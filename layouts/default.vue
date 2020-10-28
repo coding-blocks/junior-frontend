@@ -1,5 +1,6 @@
 <template>
   <div>
+    This is default layout
     <Nuxt />
   </div>
 </template>

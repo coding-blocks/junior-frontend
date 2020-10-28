@@ -8,7 +8,8 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'AdminPage'
+  name: 'AdminPage',
+  layout: 'admin'
 })
 </script>
 
