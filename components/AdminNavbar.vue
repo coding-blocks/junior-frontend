@@ -3,7 +3,7 @@
     <div> LOGO </div>
 
     <div class="links flex items-center">
-      <div>Home</div>
+      <nuxt-link to="/admin">Home</nuxt-link>
       <nuxt-link to="/admin/courses"> Courses </nuxt-link>
       <div>Example Link</div>
       <Button>Login</Button>
