@@ -5,7 +5,12 @@
       <i class="fas fa-search icon"></i>
     </div>
     <ul class="list-divided">
-      <li v-for="course in courses" :key="course.id">{{ course.title }}</li>
+      <li class="courses flex items-center" v-for="course in courses" :key="course.id">
+        <div>{{ course.title }} </div>
+        <div> 
+          <nuxt-link class="button-solid button-orange mx-auto" :to="`/admin/courses/${course.id}`"> Edit</nuxt-link>
+        </div>
+      </li>
     </ul>
     <nuxt-link class="button-solid button-orange mx-auto" to="/admin/courses/add"> Create Course </nuxt-link>
   </div>
@@ -46,3 +51,8 @@ export default Vue.extend({
 })
 </script>
 
+<style scoped>
+.courses div {
+  @apply px-4 py-4
+}
+</style>
