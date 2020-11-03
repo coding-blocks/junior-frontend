@@ -6,7 +6,7 @@
         :model="model"
         :options="formOptions"
       />
-      <button>{{ isSaving ? 'Saving...' : 'Update' }}</button>
+      <button class="d-flex justify-content-end button-solid button-orange mx-auto" >{{ isSaving ? 'Saving...' : 'Update' }}</button>
     </form>
   </div>
 </template>

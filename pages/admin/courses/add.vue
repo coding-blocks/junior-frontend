@@ -6,7 +6,7 @@
         :model="model"
         :options="formOptions"
       />Î
-      <button>{{ isSaving ? 'Saving...' : 'Create' }}</button>
+      <button class="d-flex justify-content-end button-solid button-orange mx-auto" >{{ isSaving ? 'Saving...' : 'Create' }}</button>
     </form>
   </div>
 </template>
@@ -41,6 +41,7 @@ export default Vue.extend({
       try {
         await this.$axios.$post('/admin/courses', this.model)
         alert('Saved Successfully')
+        redirect(302, '/admin/courses')
       } catch (e) {
         console.log(e)
         alert(e.message)
