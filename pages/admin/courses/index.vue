@@ -4,15 +4,15 @@
       <input type="text" placeholder="Search Here" />
       <i class="fas fa-search icon"></i>
     </div>
-    <ul class="list-divided">
-      <li class="courses flex items-center" v-for="course in courses" :key="course.id">
+    <ul class="list-divided mt-4">
+      <li class="courses flex items-center px-4 py-3" v-for="course in courses" :key="course.id">
         <div>{{ course.title }} </div>
         <div> 
           <nuxt-link class="button-solid button-orange mx-auto" :to="`/admin/courses/${course.id}`"> Edit</nuxt-link>
         </div>
       </li>
     </ul>
-    <nuxt-link class="button-solid button-orange mx-auto" to="/admin/courses/add"> Create Course </nuxt-link>
+    <nuxt-link class="button-solid button-orange mx-auto mt-4" to="/admin/courses/add"> Create Course </nuxt-link>
   </div>
 </template>
 
@@ -22,8 +22,6 @@ import Vue from 'vue'
 import Button from '@/components/Base/Button.vue'
 
 export default Vue.extend({
-  name: 'CoursesAdminPage',
-  layout: 'admin',
   components: {},
   data() {
     return {
@@ -50,9 +48,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style scoped>
-.courses div {
-  @apply px-4 py-4
-}
-</style>

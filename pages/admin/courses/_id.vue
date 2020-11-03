@@ -19,8 +19,6 @@ import 'vue-form-generator/dist/vfg.css'
 Vue.use(VueFormGenerator)
 
 export default Vue.extend({
-  name: 'CourseEditPage',
-  layout: 'admin',
   data() {
     return {
       model: {},

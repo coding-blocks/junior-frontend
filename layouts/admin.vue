@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="a-ocb pt-4">
     <AdminNavbar />
     <Nuxt />
   </div>
