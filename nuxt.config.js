@@ -27,6 +27,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/axios-accessor.ts'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -43,6 +44,10 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
+
+  router: {
+    linkActiveClass: 'active',
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {

@@ -18,33 +18,24 @@
 
 
 <script lang="ts">
-import Vue from 'vue'
-import Button from '@/components/Base/Button.vue'
+import Vue from 'vue';
+import { mapGetters, mapActions } from 'vuex';
+import Button from '@/components/Base/Button.vue';
 
 export default Vue.extend({
   components: {},
-  data() {
-    return {
-      courses: <any>[],
-    }
+  mounted() {
+    this.fetchCourses()
   },
-  async asyncData({ $axios }) {
-    const {
-      data: { data: courses },
-    } = await $axios.get('/courses')
-    return { courses }
+  computed: {
+    ...mapGetters({
+      courses: 'courses/courses'
+    })
   },
   methods: {
-    addNewCourse() {
-      const newCourse = {
-        id: 111221,
-        title: 'New Dummy', // input field
-      }
-      // api call to backend POST
-
-      console.log('added')
-      this.courses.push(newCourse)
-    },
-  },
+    ...mapActions({
+      fetchCourses: 'courses/fetchAll'
+    })
+  }
 })
 </script>
