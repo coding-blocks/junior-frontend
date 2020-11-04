@@ -29,7 +29,7 @@ export default Vue.extend({
   },
   computed: {
     ...mapGetters({
-      courses: 'courses/courses'
+      courses: 'courses/list'
     })
   },
   methods: {

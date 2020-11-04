@@ -1,6 +1,5 @@
-import { Module, VuexModule, MutationAction } from 'vuex-module-decorators';
-import { $axios } from '~/utils/api';
-import { listToMap } from '~/utils/store';
+import { Module } from 'vuex-module-decorators';
+import { BaseVuexModule } from '~/utils/store';
 
 export interface Course {
   id: number;
@@ -15,21 +14,6 @@ export interface Course {
   stateFactory: true,
   namespaced: true,
 })
-export default class CoursesModule extends VuexModule {
-  courseMap: {[key: number]: Course} = {};
-
-  @MutationAction({ mutate: ['courseMap'] })
-  async fetchAll() {
-    const response = await $axios.$get('courses');
-    return {
-      courseMap: {
-        ...this.courseMap,
-        ...listToMap(response.data, 'id')
-      }
-    }
-  }
-
-  get courses() {
-    return Object.values(this.courseMap);
-  }
+export default class CoursesModule extends BaseVuexModule<Course> {
+  _modelName: string = 'courses';
 }
