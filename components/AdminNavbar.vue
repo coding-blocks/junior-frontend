@@ -16,6 +16,11 @@
       </div>
       <ul class="right-nav d-md-flex d-none">
         <li class="top-nav-option px-3">
+          <nuxt-link to="/admin/resources">
+            Resources
+          </nuxt-link>
+        </li>
+        <li class="top-nav-option px-3">
           <nuxt-link to="/admin/courses">
             Courses
           </nuxt-link>

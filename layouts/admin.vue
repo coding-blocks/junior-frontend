@@ -1,7 +1,9 @@
 <template>
   <div class="a-ocb pt-4">
     <AdminNavbar />
-    <Nuxt />
+    <div class="container">
+      <Nuxt />
+    </div>
   </div>
 </template>
 

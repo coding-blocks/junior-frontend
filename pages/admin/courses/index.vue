@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <div class="search-bar">
       <input type="text" placeholder="Search Here" />
       <i class="fas fa-search icon"></i>

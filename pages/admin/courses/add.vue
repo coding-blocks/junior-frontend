@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <form action="" @submit.prevent="addNewCourse">
       <vue-form-generator
         :schema="schema"
