@@ -13,10 +13,6 @@
  
 <script>
 import Vue from 'vue'
-const VueFormGenerator = require('vue-form-generator')
-import 'vue-form-generator/dist/vfg.css'
-
-Vue.use(VueFormGenerator)
 
 export default Vue.extend({
   data() {
