@@ -13,7 +13,10 @@
  
 <script>
 import Vue from 'vue'
+<<<<<<< HEAD
 import courseFormSchema from '@/forms/courseForms'
+=======
+>>>>>>> b153bced96dea33b8565ba04f61e23c29fc3ff85
 
 export default Vue.extend({
   name: 'CourseEditPage',
