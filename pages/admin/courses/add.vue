@@ -1,52 +1,30 @@
 <template>
   <div>
-    <form action="" @submit.prevent="addNewCourse">
-      <vue-form-generator
-        :schema="schema"
-        :model="model"
-        :options="formOptions"
-      />Î
-      <button class="d-flex justify-content-end button-solid button-orange mx-auto" >{{ isSaving ? 'Saving...' : 'Create' }}</button>
-    </form>
+    <CourseEditor 
+      :course="course"
+    />
   </div>
 </template>
  
 <script>
-import Vue from 'vue'
-import courseFormSchema from '@/forms/courseForms'
+import Vue from 'vue';
+import CourseEditor from '@/components/Course/CourseEditor';
 
 export default Vue.extend({
   name: 'CourseAddPage',
   layout: 'admin',
+  components: {
+    CourseEditor
+  },
   data() {
     return {
-      model: {
+      course: {
         title: '',
         description: '',
         slug: '',
         syllabus: '',
-      },
-      schema: courseFormSchema,
-      formOptions: {
-        validateAfterLoad: true,
-        validateAfterChanged: true,
-        validateAsync: true,
-      },
-      isSaving: false,
-    }
-  },
-  methods: {
-    async addNewCourse() {
-      // api call to backend POST
-      try {
-        await this.$axios.$post('/admin/courses', this.model)
-        alert('Saved Successfully')
-        redirect(302, '/admin/courses')
-      } catch (e) {
-        console.log(e)
-        alert(e.message)
       }
-    },
-  },
+    }
+  }
 })
 </script>

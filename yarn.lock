@@ -3494,6 +3494,11 @@ encodeurl@~1.0.2:
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
   integrity sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
 
+ency@0.0.21:
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/ency/-/ency-0.0.21.tgz#0bcce7014ad7c24790a11751278dc640aaa2c9e7"
+  integrity sha512-2PrINa2i8HHB7euB7Ld4I9Lz6QQtJfToGOd1+n3yzNkye3ZV1zZmQtPamgm61wpw+fScCWRXtI5a1qERO/fzPg==
+
 end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/end-of-stream/-/end-of-stream-1.4.4.tgz#5ae64a5f45057baf3626ec14da0ca5e4b2431eb0"
@@ -8313,10 +8318,18 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.6.12:
+vue@^2.1.8, vue@^2.6.12:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
+
+vuency@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/vuency/-/vuency-0.1.7.tgz#762f07f73a0b57f94d0f3696150906197a4463c3"
+  integrity sha512-jc5akQ23TJDqNI1boPoHR4xqam3Lfv+t3k+MXXv+56A4t9Sd07l1lXl0l3Rz3rbbJmK8Q9zb87tcgx93QmQsZA==
+  dependencies:
+    ency "0.0.21"
+    vue "^2.1.8"
 
 vuex-module-decorators@^1.0.1:
   version "1.0.1"

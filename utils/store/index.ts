@@ -43,9 +43,49 @@ export class BaseVuexModule<T, S extends ModuleState<T> = ModuleState<T>, R = an
       oldState = this.state;
     }
 
-    const response = await $axios.get(`${oldState?._modelName}/${id}`)
+    const response = await $axios.$get(`${oldState?._modelName}/${id}`)
     const object = response.data;
-    
+
+    return {
+      objectMap: {
+        ...oldState?.objectMap,
+        [object.id]: object
+      }
+    }
+  }
+
+  @MutationAction({ mutate: ['objectMap'] })
+  async updateById({ id, obj }: { id: number, obj: T }) {
+    let oldState: S | undefined;
+    if (this.state instanceof Function) {
+      oldState = this.state();
+    } else {
+      oldState = this.state;
+    }
+
+    const response = await $axios.$patch(`${oldState?._modelName}/${id}`, obj);
+    const object = response.data;
+
+    return {
+      objectMap: {
+        ...oldState?.objectMap,
+        [object.id]: object
+      }
+    }
+  }
+
+  @MutationAction({ mutate: ['objectMap'] })
+  async create(obj: T) {
+    let oldState: S | undefined;
+    if (this.state instanceof Function) {
+      oldState = this.state();
+    } else {
+      oldState = this.state;
+    }
+
+    const response = await $axios.$post(`${oldState?._modelName}`, obj);
+    const object = response.data;
+
     return {
       objectMap: {
         ...oldState?.objectMap,
@@ -59,6 +99,6 @@ export class BaseVuexModule<T, S extends ModuleState<T> = ModuleState<T>, R = an
   }
 
   get getById() {
-    return id => this.objectMap[id];
+    return id => ({ ...this.objectMap[id] });
   }
 }

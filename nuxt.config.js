@@ -28,7 +28,8 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/axios-accessor.ts',
-    '~/plugins/vue-form-generator'
+    '~/plugins/vue-form-generator',
+    '~/plugins/vuency.ts'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -52,7 +53,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: process.env.BACKEND?.baseURL || 'http://localhost:4242/api',
+    baseURL: process.env.BACKEND?.baseURL || 'http://dev.junior/api/admin',
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

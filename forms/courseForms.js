@@ -11,7 +11,7 @@ export default {
           placeholder: 'Enter course name',
           help: 'This will be the title for the course',
           required: true,
-          validator: ['string', 'required']
+          validators: ['string', 'required']
 
         },
         {
@@ -22,7 +22,7 @@ export default {
           placeholder: 'Enter course name',
           help: 'This will be the summary for the course',
           required: true,
-          validator: ['string', 'required']
+          validators: ['string', 'required']
         },
         {
           type: 'input',
@@ -33,7 +33,7 @@ export default {
             Use kebab-case (hyphen separated) name and avoid special characters if you can) For example: c++-for-beginners`,
           placeholder: 'This will be the slug for the course',
           required: true,
-          validator: ['validSlug', 'required']
+          validators: ['validSlug', 'required']
         },
         {
           type: 'textArea',
@@ -43,7 +43,7 @@ export default {
           placeholder: 'Enter course syllabus json',
           help: 'This will be the syllabus for the course',
           required: true,
-          validator: ['string', 'required']
+          validators: ['string', 'required']
         }
       ],
     },

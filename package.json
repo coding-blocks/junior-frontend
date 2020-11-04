@@ -17,6 +17,7 @@
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "vue-form-generator": "^2.3.4",
+    "vuency": "^0.1.7",
     "vuex-module-decorators": "^1.0.1"
   },
   "devDependencies": {
