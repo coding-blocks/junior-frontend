@@ -1,12 +1,11 @@
 <template>
-      <nuxt-child/>
+  <h1>
+    Resources Page
+  </h1>
 </template>
-
 <script lang="ts">
 import Vue from 'vue'
-
 export default Vue.extend({
-  name: 'CoursesPage',
-  layout: 'admin'
+  
 })
 </script>

@@ -9,6 +9,9 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: 'https://unpkg.com/@coding-blocks/web-components@0.0.12/dist/index.js' }
     ]
   },
 
@@ -18,11 +21,15 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '@coding-blocks/motley/dist/app.min.css'
+    '@coding-blocks/motley/dist/online-cb/app.min.css',
+    '~/assets/styles/app.scss'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/axios-accessor.ts',
+    '~/plugins/vue-form-generator',
+    '~/plugins/vuency.ts'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -31,9 +38,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    '@nuxt/typescript-build'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -42,9 +47,13 @@ export default {
     '@nuxtjs/axios',
   ],
 
+  router: {
+    linkActiveClass: 'active',
+  },
+
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: process.env.BACKEND?.baseURL || 'http://localhost:4242/api',
+    baseURL: process.env.BACKEND?.baseURL || 'http://dev.junior/api/admin',
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
