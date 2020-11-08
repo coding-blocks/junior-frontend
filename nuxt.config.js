@@ -29,7 +29,8 @@ export default {
   plugins: [
     '~/plugins/axios-accessor.ts',
     '~/plugins/vue-form-generator',
-    '~/plugins/vuency.ts'
+    '~/plugins/vuency.ts',
+    '~/plugins/repository.ts'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

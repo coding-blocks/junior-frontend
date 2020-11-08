@@ -18,6 +18,7 @@ import Vue from 'vue';
 import { mapActions, mapGetters } from 'vuex';
 import { Course } from '@/store/courses';
 import courseFormSchema from '@/forms/courseForms'
+import CourseRepository from '@/repositories/courses';
 
 export default Vue.extend({
   props: {
@@ -36,19 +37,13 @@ export default Vue.extend({
       }
     }
   },
-  methods: {
-    ...mapActions({
-      updateCourse: 'courses/updateById',
-      createCourse: 'courses/create'
-    })
-  },
   tasks(t) {
     return {
       saveCourse: t(function *() {
         if (this.course.id) {
-          yield this.updateCourse({ id: this.course.id, obj: this.course });
+          yield CourseRepository.update(this.course.id, this.course);
         } else {
-          yield this.createCourse(this.course);
+          yield CourseRepository.create(this.course)
         }
       })
       .flow('drop')

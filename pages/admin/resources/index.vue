@@ -21,21 +21,21 @@
 import Vue from 'vue';
 import { mapGetters, mapActions } from 'vuex';
 import Button from '@/components/Base/Button.vue';
+import ResourceRepository from '@/repositories/resources';
 
 export default Vue.extend({
   components: {},
-  mounted() {
-    this.fetchResources()
+  data() {
+    return {
+      resources: []
+    }
   },
-  computed: {
-    ...mapGetters({
-      resources: 'resources/list'
-    })
-  },
-  methods: {
-    ...mapActions({
-      fetchResources: 'resources/fetchAll'
-    })
+  async asyncData() {
+    const resources = await ResourceRepository.fetchAll();
+
+    return {
+      resources
+    }
   }
 })
 </script>
