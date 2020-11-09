@@ -13,11 +13,12 @@
     </button>
   </form>
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import { mapActions, mapGetters } from 'vuex';
-import { Resource } from '@/store/resources';
-import resourceFormSchema from '@/forms/resourceForms'
+import resourceForm from '@/forms/resource'
+import pdfForm from '@/forms/pdf'
+import videoForm from '@/forms/video'
 import ResourceRepository from '@/repositories/resources';
 
 export default Vue.extend({
@@ -27,9 +28,28 @@ export default Vue.extend({
       required: true
     }
   },
+  computed: {
+    resourceTypeForm() {
+      switch(this.resource.type) {
+        case 'pdf':
+          return pdfForm({ modelPrefix: 'document.' });
+        case 'quiz':
+          return pdfForm({ modelPrefix: 'document.' });
+        case 'hb_content':
+          return pdfForm({ modelPrefix: 'document.' });
+        case 'video':
+          return videoForm({ modelPrefix: 'video.' })
+      }
+    },
+    schema() {
+      if (this.resourceTypeForm) {
+        return resourceForm({ extraGroups: this.resourceTypeForm.groups })
+      }
+      return resourceForm()
+    }
+  },
   data() {
     return {
-      schema: resourceFormSchema,
       formOptions: {
         validateAfterLoad: true,
         validateAfterChanged: true,

@@ -16,8 +16,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapActions, mapGetters } from 'vuex';
-import { Course } from '@/store/courses';
-import courseFormSchema from '@/forms/courseForms'
+import courseForm from '@/forms/course'
 import CourseRepository from '@/repositories/courses';
 
 export default Vue.extend({
@@ -29,7 +28,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      schema: courseFormSchema,
+      schema: courseForm(),
       formOptions: {
         validateAfterLoad: true,
         validateAfterChanged: true,
