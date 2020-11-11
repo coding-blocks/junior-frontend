@@ -1,3 +1,5 @@
+const config = require('./config');
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -16,7 +18,7 @@ export default {
   },
 
   server: {
-    port: process.env.PORT || 3005 
+    port: config.PORT 
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -53,9 +55,7 @@ export default {
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {
-    baseURL: process.env.BACKEND?.baseURL || 'http://dev.junior/api/admin',
-  },
+  axios: config.axios,
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
