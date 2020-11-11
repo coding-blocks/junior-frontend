@@ -13,7 +13,7 @@
     </button>
   </form>
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import { mapActions, mapGetters } from 'vuex';
 import courseForm from '@/forms/course'
