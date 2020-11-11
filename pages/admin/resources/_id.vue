@@ -10,7 +10,7 @@
 import Vue from 'vue'
 import { mapActions, mapGetters } from 'vuex';
 import CourseEditor from '@/components/Course/CourseEditor';
-import CourseRepository from '@/repositories/courses';
+import ResourceRepository from '@/repositories/resources';
 
 export default Vue.extend({
   name: 'CourseEditPage',
@@ -24,7 +24,7 @@ export default Vue.extend({
     }
   },
   async asyncData({ params }) {
-    const course = await CourseRepository.fetchById(params.id)
+    const course = await ResourceRepository.fetchById(params.id)
 
     return {
       course

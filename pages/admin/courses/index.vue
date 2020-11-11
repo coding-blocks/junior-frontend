@@ -21,21 +21,21 @@
 import Vue from 'vue';
 import { mapGetters, mapActions } from 'vuex';
 import Button from '@/components/Base/Button.vue';
+import CourseRepository from '@/repositories/courses';
 
 export default Vue.extend({
   components: {},
-  mounted() {
-    this.fetchCourses()
+  data() {
+    return {
+      courses: []
+    }
   },
-  computed: {
-    ...mapGetters({
-      courses: 'courses/list'
-    })
-  },
-  methods: {
-    ...mapActions({
-      fetchCourses: 'courses/fetchAll'
-    })
+  async asyncData() {
+    const courses = await CourseRepository.fetchAll();
+
+    return {
+      courses
+    }
   }
 })
 </script>

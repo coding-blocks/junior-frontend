@@ -13,11 +13,11 @@
     </button>
   </form>
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import { mapActions, mapGetters } from 'vuex';
-import { Course } from '@/store/courses';
-import courseFormSchema from '@/forms/courseForms'
+import courseForm from '@/forms/course'
+import CourseRepository from '@/repositories/courses';
 
 export default Vue.extend({
   props: {
@@ -28,7 +28,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      schema: courseFormSchema,
+      schema: courseForm(),
       formOptions: {
         validateAfterLoad: true,
         validateAfterChanged: true,
@@ -36,19 +36,13 @@ export default Vue.extend({
       }
     }
   },
-  methods: {
-    ...mapActions({
-      updateCourse: 'courses/updateById',
-      createCourse: 'courses/create'
-    })
-  },
   tasks(t) {
     return {
       saveCourse: t(function *() {
         if (this.course.id) {
-          yield this.updateCourse({ id: this.course.id, obj: this.course });
+          yield CourseRepository.update(this.course.id, this.course);
         } else {
-          yield this.createCourse(this.course);
+          yield CourseRepository.create(this.course)
         }
       })
       .flow('drop')
