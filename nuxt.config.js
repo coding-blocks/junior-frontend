@@ -10,7 +10,8 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://unpkg.com/@coding-blocks/motley@2.5.6/dist/coding-blocks/app.min.css' }
     ],
     script: [
       { src: 'https://unpkg.com/@coding-blocks/web-components@0.0.12/dist/index.js' }
@@ -23,7 +24,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '@coding-blocks/motley/dist/online-cb/app.min.css',
+    // '@coding-blocks/motley/dist/online-cb/app.min.css',
     '~/assets/styles/app.scss'
   ],
 
