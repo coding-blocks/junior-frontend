@@ -1,6 +1,7 @@
 module.exports = {
   axios: {
-    baseUrl: 'https://junior.codingblocks.com/',
+    host: 'https://junior.codingblocks.com/',
+    port: 443,
     prefix: '/api/admin'
   }
 }

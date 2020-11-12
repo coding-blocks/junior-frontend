@@ -1,6 +1,7 @@
 module.exports = {
   axios: {
-    baseUrl: 'dev.junior',
+    host: 'dev.junior',
+    port: 80,
     prefix: '/api/admin'
   }
 }
