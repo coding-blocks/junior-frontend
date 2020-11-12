@@ -5,10 +5,20 @@ export default ({ $axios }) => {
   */
   const repos = [
     'courses',
-    'resources'
+    'resources',
+    'users'
   ]
 
   repos.forEach(repo => {
     require(`@/repositories/${repo}`).default.register($axios, repo);
   })
+
+  const adminRepos = [
+    'courses',
+    'resources'
+  ]
+
+  adminRepos.forEach(repo => {
+    require(`@/repositories/admin/${repo}`).default.register($axios, repo, 'admin');
+  })  
 }

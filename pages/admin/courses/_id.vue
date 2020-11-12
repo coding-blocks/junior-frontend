@@ -10,7 +10,7 @@
 import Vue from 'vue'
 import { mapActions, mapGetters } from 'vuex';
 import CourseEditor from '@/components/Course/CourseEditor';
-import CourseRepository from '@/repositories/courses';
+import CourseRepository from '@/repositories/admin/courses';
 
 export default Vue.extend({
   name: 'CourseEditPage',

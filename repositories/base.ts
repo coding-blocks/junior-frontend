@@ -1,12 +1,40 @@
 import { NuxtAxiosInstance } from "@nuxtjs/axios";
 
 export class BaseRepository<T> {
-  private axios?: NuxtAxiosInstance;
-  private modelName?: string;
+  private _axios?: NuxtAxiosInstance;
+  private _modelName?: string;
+  private _namespace?: string;
 
-  register(axios, modelName) {
-    this.axios = axios;
-    this.modelName = modelName;
+  constructor() {
+    Object
+      .getOwnPropertyNames(BaseRepository.prototype)
+      .filter(method => !['constructor', 'register', 'checkRegistered'].includes(method))
+      .filter(method => typeof this[method] === 'function')
+      .map(method => {
+        const func = this[method].bind(this);
+        this[method] = (...args) => {
+          this.checkRegistered();
+          return func(...args);
+        }
+      })
+  }
+
+  register(axios, modelName, namespace = '') {
+    this._axios = axios;
+    this._modelName = modelName;
+    this._namespace = namespace;
+  }
+
+  buildUrl(url: string = '') {
+    return `${this._namespace}/${this._modelName}/${url}`
+  }
+
+  get axios() {
+    return this._axios;
+  }
+
+  get modelName() {
+    return this._modelName;
   }
 
   private checkRegistered() {
@@ -24,26 +52,22 @@ export class BaseRepository<T> {
   }
 
   async fetchAll(): Promise<T> {
-    this.checkRegistered();
-    const response = await this.axios!.$get(this.modelName!);
+    const response = await this.axios!.$get(this.buildUrl());
     return response.data;
   }
 
   async fetchById(id: number): Promise<T> {
-    this.checkRegistered();
-    const response = await this.axios!.$get(`${this.modelName}/${id}`);
+    const response = await this.axios!.$get(this.buildUrl(id.toString()));
     return response.data;
   }
 
   async create(obj: T): Promise<T> {
-    this.checkRegistered();
-    const response = await this.axios!.$post(this.modelName!, obj);
+    const response = await this.axios!.$post(this.buildUrl(), obj);
     return response.data;
   }
 
   async update(id: number, obj: T): Promise<T> {
-    this.checkRegistered();
-    const response = await this.axios!.$patch(`${this.modelName}/${id}`, obj);
+    const response = await this.axios!.$patch(this.buildUrl(id.toString()), obj);
     return response.data;
   }
 }

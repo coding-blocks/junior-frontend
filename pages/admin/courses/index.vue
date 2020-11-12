@@ -21,7 +21,7 @@
 import Vue from 'vue';
 import { mapGetters, mapActions } from 'vuex';
 import Button from '@/components/Base/Button.vue';
-import CourseRepository from '@/repositories/courses';
+import CourseRepository from '@/repositories/admin/courses';
 
 export default Vue.extend({
   components: {},
