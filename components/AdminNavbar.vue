@@ -41,7 +41,7 @@
               </li>
               <div class="divider-h my-3"></div>
               <li>
-                <a class="dark-grey"> Logout </a>
+                <a class="dark-grey" href="/pages/logout"> Logout </a>
               </li>
             </ul>
           </div>
@@ -71,7 +71,7 @@
 
 <script>
 import Vue from 'vue'
-import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 import Button from './Base/Button.vue'
 export default Vue.extend({
   name: 'AdminNavbar',
@@ -79,11 +79,7 @@ export default Vue.extend({
     Button,
   },
   computed: {
-    user() {
-      // doesn't work with mapState
-      // please someone figure out why
-      return this.$store.state.session.user;
-    }
+    ...mapState('session', ['user'])
   },
   methods: {
     openNavbar() {

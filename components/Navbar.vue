@@ -30,9 +30,9 @@
             Upcoming Webinars
           </nuxt-link>
         </li>
-        <li class="top-nav-option hoverable px-3">
+        <li class="top-nav-option hoverable px-3" v-if="user">
           <div class="img-desc align-items-center font-sm">
-            <div class="description ml-4 font-sm bold">Hi, Jatin Katyal</div>
+            <div class="description ml-4 font-sm bold">Hi, {{user.name}}</div>
           </div>
           <div class="pop-up border-card p-3 br-5">
             <ul class="t-align-l">
@@ -46,10 +46,15 @@
               </li>
               <div class="divider-h my-3"></div>
               <li>
-                <a class="dark-grey"> Logout </a>
+                <a class="dark-grey" href="/pages/logout"> Logout </a>
               </li>
             </ul>
           </div>
+        </li>
+        <li class="top-nav-option px-3" v-else>
+          <a class="button-solid button-orange" href="/pages/login">
+            Login
+          </a>
         </li>
       </ul>
     </div>
@@ -57,10 +62,11 @@
     <cb-mobile-navbar id="navbar" logo="">
       <div 
         class="my-4 pl-4"
+        v-if="user"
       >
         <div class="pl-4">
           <div class="extra-bold gradient-text font-mds">
-            Jatin Katyal
+            {{user.name}}
           </div>
         </div>
       </div>
@@ -69,12 +75,17 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import Button from './Base/Button.vue'
+import Vue from 'vue';
+import { mapState } from 'vuex';
+import Button from './Base/Button.vue';
+
 export default Vue.extend({
   name: 'AdminNavbar',
   components: {
     Button,
+  },
+  computed: {
+    ...mapState('session', ['user'])
   },
   methods: {
     openNavbar() {
