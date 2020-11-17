@@ -377,6 +377,30 @@
         </div>
       </div>
     </div>
+
+    <div class="divider-h"></div>
+
+    <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
+      <div class="row">
+        <div class="col-lg-7 mb-lg-none mb-50">
+          <div class="card br-20" style="background: radial-gradient(95.83% 1829.77% at 15.26% 21.53%, #0575E6 0%, #021B79 100%);">
+            <div class="row align-items-center justify-content-between no-gutters">
+              <div class="flex-1 white">
+                <div class="heading-5 mb-15">Wherever you go!</div>
+                <div class="heading-5 bold mb-40">
+                  Download the app and always stay connected!
+                </div>
+                <div class="row no-gutters justify-content-center align-items-center">
+                  <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/app-store.svg" class="mr-10">
+                  <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/google-play.svg" class="ml-10">
+                </div>
+              </div>
+              <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/junior.svg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
