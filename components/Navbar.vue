@@ -14,23 +14,23 @@
           </div>
         </div>
       </div>
-      <ul class="right-nav d-md-flex d-none">
-        <li class="top-nav-option px-3">
+      <ul class="d-md-flex d-none align-items-center">
+        <li class="px-3">
           <nuxt-link to="/">
             Home
           </nuxt-link>
         </li>
-        <li class="top-nav-option px-3">
+        <li class="px-3">
           <nuxt-link to="/courses">
             All Courses
           </nuxt-link>
         </li>
-        <li class="top-nav-option px-3">
+        <li class="px-3">
           <nuxt-link to="/">
             Upcoming Webinars
           </nuxt-link>
         </li>
-        <li class="top-nav-option hoverable px-3" v-if="user">
+        <li class="hoverable px-3" v-if="user">
           <div class="img-desc align-items-center font-sm">
             <div class="description ml-4 font-sm bold">Hi, {{user.name}}</div>
           </div>
@@ -51,7 +51,7 @@
             </ul>
           </div>
         </li>
-        <li class="top-nav-option px-3" v-else>
+        <li class="px-3" v-else>
           <a class="button-primary" href="/pages/login">
             Get Started
           </a>
