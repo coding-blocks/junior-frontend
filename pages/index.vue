@@ -21,8 +21,7 @@
     </div>
 
     <div
-      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white"
-      style="background: linear-gradient(76.34deg, #4a00e0 8.9%, #8e2de2 87.68%);"
+      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
     >
       <div class="row align-items-center">
         <div class="col-lg-7">
@@ -232,8 +231,7 @@
     </div>
 
     <div
-      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 white"
-      style="background: radial-gradient(95.83% 1829.77% at 15.26% 21.53%, #0575e6 0%, #021b79 100%);"
+      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 white bg-gradient-blue-dark"
     >
       <div class="row align-items-center">
         <div class="col-lg-7">
@@ -383,10 +381,7 @@
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="row align-items-center">
         <div class="col-lg-7 mb-lg-none mb-40">
-          <div
-            class="card br-20"
-            style="background: radial-gradient(95.83% 1829.77% at 15.26% 21.53%, #0575e6, #021b79);"
-          >
+          <div class="card br-20 bg-gradient-blue-dark">
             <div
               class="row align-items-center justify-content-between no-gutters"
             >
