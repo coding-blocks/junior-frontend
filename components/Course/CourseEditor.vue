@@ -17,7 +17,7 @@
 import Vue from 'vue';
 import { mapActions, mapGetters } from 'vuex';
 import courseForm from '@/forms/course'
-import CourseRepository from '@/repositories/courses';
+import CourseRepository from '@/repositories/admin/courses';
 
 export default Vue.extend({
   props: {

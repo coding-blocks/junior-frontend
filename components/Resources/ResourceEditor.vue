@@ -19,7 +19,7 @@ import { mapActions, mapGetters } from 'vuex';
 import resourceForm from '@/forms/resource'
 import pdfForm from '@/forms/pdf'
 import videoForm from '@/forms/video'
-import ResourceRepository from '@/repositories/resources';
+import ResourceRepository from '@/repositories/admin/resources';
 
 export default Vue.extend({
   props: {
