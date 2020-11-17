@@ -52,8 +52,8 @@
           </div>
         </li>
         <li class="top-nav-option px-3" v-else>
-          <a class="button-solid button-orange" href="/pages/login">
-            Login
+          <a class="button-primary" href="/pages/login">
+            Get Started
           </a>
         </li>
       </ul>
