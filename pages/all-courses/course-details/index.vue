@@ -60,7 +60,7 @@
       </div>
     </div>
     <div class="row c-card-carousel mt-40 pb-xl-100 pb-lg-75 pb-md-50 pb-30">
-      <div class="col-3">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-8">
         <div class="course-video-card">
           <img
             src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
@@ -69,7 +69,7 @@
           <button class="button-primary floating-button">Start Learning</button>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-8">
         <div class="course-video-card">
           <img
             src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
@@ -78,7 +78,7 @@
           <button class="button-primary floating-button">Start Learning</button>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-8">
         <div class="course-video-card">
           <img
             src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
@@ -87,7 +87,7 @@
           <button class="button-primary floating-button">Start Learning</button>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-8">
         <div class="course-video-card course-video-card--unwatched">
           <img
             src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
@@ -96,7 +96,7 @@
           <button class="button-primary floating-button">Start Learning</button>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-8">
         <div class="course-video-card course-video-card--unwatched">
           <img
             src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
