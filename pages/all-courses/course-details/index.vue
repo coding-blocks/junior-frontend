@@ -394,5 +394,28 @@
         </div>
       </div>
     </div>
+
+    <div
+      class="pt-xl-100 pt-lg-75 pt-md-50 pt-30 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
+    >
+      <div class="container">
+        <div class="heading-5 bold t-align-c">Choose from available batches</div>
+      </div>
+    </div>
+    <div class="row c-card-carousel mt-40 pb-xl-100 pb-lg-75 pb-md-50 pb-30">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-8">
+        <CourseBatchCardSmall />
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+import CourseBatchCardSmall from '@/components/Course/CourseBatchCardSmall.vue'
+
+export default {
+  components: {
+    CourseBatchCardSmall,
+  },
+}
+</script>
