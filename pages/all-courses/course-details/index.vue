@@ -253,21 +253,94 @@
           </div>
         </div>
         <div class="heading-5 bold mb-40">Projects you will build</div>
+        <div class="row c-card-carousel mb-xl-100 mb-lg-75 mb-50">
+          <div class="col-3">
+            <div class="card bg-grey-light-1" style="height: 200px"></div>
+          </div>
+          <div class="col-3">
+            <div class="card bg-grey-light-1" style="height: 200px"></div>
+          </div>
+          <div class="col-3">
+            <div class="card bg-grey-light-1" style="height: 200px"></div>
+          </div>
+          <div class="col-3">
+            <div class="card bg-grey-light-1" style="height: 200px"></div>
+          </div>
+          <div class="col-3">
+            <div class="card bg-grey-light-1" style="height: 200px"></div>
+          </div>
+        </div>
+        <div class="heading-5 bold mb-40">Assignments, Quizzes and more...</div>
         <div class="row c-card-carousel">
           <div class="col-3">
-            <div class="card bg-grey" style="height: 200px"></div>
+            <div
+              class="card bg-grey-light-1 position-relative"
+              style="height: 200px"
+            >
+              <div class="position-absolute w-100 h-100 z-pos all-center tl">
+                <span
+                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-green-light"
+                >
+                  Assignment
+                </span>
+              </div>
+            </div>
           </div>
           <div class="col-3">
-            <div class="card bg-grey" style="height: 200px"></div>
+            <div
+              class="card bg-grey-light-1 position-relative"
+              style="height: 200px"
+            >
+              <div class="position-absolute w-100 h-100 z-pos all-center tl">
+                <span
+                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-pink-light"
+                >
+                  Video
+                </span>
+              </div>
+            </div>
           </div>
           <div class="col-3">
-            <div class="card bg-grey" style="height: 200px"></div>
+            <div
+              class="card bg-grey-light-1 position-relative"
+              style="height: 200px"
+            >
+              <div class="position-absolute w-100 h-100 z-pos all-center tl">
+                <span
+                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-green-light"
+                >
+                  Assignment
+                </span>
+              </div>
+            </div>
           </div>
           <div class="col-3">
-            <div class="card bg-grey" style="height: 200px"></div>
+            <div
+              class="card bg-grey-light-1 position-relative"
+              style="height: 200px"
+            >
+              <div class="position-absolute w-100 h-100 z-pos all-center tl">
+                <span
+                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-blue-light"
+                >
+                  Quiz
+                </span>
+              </div>
+            </div>
           </div>
           <div class="col-3">
-            <div class="card bg-grey" style="height: 200px"></div>
+            <div
+              class="card bg-grey-light-1 position-relative"
+              style="height: 200px"
+            >
+              <div class="position-absolute w-100 h-100 z-pos all-center tl">
+                <span
+                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-pink-light"
+                >
+                  Video
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
