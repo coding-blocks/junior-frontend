@@ -190,7 +190,7 @@
 
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
-        <div class="row">
+        <div class="row mb-xl-100 mb-lg-75 mb-50">
           <div class="col-6">
             <div class="heading-5 bold">Resources</div>
             <div class="heading-6 my-40 text-grey">
@@ -250,6 +250,24 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="heading-5 bold mb-40">Projects you will build</div>
+        <div class="row c-card-carousel">
+          <div class="col-3">
+            <div class="card bg-grey" style="height: 200px"></div>
+          </div>
+          <div class="col-3">
+            <div class="card bg-grey" style="height: 200px"></div>
+          </div>
+          <div class="col-3">
+            <div class="card bg-grey" style="height: 200px"></div>
+          </div>
+          <div class="col-3">
+            <div class="card bg-grey" style="height: 200px"></div>
+          </div>
+          <div class="col-3">
+            <div class="card bg-grey" style="height: 200px"></div>
           </div>
         </div>
       </div>
