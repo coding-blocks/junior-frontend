@@ -59,7 +59,7 @@ body {
 
   &--unwatched {
     &::after {
-      content: "";
+      content: '';
       height: 100%;
       width: 100%;
       position: absolute;
@@ -71,6 +71,31 @@ body {
 
     .floating-button {
       display: flex;
+    }
+  }
+}
+
+.side-tag {
+  position: relative;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+    background: #fb8133;
+  }
+
+  &--right {
+    &::after {
+      right: -26px;
+    }
+  }
+
+  &--left {
+    &::after {
+      left: -26px;
     }
   }
 }
