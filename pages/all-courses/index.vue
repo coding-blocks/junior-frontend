@@ -185,8 +185,28 @@
       </div>
     </div>
 
-    
+    <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
+      <div class="container">
+        <div class="heading-4 bold mb-40 t-align-c">Other Popular Courses</div>
+        <div class="row">
+          <div class="col-md-6 mb-md-none mb-40">
+            <CourseCard />
+          </div>
+          <div class="col-md-6">
+            <CourseCard />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script></script>
+<script>
+import CourseCard from '@/components/Course/CourseCard.vue'
+
+export default {
+  components: {
+    CourseCard,
+  },
+}
+</script>
