@@ -16,18 +16,13 @@
       </div>
       <ul class="d-md-flex d-none align-items-center">
         <li class="px-3 font-5 bold">
-          <nuxt-link to="/">
+          <nuxt-link to="/" exact>
             Home
           </nuxt-link>
         </li>
         <li class="px-3 font-5 bold">
           <nuxt-link to="/courses">
             All Courses
-          </nuxt-link>
-        </li>
-        <li class="px-3 font-5 bold">
-          <nuxt-link to="/">
-            Upcoming Webinars
           </nuxt-link>
         </li>
         <li class="hoverable px-3" v-if="user">
