@@ -127,8 +127,8 @@
           </div>
           <div class="col-6">
             <div class="heading-5 bold mb-40">Course Description</div>
-            <div class="row">
-              <div class="col-3">
+            <div class="row mb-25">
+              <div class="col-3 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/learning_hours.svg"
@@ -137,7 +137,7 @@
                 </div>
                 <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
               </div>
-              <div class="col-3">
+              <div class="col-3 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/students_taught.svg"
@@ -146,7 +146,7 @@
                 </div>
                 <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
               </div>
-              <div class="col-3">
+              <div class="col-3 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects.svg"
@@ -155,7 +155,7 @@
                 </div>
                 <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
               </div>
-              <div class="col-3">
+              <div class="col-3 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/certificates_issued.svg"
@@ -163,6 +163,16 @@
                   />
                 </div>
                 <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
+              </div>
+            </div>
+            <div class="heading-5 bold mb-40">Capstone Project</div>
+            <div class="card">
+              <div class="row no-gutters align-items-center justify-content-between">
+                <div class="flex-1">
+                  <div class="heading-5 bold mb-10">Project Name</div>
+                  <div class="text-grey-light-1 font-5 text-ellipses">Description goes in this placeholder</div>
+                </div>
+                <button class="button-secondary button-secondary--light">View Live Demo</button>
               </div>
             </div>
           </div>
