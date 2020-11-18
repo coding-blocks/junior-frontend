@@ -15,17 +15,17 @@
         </div>
       </div>
       <ul class="d-md-flex d-none align-items-center">
-        <li class="px-3">
+        <li class="px-3 font-5 bold">
           <nuxt-link to="/">
             Home
           </nuxt-link>
         </li>
-        <li class="px-3">
+        <li class="px-3 font-5 bold">
           <nuxt-link to="/courses">
             All Courses
           </nuxt-link>
         </li>
-        <li class="px-3">
+        <li class="px-3 font-5 bold">
           <nuxt-link to="/">
             Upcoming Webinars
           </nuxt-link>
@@ -51,7 +51,7 @@
             </ul>
           </div>
         </li>
-        <li class="px-3" v-else>
+        <li class="px-3 font-5 bold" v-else>
           <a class="button-primary" href="/pages/login">
             Get Started
           </a>
