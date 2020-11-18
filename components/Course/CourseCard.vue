@@ -37,7 +37,9 @@
     </div>
     <div class="my-40 divider-h"></div>
     <div class="row no-gutters align-items-center justify-content-between">
-      <div class="flex-1">
+      <div
+        class="col-xl-7 col-lg-6 col-md-12 col-sm-8 mb-lg-none mb-md-25 mb-sm-none mb-25"
+      >
         <div class="row no-gutters align-items-center">
           <div class="round s-30x30 border b-white">
             <img
