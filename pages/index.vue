@@ -1,20 +1,22 @@
 <template>
   <div class="junior-landing">
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
-      <div class="row no-gutters align-items-center">
-        <div class="col-lg-6">
-          <div class="heading-1 bold">
-            Coding is for every
-            <span class="extra-bold orange">child.</span>
-          </div>
-          <div class="mt-30 grey heading-5">
-            Live 1:1 coding classes to introduce you to the world of coding.
-          </div>
-          <div class="mt-40">
-            <button class="button-primary">Get Started</button>
-            <button class="ml-30 button-secondary button-secondary--light">
-              Book counselling session
-            </button>
+      <div class="container">
+        <div class="row no-gutters align-items-center">
+          <div class="col-lg-6">
+            <div class="heading-1 bold">
+              Coding is for every
+              <span class="extra-bold orange">child.</span>
+            </div>
+            <div class="mt-30 grey heading-5">
+              Live 1:1 coding classes to introduce you to the world of coding.
+            </div>
+            <div class="mt-40">
+              <button class="button-primary">Get Started</button>
+              <button class="ml-30 button-secondary button-secondary--light">
+                Book counselling session
+              </button>
+            </div>
           </div>
         </div>
       </div>
