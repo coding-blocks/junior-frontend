@@ -89,13 +89,13 @@ body {
 
   &--right {
     &::after {
-      right: -26px;
+      right: -30px !important;
     }
   }
 
   &--left {
     &::after {
-      left: -26px;
+      left: -30px !important;
     }
   }
 }
