@@ -405,13 +405,13 @@
       </div>
     </div>
     <div class="row c-card-carousel mt-40 pb-xl-100 pb-lg-75 pb-md-50 pb-30">
-      <div class="col-lg-3 col-md-4 col-sm-6 col-8">
+      <div class="col-xl-3 col-md-5 col-sm-7 col-10">
         <CourseBatchCardSmall :premium="true" />
       </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 col-8">
+      <div class="col-xl-3 col-md-5 col-sm-7 col-10">
         <CourseBatchCardSmall :premium="false" />
       </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 col-8">
+      <div class="col-xl-3 col-md-5 col-sm-7 col-10">
         <CourseBatchCardSmall :premium="false" />
       </div>
     </div>
