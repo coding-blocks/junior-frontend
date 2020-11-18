@@ -21,8 +21,7 @@
     </div>
 
     <div
-      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white"
-      style="background: linear-gradient(76.34deg, #4a00e0 8.9%, #8e2de2 87.68%);"
+      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
     >
       <div class="row align-items-center">
         <div class="col-lg-7">
@@ -39,8 +38,8 @@
           </div>
           <div class="font-5 mt-40">
             Python is a great programming language with which to start learning
-            to code. Short, colorful apps and games you &amp; your child can program
-            right away!
+            to code. Short, colorful apps and games you &amp; your child can
+            program right away!
           </div>
           <div class="heading-6 bold mt-40">What will you learn?</div>
           <div class="mt-40 row no-gutters align-items-center">
@@ -232,8 +231,7 @@
     </div>
 
     <div
-      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 white"
-      style="background: radial-gradient(95.83% 1829.77% at 15.26% 21.53%,#0575e6 0%,#021b79 100%);"
+      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 white bg-gradient-blue-dark"
     >
       <div class="row align-items-center">
         <div class="col-lg-7">
@@ -371,6 +369,84 @@
               </div>
               <div class="py-20 px-30 d-none">
                 Anyone and everyone can join codingblocks junior.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-h"></div>
+
+    <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
+      <div class="row align-items-center">
+        <div class="col-lg-7 mb-lg-none mb-40">
+          <div class="card br-20 bg-gradient-blue-dark">
+            <div
+              class="row align-items-center justify-content-between no-gutters"
+            >
+              <div class="flex-1 white d-sm-block d-none">
+                <div class="heading-5 mb-15">Wherever you go!</div>
+                <div class="heading-5 bold mb-40">
+                  Download the app and always stay connected!
+                </div>
+                <div class="row no-gutters align-items-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/app-store.svg"
+                    class="mr-15"
+                  />
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/google-play.svg"
+                  />
+                </div>
+              </div>
+              <div class="col-12 d-sm-none d-block mb-25 white">
+                <div class="heading-5 mb-15">Wherever you go!</div>
+                <div class="heading-5 bold mb-40">
+                  Download the app and always stay connected!
+                </div>
+                <div class="row no-gutters align-items-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/app-store.svg"
+                    class="mr-15"
+                  />
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/google-play.svg"
+                  />
+                </div>
+              </div>
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/junior.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card br-20 mb-40">
+            <div class="row no-gutters align-items-center">
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/discord.svg"
+              />
+              <div class="flex-1 pl-25">
+                <div class="font-5 bold mb-10">Join Discord Community</div>
+                <div class="font-4">
+                  Get your doubts clarified related to courses on our Discord
+                  Channel
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card br-20">
+            <div class="row no-gutters align-items-center">
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/youtube.svg"
+              />
+              <div class="flex-1 pl-25">
+                <div class="font-5 bold mb-10">Join Youtube Community</div>
+                <div class="font-4">
+                  Live classes of our courses are conducted on CB Jr Youtube
+                  channel.
+                </div>
               </div>
             </div>
           </div>
