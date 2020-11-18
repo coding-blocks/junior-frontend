@@ -179,7 +179,7 @@
     </div>
 
     <div
-      class="pt-xl-100 pt-lg-75 pt-md-50 pt-sm-30 pt-20 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
+      class="pt-xl-100 pt-lg-75 pt-md-50 pt-30 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
     >
       <div class="heading-3 bold t-align-c">Learning journey with us</div>
     </div>

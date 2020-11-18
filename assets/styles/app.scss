@@ -26,3 +26,27 @@ body {
     }
   }
 }
+
+.course-video-card {
+  border-radius: 20px;
+  position: relative;
+
+  .lecture-tag {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: 100px;
+    color: #fb8133;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .floating-button {
+    width: 80%;
+    justify-content: center;
+    left: 10%;
+    bottom: -20px;
+  }
+}

@@ -51,5 +51,20 @@
         </div>
       </div>
     </div>
+
+    <div
+      class="pt-xl-100 pt-lg-75 pt-md-50 pt-30 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
+    >
+      <div class="container">
+        <div class="heading-5 bold t-align-c">Recorded Lectures</div>
+      </div>
+    </div>
+    <div class="row c-card-carousel mt-40">
+      <div class="col-3">
+        <div class="course-video-card">
+          <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg">
+        </div>
+      </div>
+    </div>
   </div>
 </template>
