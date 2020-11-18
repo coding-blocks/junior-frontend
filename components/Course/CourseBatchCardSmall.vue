@@ -1,12 +1,12 @@
 <template>
-  <div class="card" :class="premium && premium-card">
+  <div class="card" :class="premium && 'premium-card'">
     <div class="row no-gutters justify-content-between align-items-center">
       <div class="br-20 bg-white all-center p-10 border">
         <img
           src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python-purple.svg"
         />
       </div>
-      <div class="flex-1 t-align-r premium-tag side-tag side-tag--left">
+      <div class="flex-1 t-align-r premium-tag side-tag side-tag--right">
         <div class="font-5">PREMIUM</div>
         <div class="heading-5 bold text-orange">Rs 149 / Class</div>
       </div>
