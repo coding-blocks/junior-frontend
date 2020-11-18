@@ -59,10 +59,50 @@
         <div class="heading-5 bold t-align-c">Recorded Lectures</div>
       </div>
     </div>
-    <div class="row c-card-carousel mt-40">
+    <div class="row c-card-carousel mt-40 pb-xl-100 pb-lg-75 pb-md-50 pb-30">
       <div class="col-3">
         <div class="course-video-card">
-          <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg">
+          <img
+            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+          />
+          <div class="lecture-tag">Lecture 1</div>
+          <button class="button-primary floating-button">Start Learning</button>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="course-video-card">
+          <img
+            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+          />
+          <div class="lecture-tag">Lecture 1</div>
+          <button class="button-primary floating-button">Start Learning</button>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="course-video-card">
+          <img
+            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+          />
+          <div class="lecture-tag">Lecture 1</div>
+          <button class="button-primary floating-button">Start Learning</button>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="course-video-card course-video-card--unwatched">
+          <img
+            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+          />
+          <div class="lecture-tag">Lecture 1</div>
+          <button class="button-primary floating-button">Start Learning</button>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="course-video-card course-video-card--unwatched">
+          <img
+            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+          />
+          <div class="lecture-tag">Lecture 1</div>
+          <button class="button-primary floating-button">Start Learning</button>
         </div>
       </div>
     </div>

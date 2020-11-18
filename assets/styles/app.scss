@@ -46,9 +46,11 @@ body {
   .floating-button {
     width: 80%;
     justify-content: center;
+    position: absolute;
     left: 10%;
     bottom: -20px;
     z-index: 10;
+    display: none;
   }
 
   &--unwatched {
@@ -61,6 +63,10 @@ body {
       left: 0;
       background: rgba($color: #fff, $alpha: 0.7);
       z-index: 5;
+    }
+
+    .floating-button {
+      display: flex;
     }
   }
 }
