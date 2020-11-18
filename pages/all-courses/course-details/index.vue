@@ -106,5 +106,68 @@
         </div>
       </div>
     </div>
+
+    <div class="divider-h"></div>
+
+    <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <div class="heading-5 bold">Course Description</div>
+            <div class="heading-6 my-40 text-grey">
+              We started Coding Blocks in 2014 but handled a bigger problem at
+              hand, skillifying and guiding College students and working
+              professional into the world of coding. Now, with the right
+              resources and team in hand, we are here with Coding Blocks Jr, a
+              specialised division of Coding Blocks which focusses on empowering
+              School students with Coding education in multiple streams of
+              technology. We started Coding Blocks in 2014.
+            </div>
+            <button class="button-primary">View Complete Syllabus</button>
+          </div>
+          <div class="col-6">
+            <div class="heading-5 bold mb-40">Course Description</div>
+            <div class="row">
+              <div class="col-3">
+                <div class="card all-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/learning_hours.svg"
+                    style="height: 50px"
+                  />
+                </div>
+                <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
+              </div>
+              <div class="col-3">
+                <div class="card all-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/students_taught.svg"
+                    style="height: 50px"
+                  />
+                </div>
+                <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
+              </div>
+              <div class="col-3">
+                <div class="card all-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects.svg"
+                    style="height: 50px"
+                  />
+                </div>
+                <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
+              </div>
+              <div class="col-3">
+                <div class="card all-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/certificates_issued.svg"
+                    style="height: 50px"
+                  />
+                </div>
+                <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
