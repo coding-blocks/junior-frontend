@@ -12,7 +12,7 @@ export default (opts: FormSchemaOpts = {}) => {
             type: 'input',
             inputType: 'text',
             label: 'Pdf Name',
-            model: `${modelPrefix}url`,
+            model: `${modelPrefix}pdf_link`,
             placeholder: 'Enter PDF url',
             help: 'Give the pdf url',
           },

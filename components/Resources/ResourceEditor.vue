@@ -21,6 +21,8 @@ import pdfForm from '@/forms/pdf'
 import videoForm from '@/forms/video'
 import ResourceRepository from '@/repositories/admin/resources';
 
+import DocumentRepository from '@/repositories/admin/documents';
+
 export default Vue.extend({
   props: {
     resource: {
@@ -29,6 +31,30 @@ export default Vue.extend({
     }
   },
   computed: {
+    resourceTypeRepository() {
+      switch(this.resource.type) {
+        case 'pdf':
+          return DocumentRepository;
+        case 'quiz':
+          return DocumentRepository;
+        case 'hb_content':
+          return DocumentRepository;
+        case 'video':
+          return DocumentRepository;
+      }
+    },
+    resourceTypePayload() {
+      switch(this.resource.type) {
+        case 'pdf':
+          return this.resource.document;
+        case 'quiz':
+          return this.resource.quiz;
+        case 'hb_content':
+          return this.resource.hb_content;
+        case 'video':
+          return this.resource.video;
+      }
+    },
     resourceTypeForm() {
       switch(this.resource.type) {
         case 'pdf':
@@ -62,6 +88,7 @@ export default Vue.extend({
       saveResource: t(function *() {
         if (this.resource.id) {
           yield ResourceRepository.update(this.resource.id, this.resource);
+          yield this.resourceTypeRepository.update(this.resourceTypePayload.id, this.resourceTypePayload);
         } else {
           yield ResourceRepository.create(this.resource)
         }
