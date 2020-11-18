@@ -48,5 +48,19 @@ body {
     justify-content: center;
     left: 10%;
     bottom: -20px;
+    z-index: 10;
+  }
+
+  &--unwatched {
+    &::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba($color: #fff, $alpha: 0.7);
+      z-index: 5;
+    }
   }
 }
