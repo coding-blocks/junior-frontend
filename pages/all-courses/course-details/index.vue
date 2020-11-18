@@ -260,25 +260,25 @@
         </div>
         <div class="heading-5 bold mb-40">Projects you will build</div>
         <div class="row c-card-carousel mb-xl-100 mb-lg-75 mb-50">
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div class="card bg-grey-light-1" style="height: 200px"></div>
           </div>
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div class="card bg-grey-light-1" style="height: 200px"></div>
           </div>
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div class="card bg-grey-light-1" style="height: 200px"></div>
           </div>
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div class="card bg-grey-light-1" style="height: 200px"></div>
           </div>
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div class="card bg-grey-light-1" style="height: 200px"></div>
           </div>
         </div>
         <div class="heading-5 bold mb-40">Assignments, Quizzes and more...</div>
         <div class="row c-card-carousel">
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div
               class="card bg-grey-light-1 position-relative"
               style="height: 200px"
@@ -292,7 +292,7 @@
               </div>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div
               class="card bg-grey-light-1 position-relative"
               style="height: 200px"
@@ -306,7 +306,7 @@
               </div>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div
               class="card bg-grey-light-1 position-relative"
               style="height: 200px"
@@ -320,7 +320,7 @@
               </div>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div
               class="card bg-grey-light-1 position-relative"
               style="height: 200px"
@@ -334,7 +334,7 @@
               </div>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
             <div
               class="card bg-grey-light-1 position-relative"
               style="height: 200px"
