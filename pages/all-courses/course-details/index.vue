@@ -112,7 +112,7 @@
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="heading-5 bold">Course Description</div>
             <div class="heading-6 my-40 text-grey">
               We started Coding Blocks in 2014 but handled a bigger problem at
@@ -125,10 +125,10 @@
             </div>
             <button class="button-primary">View Complete Syllabus</button>
           </div>
-          <div class="col-6">
+          <div class="col-md-6 mt-md-none mt-50">
             <div class="heading-5 bold mb-40">Course Description</div>
             <div class="row mb-25">
-              <div class="col-3 mb-25">
+              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/learning_hours.svg"
@@ -137,7 +137,7 @@
                 </div>
                 <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
               </div>
-              <div class="col-3 mb-25">
+              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/students_taught.svg"
@@ -146,7 +146,7 @@
                 </div>
                 <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
               </div>
-              <div class="col-3 mb-25">
+              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects.svg"
@@ -155,7 +155,7 @@
                 </div>
                 <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
               </div>
-              <div class="col-3 mb-25">
+              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/certificates_issued.svg"
@@ -170,9 +170,15 @@
               <div
                 class="row no-gutters align-items-center justify-content-between"
               >
-                <div class="flex-1">
+                <div class="flex-1 d-sm-block d-none">
                   <div class="heading-5 bold mb-10">Project Name</div>
-                  <div class="text-grey-light-1 font-5 text-ellipses">
+                  <div class="text-grey-light-1 font-5">
+                    Description goes in this placeholder
+                  </div>
+                </div>
+                <div class="col-12 d-sm-none d-block mb-25">
+                  <div class="heading-5 bold mb-10">Project Name</div>
+                  <div class="text-grey-light-1 font-5">
                     Description goes in this placeholder
                   </div>
                 </div>
@@ -190,8 +196,8 @@
 
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
-        <div class="row mb-xl-100 mb-lg-75 mb-50">
-          <div class="col-6">
+        <div class="row">
+          <div class="col-md-6 mb-xl-100 mb-lg-75 mb-md-50">
             <div class="heading-5 bold">Resources</div>
             <div class="heading-6 my-40 text-grey">
               We started Coding Blocks in 2014 but handled a bigger at hand,
@@ -199,9 +205,9 @@
             </div>
             <button class="button-primary">Explore All Resources</button>
           </div>
-          <div class="col-6">
+          <div class="col-md-6 mt-md-none mt-50 mb-xl-75 mb-lg-50 mb-25">
             <div class="row align-items-center">
-              <div class="col-3">
+              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg"
@@ -213,7 +219,7 @@
                   <div class="mt-10 font-5">Projects</div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg"
@@ -225,7 +231,7 @@
                   <div class="mt-10 font-5">Assignments</div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg"
@@ -237,7 +243,7 @@
                   <div class="mt-10 font-5">Quizzes</div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
                 <div class="card all-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/play-red.svg"
