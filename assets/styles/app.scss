@@ -1,3 +1,28 @@
 body {
   padding-top: 71px !important;
 }
+
+.pill-tag {
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 200px;
+  padding: 15px 25px;
+
+  &--hoverable {
+    border: 1px solid #cecece;
+    color: #3b4254;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &.active {
+      border: 1px solid #fb8133;
+    }
+
+    &:active,
+    &.active {
+      color: #fb8133;
+    }
+  }
+}
