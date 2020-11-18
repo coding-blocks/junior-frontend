@@ -167,12 +167,87 @@
             </div>
             <div class="heading-5 bold mb-40">Capstone Project</div>
             <div class="card">
-              <div class="row no-gutters align-items-center justify-content-between">
+              <div
+                class="row no-gutters align-items-center justify-content-between"
+              >
                 <div class="flex-1">
                   <div class="heading-5 bold mb-10">Project Name</div>
-                  <div class="text-grey-light-1 font-5 text-ellipses">Description goes in this placeholder</div>
+                  <div class="text-grey-light-1 font-5 text-ellipses">
+                    Description goes in this placeholder
+                  </div>
                 </div>
-                <button class="button-secondary button-secondary--light">View Live Demo</button>
+                <button class="button-secondary button-secondary--light">
+                  View Live Demo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-h"></div>
+
+    <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <div class="heading-5 bold">Resources</div>
+            <div class="heading-6 my-40 text-grey">
+              We started Coding Blocks in 2014 but handled a bigger at hand,
+              skillifying and guiding College students and working.
+            </div>
+            <button class="button-primary">Explore All Resources</button>
+          </div>
+          <div class="col-6">
+            <div class="row align-items-center">
+              <div class="col-3">
+                <div class="card all-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg"
+                    style="height: 50px"
+                  />
+                </div>
+                <div class="mt-20 t-align-c">
+                  <div class="heading-2 bold">12+</div>
+                  <div class="mt-10 font-5">Projects</div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card all-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg"
+                    style="height: 50px"
+                  />
+                </div>
+                <div class="mt-20 t-align-c">
+                  <div class="heading-2 bold">40+</div>
+                  <div class="mt-10 font-5">Assignments</div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card all-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg"
+                    style="height: 50px"
+                  />
+                </div>
+                <div class="mt-20 t-align-c">
+                  <div class="heading-2 bold">25+</div>
+                  <div class="mt-10 font-5">Quizzes</div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card all-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/play-red.svg"
+                    style="height: 50px"
+                  />
+                </div>
+                <div class="mt-20 t-align-c">
+                  <div class="heading-2 bold">35+</div>
+                  <div class="mt-10 font-5">Lectures</div>
+                </div>
               </div>
             </div>
           </div>
