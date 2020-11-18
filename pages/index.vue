@@ -25,80 +25,120 @@
     <div
       class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
     >
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <div class="row no-gutters align-items-center">
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python-white-big.svg"
-            />
-            <div class="flex-1 pl-30">
-              <div class="font-5">RECOMMENDED FOR 7-9</div>
-              <div class="mt-5 white heading-2 bold">
-                Introduction to Python
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="row no-gutters align-items-center">
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python-white-big.svg"
+              />
+              <div class="flex-1 pl-30">
+                <div class="font-5">RECOMMENDED FOR 7-9</div>
+                <div class="mt-5 white heading-2 bold">
+                  Introduction to Python
+                </div>
+              </div>
+            </div>
+            <div class="font-5 mt-40">
+              Python is a great programming language with which to start
+              learning to code. Short, colorful apps and games you &amp; your
+              child can program right away!
+            </div>
+            <div class="heading-6 bold mt-40">What will you learn?</div>
+            <div class="mt-40 row no-gutters align-items-center">
+              <div class="pill-tag mr-20 mb-20">Introduction to Python</div>
+              <div class="pill-tag mr-20 mb-20">Animations</div>
+              <div class="pill-tag mr-20 mb-20">Desktop Games</div>
+              <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
+              <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
+            </div>
+            <div class="mt-30 heading-6 bold">Projects you will build</div>
+            <div class="mt-30 row c-card-carousel">
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
               </div>
             </div>
           </div>
-          <div class="font-5 mt-40">
-            Python is a great programming language with which to start learning
-            to code. Short, colorful apps and games you &amp; your child can
-            program right away!
-          </div>
-          <div class="heading-6 bold mt-40">What will you learn?</div>
-          <div class="mt-40 row no-gutters align-items-center">
-            <div class="pill-tag mr-20 mb-20">Introduction to Python</div>
-            <div class="pill-tag mr-20 mb-20">Animations</div>
-            <div class="pill-tag mr-20 mb-20">Desktop Games</div>
-            <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
-            <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
-          </div>
-          <div class="mt-30 heading-6 bold">Projects you will build</div>
-          <div class="mt-30 row c-card-carousel">
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5 mt-lg-none mt-50">
-          <div
-            class="br-20 position-relative mb-20 mx-auto"
-            style="max-width: 450px"
-          >
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
-              class="br-20 w-100"
-            />
-            <button
-              class="button-primary w-75 position-absolute justify-content-center"
-              style="left: 12.5%; bottom: -20px"
+          <div class="col-lg-5 mt-lg-none mt-50">
+            <div
+              class="br-20 position-relative mb-20 mx-auto"
+              style="max-width: 450px"
             >
-              Start Learning
-            </button>
-          </div>
-          <div class="mt-70 mx-auto" style="width: fit-content">
-            <div class="heading-5 bold">What you will get!</div>
-            <ul class="divided-list mt-30 d-xl-flex d-lg-none d-sm-flex d-none">
-              <li class="px-25">
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+                class="br-20 w-100"
+              />
+              <button
+                class="button-primary w-75 position-absolute justify-content-center"
+                style="left: 12.5%; bottom: -20px"
+              >
+                Start Learning
+              </button>
+            </div>
+            <div class="mt-70 mx-auto" style="width: fit-content">
+              <div class="heading-5 bold">What you will get!</div>
+              <ul
+                class="divided-list mt-30 d-xl-flex d-lg-none d-sm-flex d-none"
+              >
+                <li class="px-25">
+                  <div class="row no-gutters align-items-center">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
+                      class="mr-20"
+                    />
+                    <div class="flex-1">
+                      <div class="heading-5 bold">12+</div>
+                      <div class="font-4 mt-5">Projects</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="px-25">
+                  <div class="row no-gutters align-items-center">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/pdf_notes.svg"
+                      class="mr-20"
+                    />
+                    <div class="flex-1">
+                      <div class="heading-5 bold">40+</div>
+                      <div class="font-4 mt-5">PDF Notes</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="px-25">
+                  <div class="row no-gutters align-items-center">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats_quizzes.svg"
+                      class="mr-20"
+                    />
+                    <div class="flex-1">
+                      <div class="heading-5 bold">25+</div>
+                      <div class="font-4 mt-5">Quizzes</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="d-xl-none d-lg-block d-sm-none d-block mt-30">
                 <div class="row no-gutters align-items-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
@@ -109,8 +149,7 @@
                     <div class="font-4 mt-5">Projects</div>
                   </div>
                 </div>
-              </li>
-              <li class="px-25">
+                <div class="divider-h my-20"></div>
                 <div class="row no-gutters align-items-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/pdf_notes.svg"
@@ -121,8 +160,7 @@
                     <div class="font-4 mt-5">PDF Notes</div>
                   </div>
                 </div>
-              </li>
-              <li class="px-25">
+                <div class="divider-h my-20"></div>
                 <div class="row no-gutters align-items-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats_quizzes.svg"
@@ -132,40 +170,6 @@
                     <div class="heading-5 bold">25+</div>
                     <div class="font-4 mt-5">Quizzes</div>
                   </div>
-                </div>
-              </li>
-            </ul>
-            <div class="d-xl-none d-lg-block d-sm-none d-block mt-30">
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
-                  class="mr-20"
-                />
-                <div class="flex-1">
-                  <div class="heading-5 bold">12+</div>
-                  <div class="font-4 mt-5">Projects</div>
-                </div>
-              </div>
-              <div class="divider-h my-20"></div>
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/pdf_notes.svg"
-                  class="mr-20"
-                />
-                <div class="flex-1">
-                  <div class="heading-5 bold">40+</div>
-                  <div class="font-4 mt-5">PDF Notes</div>
-                </div>
-              </div>
-              <div class="divider-h my-20"></div>
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats_quizzes.svg"
-                  class="mr-20"
-                />
-                <div class="flex-1">
-                  <div class="heading-5 bold">25+</div>
-                  <div class="font-4 mt-5">Quizzes</div>
                 </div>
               </div>
             </div>
@@ -177,7 +181,7 @@
     <div
       class="pt-xl-100 pt-lg-75 pt-md-50 pt-sm-30 pt-20 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
     >
-      <div class="heading-3 bold">Learning journey with us</div>
+      <div class="heading-3 bold t-align-c">Learning journey with us</div>
     </div>
     <div
       class="mt-lg-60 mt-sm-45 mt-30 row c-card-carousel mb-xl-100 mb-lg-75 mb-md-50 mb-sm-30 mb-20"
@@ -235,144 +239,83 @@
     <div
       class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 white bg-gradient-blue-dark"
     >
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <div class="heading-3 bold">Kids and parents love us!!</div>
-          <div class="my-40">
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
-              class="mr-sm-10 mr-5"
-            />
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
-              class="mr-sm-10 mr-5"
-            />
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
-              class="mr-sm-10 mr-5"
-            />
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
-              class="mr-sm-10 mr-5"
-            />
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
-            />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="heading-3 bold">Kids and parents love us!!</div>
+            <div class="my-40">
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
+                class="mr-sm-10 mr-5"
+              />
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
+                class="mr-sm-10 mr-5"
+              />
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
+                class="mr-sm-10 mr-5"
+              />
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
+                class="mr-sm-10 mr-5"
+              />
+              <img
+                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/star_round.svg"
+              />
+            </div>
+            <div class="font-5">
+              My daughter is in Grade 2 and we started attending the Block
+              programming classes. I am very satisfied with the way she is
+              progressing. She has started making games on her own in SpriteLab.
+              I would like to congratulate the Coding Blocks Jr team and wish
+              you guys success.
+            </div>
+            <div class="mt-40 heading-6 bold">
+              John Doe, Father of Johny Doe
+            </div>
           </div>
-          <div class="font-5">
-            My daughter is in Grade 2 and we started attending the Block
-            programming classes. I am very satisfied with the way she is
-            progressing. She has started making games on her own in SpriteLab. I
-            would like to congratulate the Coding Blocks Jr team and wish you
-            guys success.
-          </div>
-          <div class="mt-40 heading-6 bold">John Doe, Father of Johny Doe</div>
         </div>
       </div>
     </div>
 
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
-      <div class="t-align-c bold heading-3 mb-md-80 mb-sm-60 mb-50">
-        Numbers speak louder
-      </div>
-      <div class="row align-items-center">
-        <div class="col-md-3 col-6 t-align-c">
-          <img
-            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/learning_hours.svg"
-            class="mb-40"
-          />
-          <div class="orange bold mb-15" style="font-size: 50px">75000+</div>
-          <div class="heading-6 word-wrap">Hours of Learning</div>
+      <div class="container">
+        <div class="t-align-c bold heading-3 mb-md-80 mb-sm-60 mb-50">
+          Numbers speak louder
         </div>
-        <div class="col-md-3 col-6 t-align-c">
-          <img
-            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/students_taught.svg"
-            class="mb-40"
-          />
-          <div class="orange bold mb-15" style="font-size: 50px">8000+</div>
-          <div class="heading-6 word-wrap">No. of students taught</div>
-        </div>
-        <div class="col-md-3 col-6 mt-md-none mt-50 t-align-c">
-          <img
-            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects.svg"
-            class="mb-40"
-          />
-          <div class="orange bold mb-15" style="font-size: 50px">3000+</div>
-          <div class="heading-6 word-wrap">Projects submitted</div>
-        </div>
-        <div class="col-md-3 col-6 mt-md-none mt-50 t-align-c">
-          <img
-            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/certificates_issued.svg"
-            class="mb-40"
-          />
-          <div class="orange bold mb-15" style="font-size: 50px">8000+</div>
-          <div class="heading-6 word-wrap">Certificates issued</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="divider-h"></div>
-
-    <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
-      <div class="heading-3 bold t-align-c mb-60">
-        Our Perspective on education system
-      </div>
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <div class="font-5">
-            We started Coding Blocks in 2014, skillifying and guiding College
-            students and working professional into the world of coding. Now,
-            with the right resources and team in hand, we are here with Coding
-            Blocks Jr, a specialised division of Coding Blocks which focusses on
-            empowering School students with Coding education in multiple streams
-            of technology.
+        <div class="row align-items-center">
+          <div class="col-md-3 col-6 t-align-c">
+            <img
+              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/learning_hours.svg"
+              class="mb-40"
+            />
+            <div class="orange bold mb-15" style="font-size: 50px">75000+</div>
+            <div class="heading-6 word-wrap">Hours of Learning</div>
           </div>
-          <div class="mt-60 font-5">
-            <div class="border br-20 pointer">
-              <div class="br-20 bg-grey-light-2 py-20 px-30 bold">
-                <div
-                  class="row no-gutters align-items-center justify-content-between"
-                >
-                  <div class="flex-1">
-                    What is the eligibility for coding blocks junior?
-                  </div>
-                  <div>-</div>
-                </div>
-              </div>
-              <div class="py-20 px-30">
-                Anyone and everyone can join codingblocks junior.
-              </div>
-            </div>
-            <div class="border br-20 pointer mt-30">
-              <div class="br-20 bg-grey-light-2 py-20 px-30 bold">
-                <div
-                  class="row no-gutters align-items-center justify-content-between"
-                >
-                  <div class="flex-1">
-                    What is the eligibility for coding blocks junior?
-                  </div>
-                  <div>+</div>
-                </div>
-              </div>
-              <div class="py-20 px-30 d-none">
-                Anyone and everyone can join codingblocks junior.
-              </div>
-            </div>
-            <div class="border br-20 pointer mt-30">
-              <div class="br-20 bg-grey-light-2 py-20 px-30 bold">
-                <div
-                  class="row no-gutters align-items-center justify-content-between"
-                >
-                  <div class="flex-1">
-                    What is the eligibility for coding blocks junior?
-                  </div>
-                  <div>+</div>
-                </div>
-              </div>
-              <div class="py-20 px-30 d-none">
-                Anyone and everyone can join codingblocks junior.
-              </div>
-            </div>
+          <div class="col-md-3 col-6 t-align-c">
+            <img
+              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/students_taught.svg"
+              class="mb-40"
+            />
+            <div class="orange bold mb-15" style="font-size: 50px">8000+</div>
+            <div class="heading-6 word-wrap">No. of students taught</div>
+          </div>
+          <div class="col-md-3 col-6 mt-md-none mt-50 t-align-c">
+            <img
+              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects.svg"
+              class="mb-40"
+            />
+            <div class="orange bold mb-15" style="font-size: 50px">3000+</div>
+            <div class="heading-6 word-wrap">Projects submitted</div>
+          </div>
+          <div class="col-md-3 col-6 mt-md-none mt-50 t-align-c">
+            <img
+              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/certificates_issued.svg"
+              class="mb-40"
+            />
+            <div class="orange bold mb-15" style="font-size: 50px">8000+</div>
+            <div class="heading-6 word-wrap">Certificates issued</div>
           </div>
         </div>
       </div>
@@ -381,73 +324,144 @@
     <div class="divider-h"></div>
 
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
-      <div class="row align-items-center">
-        <div class="col-lg-7 mb-lg-none mb-40">
-          <div class="card br-20 bg-gradient-blue-dark">
-            <div
-              class="row align-items-center justify-content-between no-gutters"
-            >
-              <div class="flex-1 white d-sm-block d-none">
-                <div class="heading-5 mb-15">Wherever you go!</div>
-                <div class="heading-5 bold mb-40">
-                  Download the app and always stay connected!
+      <div class="container">
+        <div class="heading-3 bold t-align-c mb-60">
+          Our Perspective on education system
+        </div>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="font-5">
+              We started Coding Blocks in 2014, skillifying and guiding College
+              students and working professional into the world of coding. Now,
+              with the right resources and team in hand, we are here with Coding
+              Blocks Jr, a specialised division of Coding Blocks which focusses
+              on empowering School students with Coding education in multiple
+              streams of technology.
+            </div>
+            <div class="mt-60 font-5">
+              <div class="border br-20 pointer">
+                <div class="br-20 bg-grey-light-2 py-20 px-30 bold">
+                  <div
+                    class="row no-gutters align-items-center justify-content-between"
+                  >
+                    <div class="flex-1">
+                      What is the eligibility for coding blocks junior?
+                    </div>
+                    <div>-</div>
+                  </div>
                 </div>
-                <div class="row no-gutters align-items-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/app-store.svg"
-                    class="mr-15"
-                  />
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/google-play.svg"
-                  />
-                </div>
-              </div>
-              <div class="col-12 d-sm-none d-block mb-25 white">
-                <div class="heading-5 mb-15">Wherever you go!</div>
-                <div class="heading-5 bold mb-40">
-                  Download the app and always stay connected!
-                </div>
-                <div class="row no-gutters align-items-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/app-store.svg"
-                    class="mr-15"
-                  />
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/google-play.svg"
-                  />
+                <div class="py-20 px-30">
+                  Anyone and everyone can join codingblocks junior.
                 </div>
               </div>
-              <img
-                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/junior.svg"
-              />
+              <div class="border br-20 pointer mt-30">
+                <div class="br-20 bg-grey-light-2 py-20 px-30 bold">
+                  <div
+                    class="row no-gutters align-items-center justify-content-between"
+                  >
+                    <div class="flex-1">
+                      What is the eligibility for coding blocks junior?
+                    </div>
+                    <div>+</div>
+                  </div>
+                </div>
+                <div class="py-20 px-30 d-none">
+                  Anyone and everyone can join codingblocks junior.
+                </div>
+              </div>
+              <div class="border br-20 pointer mt-30">
+                <div class="br-20 bg-grey-light-2 py-20 px-30 bold">
+                  <div
+                    class="row no-gutters align-items-center justify-content-between"
+                  >
+                    <div class="flex-1">
+                      What is the eligibility for coding blocks junior?
+                    </div>
+                    <div>+</div>
+                  </div>
+                </div>
+                <div class="py-20 px-30 d-none">
+                  Anyone and everyone can join codingblocks junior.
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-5">
-          <div class="card br-20 mb-40">
-            <div class="row no-gutters align-items-center">
-              <img
-                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/discord.svg"
-              />
-              <div class="flex-1 pl-25">
-                <div class="font-5 bold mb-10">Join Discord Community</div>
-                <div class="font-4">
-                  Get your doubts clarified related to courses on our Discord
-                  Channel
+      </div>
+    </div>
+
+    <div class="divider-h"></div>
+
+    <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 mb-lg-none mb-40">
+            <div class="card br-20 bg-gradient-blue-dark">
+              <div
+                class="row align-items-center justify-content-between no-gutters"
+              >
+                <div class="flex-1 white d-sm-block d-none">
+                  <div class="heading-5 mb-15">Wherever you go!</div>
+                  <div class="heading-5 bold mb-40">
+                    Download the app and always stay connected!
+                  </div>
+                  <div class="row no-gutters align-items-center">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/app-store.svg"
+                      class="mr-15"
+                    />
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/google-play.svg"
+                    />
+                  </div>
                 </div>
+                <div class="col-12 d-sm-none d-block mb-25 white">
+                  <div class="heading-5 mb-15">Wherever you go!</div>
+                  <div class="heading-5 bold mb-40">
+                    Download the app and always stay connected!
+                  </div>
+                  <div class="row no-gutters align-items-center">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/app-store.svg"
+                      class="mr-15"
+                    />
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/google-play.svg"
+                    />
+                  </div>
+                </div>
+                <img
+                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/junior.svg"
+                />
               </div>
             </div>
           </div>
-          <div class="card br-20">
-            <div class="row no-gutters align-items-center">
-              <img
-                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/youtube.svg"
-              />
-              <div class="flex-1 pl-25">
-                <div class="font-5 bold mb-10">Join Youtube Community</div>
-                <div class="font-4">
-                  Live classes of our courses are conducted on CB Jr Youtube
-                  channel.
+          <div class="col-lg-5">
+            <div class="card br-20 mb-40">
+              <div class="row no-gutters align-items-center">
+                <img
+                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/discord.svg"
+                />
+                <div class="flex-1 pl-25">
+                  <div class="font-5 bold mb-10">Join Discord Community</div>
+                  <div class="font-4">
+                    Get your doubts clarified related to courses on our Discord
+                    Channel
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card br-20">
+              <div class="row no-gutters align-items-center">
+                <img
+                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/youtube.svg"
+                />
+                <div class="flex-1 pl-25">
+                  <div class="font-5 bold mb-10">Join Youtube Community</div>
+                  <div class="font-4">
+                    Live classes of our courses are conducted on CB Jr Youtube
+                    channel.
+                  </div>
                 </div>
               </div>
             </div>
