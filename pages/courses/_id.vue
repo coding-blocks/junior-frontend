@@ -13,14 +13,12 @@
               <div class="flex-1 pl-30">
                 <div class="font-5">RECOMMENDED FOR 7-9</div>
                 <div class="mt-5 white heading-2 bold">
-                  Introduction to Python
+                  {{course.title}}
                 </div>
               </div>
             </div>
             <div class="font-5 mt-40">
-              Python is a great programming language with which to start
-              learning to code. Short, colorful apps and games you &amp; your
-              child can program right away!
+              {{course.description}}
             </div>
             <div class="heading-6 bold mt-40">What will you learn?</div>
             <div class="mt-40 row no-gutters align-items-center">
@@ -111,84 +109,9 @@
 
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="heading-5 bold">Course Description</div>
-            <div class="heading-6 my-40 text-grey">
-              We started Coding Blocks in 2014 but handled a bigger problem at
-              hand, skillifying and guiding College students and working
-              professional into the world of coding. Now, with the right
-              resources and team in hand, we are here with Coding Blocks Jr, a
-              specialised division of Coding Blocks which focusses on empowering
-              School students with Coding education in multiple streams of
-              technology. We started Coding Blocks in 2014.
-            </div>
-            <button class="button-primary">View Complete Syllabus</button>
-          </div>
-          <div class="col-md-6 mt-md-none mt-50">
-            <div class="heading-5 bold mb-40">Course Description</div>
-            <div class="row mb-25">
-              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
-                <div class="card all-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/learning_hours.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
-              </div>
-              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
-                <div class="card all-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/students_taught.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
-              </div>
-              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
-                <div class="card all-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
-              </div>
-              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
-                <div class="card all-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/certificates_issued.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
-              </div>
-            </div>
-            <div class="heading-5 bold mb-40">Capstone Project</div>
-            <div class="card">
-              <div
-                class="row no-gutters align-items-center justify-content-between"
-              >
-                <div class="flex-1 d-sm-block d-none">
-                  <div class="heading-5 bold mb-10">Project Name</div>
-                  <div class="text-grey-light-1 font-5">
-                    Description goes in this placeholder
-                  </div>
-                </div>
-                <div class="col-12 d-sm-none d-block mb-25">
-                  <div class="heading-5 bold mb-10">Project Name</div>
-                  <div class="text-grey-light-1 font-5">
-                    Description goes in this placeholder
-                  </div>
-                </div>
-                <button class="button-secondary button-secondary--light">
-                  View Live Demo
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <CourseDescriptionSection
+          :course="course"
+        />
       </div>
     </div>
 
@@ -196,159 +119,9 @@
 
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-xl-100 mb-lg-75 mb-md-50">
-            <div class="heading-5 bold">Resources</div>
-            <div class="heading-6 my-40 text-grey">
-              We started Coding Blocks in 2014 but handled a bigger at hand,
-              skillifying and guiding College students and working.
-            </div>
-            <button class="button-primary">Explore All Resources</button>
-          </div>
-          <div class="col-md-6 mt-md-none mt-50 mb-xl-75 mb-lg-50 mb-25">
-            <div class="row align-items-center">
-              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
-                <div class="card all-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="mt-20 t-align-c">
-                  <div class="heading-2 bold">12+</div>
-                  <div class="mt-10 font-5">Projects</div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
-                <div class="card all-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="mt-20 t-align-c">
-                  <div class="heading-2 bold">40+</div>
-                  <div class="mt-10 font-5">Assignments</div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
-                <div class="card all-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="mt-20 t-align-c">
-                  <div class="heading-2 bold">25+</div>
-                  <div class="mt-10 font-5">Quizzes</div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
-                <div class="card all-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/play-red.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="mt-20 t-align-c">
-                  <div class="heading-2 bold">35+</div>
-                  <div class="mt-10 font-5">Lectures</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="heading-5 bold mb-40">Projects you will build</div>
-        <div class="row c-card-carousel mb-xl-100 mb-lg-75 mb-50">
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div class="card bg-grey-light-1" style="height: 200px"></div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div class="card bg-grey-light-1" style="height: 200px"></div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div class="card bg-grey-light-1" style="height: 200px"></div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div class="card bg-grey-light-1" style="height: 200px"></div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div class="card bg-grey-light-1" style="height: 200px"></div>
-          </div>
-        </div>
-        <div class="heading-5 bold mb-40">Assignments, Quizzes and more...</div>
-        <div class="row c-card-carousel">
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div
-              class="card bg-grey-light-1 position-relative"
-              style="height: 200px"
-            >
-              <div class="position-absolute w-100 h-100 z-pos all-center tl">
-                <span
-                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-green-light"
-                >
-                  Assignment
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div
-              class="card bg-grey-light-1 position-relative"
-              style="height: 200px"
-            >
-              <div class="position-absolute w-100 h-100 z-pos all-center tl">
-                <span
-                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-pink-light"
-                >
-                  Video
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div
-              class="card bg-grey-light-1 position-relative"
-              style="height: 200px"
-            >
-              <div class="position-absolute w-100 h-100 z-pos all-center tl">
-                <span
-                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-green-light"
-                >
-                  Assignment
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div
-              class="card bg-grey-light-1 position-relative"
-              style="height: 200px"
-            >
-              <div class="position-absolute w-100 h-100 z-pos all-center tl">
-                <span
-                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-blue-light"
-                >
-                  Quiz
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-            <div
-              class="card bg-grey-light-1 position-relative"
-              style="height: 200px"
-            >
-              <div class="position-absolute w-100 h-100 z-pos all-center tl">
-                <span
-                  class="py-10 px-15 br-50 heading-6 bold white bg-gradient-pink-light"
-                >
-                  Video
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <CourseResourceSection
+          :course="course"
+        />
       </div>
     </div>
 
@@ -418,12 +191,30 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import CourseBatchCardSmall from '@/components/Course/CourseBatchCardSmall.vue'
+import CourseDescriptionSection from '@/components/Course/CourseDescriptionSection.vue';
+import CourseResourceSection from '@/components/Course/CourseResourceSection.vue';
+import CourseRepository from '@/repositories/courses';
 
-export default {
+export default Vue.extend({
   components: {
     CourseBatchCardSmall,
+    CourseDescriptionSection,
+    CourseResourceSection
   },
-}
+  data() {
+    return {
+      course: null
+    }
+  },
+  async asyncData({ params }) {
+    const course = await CourseRepository.fetchById(Number(params.id));
+
+    return {
+      course
+    }
+  }
+})
 </script>
