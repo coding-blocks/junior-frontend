@@ -19,15 +19,15 @@
         <ul class="divided-list">
           <li class="px-25">
             <div class="heading-6 bold">12+</div>
-            <div class="font-3 mt-5">Projects</div>
+            <div class="font-3 mt-10">Projects</div>
           </li>
           <li class="px-25">
             <div class="heading-6 bold">40+</div>
-            <div class="font-3 mt-5">PDF Notes</div>
+            <div class="font-3 mt-10">PDF Notes</div>
           </li>
           <li class="px-25">
             <div class="heading-6 bold">25+</div>
-            <div class="font-3 mt-5">Quizzes</div>
+            <div class="font-3 mt-10">Quizzes</div>
           </li>
         </ul>
       </div>

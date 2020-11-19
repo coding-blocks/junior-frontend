@@ -116,7 +116,7 @@
                     />
                     <div class="flex-1">
                       <div class="heading-5 bold">12+</div>
-                      <div class="font-4 mt-5">Projects</div>
+                      <div class="font-4 mt-10">Projects</div>
                     </div>
                   </div>
                 </li>
@@ -128,7 +128,7 @@
                     />
                     <div class="flex-1">
                       <div class="heading-5 bold">40+</div>
-                      <div class="font-4 mt-5">PDF Notes</div>
+                      <div class="font-4 mt-10">PDF Notes</div>
                     </div>
                   </div>
                 </li>
@@ -140,7 +140,7 @@
                     />
                     <div class="flex-1">
                       <div class="heading-5 bold">25+</div>
-                      <div class="font-4 mt-5">Quizzes</div>
+                      <div class="font-4 mt-10">Quizzes</div>
                     </div>
                   </div>
                 </li>
@@ -153,7 +153,7 @@
                   />
                   <div class="flex-1">
                     <div class="heading-5 bold">12+</div>
-                    <div class="font-4 mt-5">Projects</div>
+                    <div class="font-4 mt-10">Projects</div>
                   </div>
                 </div>
                 <div class="divider-h my-20"></div>
@@ -164,7 +164,7 @@
                   />
                   <div class="flex-1">
                     <div class="heading-5 bold">40+</div>
-                    <div class="font-4 mt-5">PDF Notes</div>
+                    <div class="font-4 mt-10">PDF Notes</div>
                   </div>
                 </div>
                 <div class="divider-h my-20"></div>
@@ -175,7 +175,7 @@
                   />
                   <div class="flex-1">
                     <div class="heading-5 bold">25+</div>
-                    <div class="font-4 mt-5">Quizzes</div>
+                    <div class="font-4 mt-10">Quizzes</div>
                   </div>
                 </div>
               </div>
