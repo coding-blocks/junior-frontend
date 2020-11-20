@@ -6,10 +6,10 @@
   </div>
 </template>
  
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import { mapActions, mapGetters } from 'vuex';
-import CourseEditor from '@/components/Course/CourseEditor';
+import CourseEditor from '@/components/Course/CourseEditor.vue';
 import CourseRepository from '@/repositories/admin/courses';
 
 export default Vue.extend({
@@ -24,7 +24,7 @@ export default Vue.extend({
     }
   },
   async asyncData({ params }) {
-    const course = await CourseRepository.fetchById(params.id)
+    const course = await CourseRepository.fetchById(Number(params.id))
 
     return {
       course
