@@ -76,7 +76,7 @@
               Start Learning
             </button>
           </div>
-          <div v-if="!course || !user">
+          <div v-if="!course && !user">
             <div class="mt-70 mx-auto" style="width: fit-content">
               <div class="heading-5 bold">What you will get!</div>
               <ul
@@ -163,6 +163,16 @@
 
 <script>
 export default {
-  props: ['user', 'course'],
+  // props: ['user', 'course'],
+  props: {
+    user: {
+      type: Boolean,
+      default: false,
+    },
+    course: {
+      type: Boolean,
+      default: false,
+    },
+  },
 }
 </script>

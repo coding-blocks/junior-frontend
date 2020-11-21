@@ -19,7 +19,9 @@
                 Book counselling session
               </button>
               <br />
-              <div class="d-xl-none d-md-inline-block d-sm-none d-inline-block mt-20">
+              <div
+                class="d-xl-none d-md-inline-block d-sm-none d-inline-block mt-20"
+              >
                 <button class="button-secondary button-secondary--light">
                   Book counselling session
                 </button>
@@ -34,7 +36,7 @@
       </div>
     </div>
 
-    <div
+    <!-- <div
       class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
     >
       <div class="container">
@@ -188,7 +190,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <CourseBanner course="true" />
 
     <div
       class="pt-xl-100 pt-lg-75 pt-md-50 pt-30 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
@@ -486,6 +490,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import CourseBanner from '@/components/Course/CourseBanner.vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: {
+    CourseBanner,
+  },
+})
 </script>
