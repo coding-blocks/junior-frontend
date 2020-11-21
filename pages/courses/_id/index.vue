@@ -13,12 +13,12 @@
               <div class="flex-1 pl-30">
                 <div class="font-5">RECOMMENDED FOR 7-9</div>
                 <div class="mt-5 white heading-2 bold">
-                  {{course.title}}
+                  {{ course.title }}
                 </div>
               </div>
             </div>
             <div class="font-5 mt-40">
-              {{course.description}}
+              {{ course.description }}
             </div>
             <div class="heading-6 bold mt-40">What will you learn?</div>
             <div class="mt-40 row no-gutters align-items-center">
@@ -109,9 +109,7 @@
 
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
-        <CourseDescriptionSection
-          :course="course"
-        />
+        <CourseDescriptionSection :course="course" />
       </div>
     </div>
 
@@ -119,9 +117,7 @@
 
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
-        <CourseResourceSection
-          :course="course"
-        />
+        <CourseResourceSection :course="course" />
       </div>
     </div>
 
@@ -194,27 +190,27 @@
 <script lang="ts">
 import Vue from 'vue'
 import CourseBatchCardSmall from '@/components/Course/CourseBatchCardSmall.vue'
-import CourseDescriptionSection from '@/components/Course/CourseDescriptionSection.vue';
-import CourseResourceSection from '@/components/Course/CourseResourceSection.vue';
-import CourseRepository from '@/repositories/courses';
+import CourseDescriptionSection from '@/components/Course/CourseDescriptionSection.vue'
+import CourseResourceSection from '@/components/Course/CourseResourceSection.vue'
+import CourseRepository from '@/repositories/courses.ts'
 
 export default Vue.extend({
   components: {
     CourseBatchCardSmall,
     CourseDescriptionSection,
-    CourseResourceSection
+    CourseResourceSection,
   },
   data() {
     return {
-      course: null
+      course: null,
     }
   },
   async asyncData({ params }) {
-    const course = await CourseRepository.fetchById(Number(params.id));
+    const course = await CourseRepository.fetchById(Number(params.id))
 
     return {
-      course
+      course,
     }
-  }
+  },
 })
 </script>
