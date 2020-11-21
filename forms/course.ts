@@ -20,6 +20,16 @@ export default (opts: FormSchemaOpts = {}) => {
   
           },
           {
+            type: 'input',
+            inputType: 'text',
+            label: 'Course Subtitle',
+            model: 'subTitle',
+            placeholder: 'Enter course name',
+            help: 'This will be the title for the course',
+            required: true,
+            validators: ['string', 'required']
+          },
+          {
             type: 'textArea',
             inputType: 'text',
             label: 'Course description',
