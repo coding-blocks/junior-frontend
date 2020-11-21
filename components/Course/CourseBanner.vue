@@ -21,15 +21,17 @@
             to code. Short, colorful apps and games you &amp; your child can
             program right away!
           </div>
-          <div class="heading-6 bold mt-40">What will you learn?</div>
-          <div class="mt-40 row no-gutters align-items-center">
-            <div class="pill-tag mr-20 mb-20">Introduction to Python</div>
-            <div class="pill-tag mr-20 mb-20">Animations</div>
-            <div class="pill-tag mr-20 mb-20">Desktop Games</div>
-            <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
-            <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
+          <div v-if="!user">
+            <div class="heading-6 bold mt-40">What will you learn?</div>
+            <div class="mt-40 row no-gutters align-items-center">
+              <div class="pill-tag mr-20 mb-20">Introduction to Python</div>
+              <div class="pill-tag mr-20 mb-20">Animations</div>
+              <div class="pill-tag mr-20 mb-20">Desktop Games</div>
+              <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
+              <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
+            </div>
           </div>
-          <div v-if="!course">
+          <div v-else-if="!course">
             <div class="mt-30 heading-6 bold">Projects you will build</div>
             <div class="mt-30 row c-card-carousel">
               <div class="col-xl-3 col-lg-4 col-md-3 col-6">
@@ -58,7 +60,18 @@
               </div>
             </div>
           </div>
-          <div v-else-if="user"></div>
+          <div v-else-if="user">
+            <div class="mt-50">
+              <div class="heading- bold">Lecture 6: Python | Classes & Objects</div>
+              <div class="mt-30">
+                <div class="row no-gutters align-items-center justify-content-between">
+                  <div class="br-50 py-15 px-20 font-5 bold" style="background: rgba(#fff, 0.7)">
+                    Thursday, 12th September
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-lg-5 mt-lg-none mt-50">
           <div
