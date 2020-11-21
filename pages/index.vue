@@ -192,7 +192,7 @@
       </div>
     </div> -->
 
-    <CourseBanner :course="true" :user="true" />
+    <CourseBanner />
 
     <div
       class="pt-xl-100 pt-lg-75 pt-md-50 pt-30 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"

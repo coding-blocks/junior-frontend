@@ -31,7 +31,7 @@
               <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
             </div>
           </div>
-          <div v-else-if="!course">
+          <div v-if="!user && !course">
             <div class="mt-30 heading-6 bold">Projects you will build</div>
             <div class="mt-30 row c-card-carousel">
               <div class="col-xl-3 col-lg-4 col-md-3 col-6">
@@ -60,7 +60,7 @@
               </div>
             </div>
           </div>
-          <div v-else-if="user">
+          <div v-if="user">
             <div class="mt-50">
               <div class="heading-5 bold">
                 Lecture 6: Python | Classes & Objects
