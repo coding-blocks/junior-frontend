@@ -29,7 +29,7 @@
             <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
             <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
           </div>
-          <div v-if="landing">
+          <div v-if="!course">
             <div class="mt-30 heading-6 bold">Projects you will build</div>
             <div class="mt-30 row c-card-carousel">
               <div class="col-xl-3 col-lg-4 col-md-3 col-6">
@@ -76,7 +76,7 @@
               Start Learning
             </button>
           </div>
-          <div v-if="user">
+          <div v-if="!course || !user">
             <div class="mt-70 mx-auto" style="width: fit-content">
               <div class="heading-5 bold">What you will get!</div>
               <ul
@@ -163,6 +163,6 @@
 
 <script>
 export default {
-  props: ['user', 'landing'],
+  props: ['user', 'course'],
 }
 </script>
