@@ -7,7 +7,12 @@
           We started Coding Blocks in 2014 but handled a bigger at hand,
           skillifying and guiding College students and working.
         </div>
-        <button class="button-primary">Explore All Resources</button>
+        <nuxt-link 
+          :to="`/courses/${course.id}/resources`"
+          class="button-primary"
+        >
+          Explore All Resources
+        </nuxt-link>
       </div>
       <div class="col-md-6 mt-md-none mt-50 mb-xl-75 mb-lg-50 mb-25">
         <div class="row align-items-center">
@@ -19,8 +24,8 @@
               />
             </div>
             <div class="mt-20 t-align-c">
-              <div class="heading-2 bold">12+</div>
-              <div class="mt-10 font-5">Projects</div>
+              <div class="heading-2 bold">{{documentCount}}</div>
+              <div class="mt-10 font-5">Notes</div>
             </div>
           </div>
           <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
@@ -31,7 +36,7 @@
               />
             </div>
             <div class="mt-20 t-align-c">
-              <div class="heading-2 bold">40+</div>
+              <div class="heading-2 bold">{{hbCount}}</div>
               <div class="mt-10 font-5">Assignments</div>
             </div>
           </div>
@@ -43,7 +48,7 @@
               />
             </div>
             <div class="mt-20 t-align-c">
-              <div class="heading-2 bold">25+</div>
+              <div class="heading-2 bold">{{quizCount}}</div>
               <div class="mt-10 font-5">Quizzes</div>
             </div>
           </div>
@@ -55,7 +60,7 @@
               />
             </div>
             <div class="mt-20 t-align-c">
-              <div class="heading-2 bold">35+</div>
+              <div class="heading-2 bold">{{videoCount}}</div>
               <div class="mt-10 font-5">Lectures</div>
             </div>
           </div>
@@ -155,7 +160,7 @@
     </div>  
   </div>  
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -163,6 +168,20 @@ export default Vue.extend({
     course: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    videoCount() {
+      return this.course?.meta?.resourceCount.videoCount || 0;
+    },
+    documentCount() {
+      return this.course?.meta?.resourceCount.documentCount || 0;
+    },
+    hbCount() {
+      return this.course?.meta?.resourceCount.hbCount || 0;
+    },
+    quizCount() {
+      return this.course?.meta?.resourceCount.quizCount || 0;
     }
   }
 })
