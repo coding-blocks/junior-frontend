@@ -11,17 +11,17 @@
             />
             <div class="flex-1 pl-30">
               <div class="font-5">RECOMMENDED FOR 7-9</div>
-              <div class="mt-5 white heading-2 bold">
+              <div class="mt-10 white heading-2 bold">
                 Introduction to Python
               </div>
             </div>
           </div>
-          <div class="font-5 mt-40">
-            Python is a great programming language with which to start learning
-            to code. Short, colorful apps and games you &amp; your child can
-            program right away!
-          </div>
           <div v-if="!user">
+            <div class="font-5 mt-40">
+              Python is a great programming language with which to start
+              learning to code. Short, colorful apps and games you &amp; your
+              child can program right away!
+            </div>
             <div class="heading-6 bold mt-40">What will you learn?</div>
             <div class="mt-40 row no-gutters align-items-center">
               <div class="pill-tag mr-20 mb-20">Introduction to Python</div>
@@ -62,10 +62,17 @@
           </div>
           <div v-else-if="user">
             <div class="mt-50">
-              <div class="heading- bold">Lecture 6: Python | Classes & Objects</div>
+              <div class="heading- bold">
+                Lecture 6: Python | Classes & Objects
+              </div>
               <div class="mt-30">
-                <div class="row no-gutters align-items-center justify-content-between">
-                  <div class="br-50 py-15 px-20 font-5 bold" style="background: rgba(#fff, 0.7)">
+                <div
+                  class="row no-gutters align-items-center justify-content-between"
+                >
+                  <div
+                    class="br-50 py-15 px-20 font-5 bold"
+                    style="background: rgba(255,255,255, 0.7);"
+                  >
                     Thursday, 12th September
                   </div>
                 </div>
@@ -189,3 +196,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  body {
+    background: rgba(red, green, blue, alpha);
+  }
+</style>
