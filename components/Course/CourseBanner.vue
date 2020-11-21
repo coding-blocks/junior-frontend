@@ -29,33 +29,36 @@
             <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
             <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
           </div>
-          <div class="mt-30 heading-6 bold">Projects you will build</div>
-          <div class="mt-30 row c-card-carousel">
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-              <div class="bg-white br-20" style="height: 150px"></div>
+          <div v-if="landing">
+            <div class="mt-30 heading-6 bold">Projects you will build</div>
+            <div class="mt-30 row c-card-carousel">
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
+                <div class="bg-white br-20" style="height: 150px"></div>
+              </div>
             </div>
           </div>
+          <div v-else-if="user"></div>
         </div>
         <div class="col-lg-5 mt-lg-none mt-50">
           <div
@@ -73,10 +76,50 @@
               Start Learning
             </button>
           </div>
-          <div class="mt-70 mx-auto" style="width: fit-content">
-            <div class="heading-5 bold">What you will get!</div>
-            <ul class="divided-list mt-30 d-xl-flex d-lg-none d-sm-flex d-none">
-              <li class="px-25">
+          <div v-if="user">
+            <div class="mt-70 mx-auto" style="width: fit-content">
+              <div class="heading-5 bold">What you will get!</div>
+              <ul
+                class="divided-list mt-30 d-xl-flex d-lg-none d-sm-flex d-none"
+              >
+                <li class="px-25">
+                  <div class="row no-gutters align-items-center">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
+                      class="mr-20"
+                    />
+                    <div class="flex-1">
+                      <div class="heading-5 bold">12+</div>
+                      <div class="font-4 mt-10">Projects</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="px-25">
+                  <div class="row no-gutters align-items-center">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/pdf_notes.svg"
+                      class="mr-20"
+                    />
+                    <div class="flex-1">
+                      <div class="heading-5 bold">40+</div>
+                      <div class="font-4 mt-10">PDF Notes</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="px-25">
+                  <div class="row no-gutters align-items-center">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats_quizzes.svg"
+                      class="mr-20"
+                    />
+                    <div class="flex-1">
+                      <div class="heading-5 bold">25+</div>
+                      <div class="font-4 mt-10">Quizzes</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="d-xl-none d-lg-block d-sm-none d-block mt-30">
                 <div class="row no-gutters align-items-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
@@ -87,8 +130,7 @@
                     <div class="font-4 mt-10">Projects</div>
                   </div>
                 </div>
-              </li>
-              <li class="px-25">
+                <div class="divider-h my-20"></div>
                 <div class="row no-gutters align-items-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/pdf_notes.svg"
@@ -99,8 +141,7 @@
                     <div class="font-4 mt-10">PDF Notes</div>
                   </div>
                 </div>
-              </li>
-              <li class="px-25">
+                <div class="divider-h my-20"></div>
                 <div class="row no-gutters align-items-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats_quizzes.svg"
@@ -110,40 +151,6 @@
                     <div class="heading-5 bold">25+</div>
                     <div class="font-4 mt-10">Quizzes</div>
                   </div>
-                </div>
-              </li>
-            </ul>
-            <div class="d-xl-none d-lg-block d-sm-none d-block mt-30">
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
-                  class="mr-20"
-                />
-                <div class="flex-1">
-                  <div class="heading-5 bold">12+</div>
-                  <div class="font-4 mt-10">Projects</div>
-                </div>
-              </div>
-              <div class="divider-h my-20"></div>
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/pdf_notes.svg"
-                  class="mr-20"
-                />
-                <div class="flex-1">
-                  <div class="heading-5 bold">40+</div>
-                  <div class="font-4 mt-10">PDF Notes</div>
-                </div>
-              </div>
-              <div class="divider-h my-20"></div>
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats_quizzes.svg"
-                  class="mr-20"
-                />
-                <div class="flex-1">
-                  <div class="heading-5 bold">25+</div>
-                  <div class="font-4 mt-10">Quizzes</div>
                 </div>
               </div>
             </div>
@@ -156,6 +163,6 @@
 
 <script>
 export default {
-  props: ['user'],
+  props: ['user', 'landing'],
 }
 </script>
