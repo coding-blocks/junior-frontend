@@ -62,20 +62,37 @@
           </div>
           <div v-else-if="user">
             <div class="mt-50">
-              <div class="heading- bold">
+              <div class="heading-5 bold">
                 Lecture 6: Python | Classes & Objects
               </div>
               <div class="mt-30">
-                <div
-                  class="row no-gutters align-items-center justify-content-between"
-                >
+                <div class="row no-gutters align-items-center">
                   <div
-                    class="br-50 py-15 px-20 font-5 bold"
-                    style="background: rgba(255,255,255, 0.7);"
+                    class="br-50 py-15 px-20 font-5 bold mr-20 mb-20"
+                    style="background: rgba(255, 255, 255, 0.2)"
                   >
                     Thursday, 12th September
                   </div>
+                  <div
+                    class="br-50 py-15 px-20 font-5 bold mr-20 mb-20"
+                    style="background: rgba(255, 255, 255, 0.2)"
+                  >
+                    8:00 PM Onwards
+                  </div>
                 </div>
+              </div>
+              <div class="mt-30">
+                <div class="row no-gutters align-items-center">
+                  <button class="button-primary mr-20 mb-20">
+                    Set Reminder
+                  </button>
+                  <button class="button-primary button-primary--white mb-20 text-orange">
+                    Start Learning
+                  </button>
+                </div>
+              </div>
+              <div class="font-4">
+                Note: Class will unlock on 12 September 2020, 7:00PM
               </div>
             </div>
           </div>
@@ -198,7 +215,7 @@ export default {
 </script>
 
 <style scoped>
-  body {
-    background: rgba(red, green, blue, alpha);
-  }
+body {
+  background: rgba(red, green, blue, alpha);
+}
 </style>
