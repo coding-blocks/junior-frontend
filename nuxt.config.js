@@ -11,7 +11,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://unpkg.com/@coding-blocks/motley@2.6.2/dist/coding-blocks/app.min.css' }
+      { rel: 'stylesheet', type: 'text/css', href: 'https://unpkg.com/@coding-blocks/motley@2.6.3/dist/coding-blocks/app.min.css' }
     ],
     script: [
       { src: 'https://unpkg.com/@coding-blocks/web-components@0.0.12/dist/index.js' }
