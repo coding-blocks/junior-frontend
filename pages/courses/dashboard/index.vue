@@ -18,7 +18,7 @@
               </div>
             </div>
             <div class="font-5 mt-40">
-              {{course.subTitle}}
+              {{ course.description }}
             </div>
             <div class="heading-6 bold mt-40">What will you learn?</div>
             <div class="mt-40 row no-gutters align-items-center">
@@ -192,7 +192,7 @@ import Vue from 'vue'
 import CourseBatchCardSmall from '@/components/Course/CourseBatchCardSmall.vue'
 import CourseDescriptionSection from '@/components/Course/CourseDescriptionSection.vue'
 import CourseResourceSection from '@/components/Course/CourseResourceSection.vue'
-import CourseRepository from '@/repositories/courses.ts'
+import CourseRepository from '@/repositories/courses'
 
 export default Vue.extend({
   components: {

@@ -1,51 +1,22 @@
 <template>
-  <div>
-    <div class="py-50 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20">
-      <div class="container">
-        <div class="row no-gutters align-items-center justify-content-between">
-          <div class="flex-1 pr-md-25 t-align-md-l t-align-c">
-            <div class="heading-5 bold mb-15">
-              Let us help to find you the perfect course!
-            </div>
-            <div class="heading-6 text-grey-light-1">
-              Which class are you/your kid in?
-            </div>
-          </div>
-          <div class="col-md-6 mt-md-none mt-25">
-            <div
-              class="row no-gutters justify-content-between align-items-center"
-            >
-              <div class="pill-tag pill-tag--hoverable heading-6 bold">1-3</div>
-              <div class="pill-tag pill-tag--hoverable heading-6 bold active">
-                4-6
-              </div>
-              <div class="pill-tag pill-tag--hoverable heading-6 bold">7-9</div>
-              <div class="pill-tag pill-tag--hoverable heading-6 bold">
-                10-12
+  <div
+    class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
+  >
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="row no-gutters align-items-center">
+            <img
+              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python-white-big.svg"
+            />
+            <div class="flex-1 pl-30">
+              <div class="font-5">RECOMMENDED FOR 7-9</div>
+              <div class="mt-10 white heading-2 bold">
+                Introduction to Python
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
-    >
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <div class="row no-gutters align-items-center">
-              <img
-                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python-white-big.svg"
-              />
-              <div class="flex-1 pl-30">
-                <div class="font-5">RECOMMENDED FOR 7-9</div>
-                <div class="mt-5 white heading-2 bold">
-                  Introduction to Python
-                </div>
-              </div>
-            </div>
+          <div v-if="!user">
             <div class="font-5 mt-40">
               Python is a great programming language with which to start
               learning to code. Short, colorful apps and games you &amp; your
@@ -59,6 +30,8 @@
               <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
               <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
             </div>
+          </div>
+          <div v-if="!user && !course">
             <div class="mt-30 heading-6 bold">Projects you will build</div>
             <div class="mt-30 row c-card-carousel">
               <div class="col-xl-3 col-lg-4 col-md-3 col-6">
@@ -87,22 +60,60 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-5 mt-lg-none mt-50">
-            <div
-              class="br-20 position-relative mb-20 mx-auto"
-              style="max-width: 450px"
-            >
-              <img
-                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
-                class="br-20 w-100"
-              />
-              <button
-                class="button-primary w-75 position-absolute justify-content-center"
-                style="left: 12.5%; bottom: -20px"
-              >
-                Start Learning
-              </button>
+          <div v-if="user">
+            <div class="mt-50">
+              <div class="heading-5 bold">
+                Lecture 6: Python | Classes & Objects
+              </div>
+              <div class="mt-30">
+                <div class="row no-gutters align-items-center">
+                  <div
+                    class="br-50 py-15 px-20 font-5 bold mr-20 mb-20"
+                    style="background: rgba(255, 255, 255, 0.2)"
+                  >
+                    Thursday, 12th September
+                  </div>
+                  <div
+                    class="br-50 py-15 px-20 font-5 bold mr-20 mb-20"
+                    style="background: rgba(255, 255, 255, 0.2)"
+                  >
+                    8:00 PM Onwards
+                  </div>
+                </div>
+              </div>
+              <div class="mt-30">
+                <div class="row no-gutters align-items-center">
+                  <button class="button-primary mr-20 mb-20">
+                    Set Reminder
+                  </button>
+                  <button class="button-primary button-primary--white mb-20 text-orange">
+                    Start Learning
+                  </button>
+                </div>
+              </div>
+              <div class="font-4">
+                Note: Class will unlock on 12 September 2020, 7:00PM
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="col-lg-5 mt-lg-none mt-50">
+          <div
+            class="br-20 position-relative mb-20 mx-auto"
+            style="max-width: 450px"
+          >
+            <img
+              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+              class="br-20 w-100"
+            />
+            <button
+              class="button-primary w-75 position-absolute justify-content-center"
+              style="left: 12.5%; bottom: -20px"
+            >
+              Start Learning
+            </button>
+          </div>
+          <div v-if="!course && !user">
             <div class="mt-70 mx-auto" style="width: fit-content">
               <div class="heading-5 bold">What you will get!</div>
               <ul
@@ -184,29 +195,27 @@
         </div>
       </div>
     </div>
-
-    <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
-      <div class="container">
-        <div class="heading-4 bold mb-40 t-align-c">Other Popular Courses</div>
-        <div class="row">
-          <div class="col-md-6 mb-md-none mb-40">
-            <CourseCard />
-          </div>
-          <div class="col-md-6">
-            <CourseCard />
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-import CourseCard from '@/components/Course/CourseCard.vue'
-
 export default {
-  components: {
-    CourseCard,
+  // props: ['user', 'course'],
+  props: {
+    user: {
+      type: Boolean,
+      default: false,
+    },
+    course: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>
+
+<style scoped>
+body {
+  background: rgba(red, green, blue, alpha);
+}
+</style>

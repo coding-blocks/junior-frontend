@@ -2,8 +2,8 @@
   <div class="junior-landing">
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
-        <div class="row no-gutters align-items-center">
-          <div class="col-lg-6">
+        <div class="row no-gutters align-items-center justify-content-between">
+          <div class="flex-1">
             <div class="heading-1 bold">
               Coding is for every
               <span class="extra-bold orange">child.</span>
@@ -13,16 +13,30 @@
             </div>
             <div class="mt-40">
               <button class="button-primary">Get Started</button>
-              <button class="ml-30 button-secondary button-secondary--light">
+              <button
+                class="ml-30 button-secondary button-secondary--light d-xl-inline-block d-md-none d-sm-inline-block d-none"
+              >
                 Book counselling session
               </button>
+              <br />
+              <div
+                class="d-xl-none d-md-inline-block d-sm-none d-inline-block mt-20"
+              >
+                <button class="button-secondary button-secondary--light">
+                  Book counselling session
+                </button>
+              </div>
             </div>
           </div>
+          <img
+            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/junior-landing-vector.svg"
+            class="mt-md-none mt-40"
+          />
         </div>
       </div>
     </div>
 
-    <div
+    <!-- <div
       class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
     >
       <div class="container">
@@ -109,7 +123,7 @@
                     />
                     <div class="flex-1">
                       <div class="heading-5 bold">12+</div>
-                      <div class="font-4 mt-5">Projects</div>
+                      <div class="font-4 mt-10">Projects</div>
                     </div>
                   </div>
                 </li>
@@ -121,7 +135,7 @@
                     />
                     <div class="flex-1">
                       <div class="heading-5 bold">40+</div>
-                      <div class="font-4 mt-5">PDF Notes</div>
+                      <div class="font-4 mt-10">PDF Notes</div>
                     </div>
                   </div>
                 </li>
@@ -133,7 +147,7 @@
                     />
                     <div class="flex-1">
                       <div class="heading-5 bold">25+</div>
-                      <div class="font-4 mt-5">Quizzes</div>
+                      <div class="font-4 mt-10">Quizzes</div>
                     </div>
                   </div>
                 </li>
@@ -146,7 +160,7 @@
                   />
                   <div class="flex-1">
                     <div class="heading-5 bold">12+</div>
-                    <div class="font-4 mt-5">Projects</div>
+                    <div class="font-4 mt-10">Projects</div>
                   </div>
                 </div>
                 <div class="divider-h my-20"></div>
@@ -157,7 +171,7 @@
                   />
                   <div class="flex-1">
                     <div class="heading-5 bold">40+</div>
-                    <div class="font-4 mt-5">PDF Notes</div>
+                    <div class="font-4 mt-10">PDF Notes</div>
                   </div>
                 </div>
                 <div class="divider-h my-20"></div>
@@ -168,7 +182,7 @@
                   />
                   <div class="flex-1">
                     <div class="heading-5 bold">25+</div>
-                    <div class="font-4 mt-5">Quizzes</div>
+                    <div class="font-4 mt-10">Quizzes</div>
                   </div>
                 </div>
               </div>
@@ -176,7 +190,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <CourseBanner />
 
     <div
       class="pt-xl-100 pt-lg-75 pt-md-50 pt-30 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
@@ -474,6 +490,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import CourseBanner from '@/components/Course/CourseBanner.vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: {
+    CourseBanner,
+  },
+})
 </script>
