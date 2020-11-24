@@ -1,8 +1,8 @@
 <template>
   <div class="container mt-50">
-    <div class="row" style="height: calc(100vh - 200px)">
+    <div class="row" style="height: calc(100vh - 150px)">
       <div class="col-lg-8 h-inherit pb-40">
-        <div class="card h-100 p-none">
+        <div class="card h-100 p-none overflow-hidden">
           <div class="flex-col h-100">
             <div
               class="flex-1 w-100 image-flex"
@@ -307,7 +307,7 @@
 
 <style scoped>
 .image-flex {
-  max-height: calc(100vh - 350px);
+  max-height: calc(100vh - 300px);
   background-size: cover !important;
 }
 </style>
