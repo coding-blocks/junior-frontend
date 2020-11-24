@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-50">
-    <div class="row">
+    <div class="row" style="height: 0.9vh;">
       <div class="col-lg-8 h-inherit mb-40">
         <div class="card h-100 p-none">
           <div class="flex-col h-100">
