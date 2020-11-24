@@ -16,7 +16,8 @@ export default ({ $axios }) => {
   const adminRepos = [
     'courses',
     'resources',
-    'documents'
+    'documents',
+    'lectures'
   ]
 
   adminRepos.forEach(repo => {
