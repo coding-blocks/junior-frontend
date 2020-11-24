@@ -213,9 +213,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-body {
-  background: rgba(red, green, blue, alpha);
-}
-</style>
