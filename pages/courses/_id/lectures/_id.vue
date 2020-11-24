@@ -1,10 +1,10 @@
 <template>
   <div class="container mt-50">
-    <div class="row" style="height: 0.9vh;">
-      <div class="col-lg-8 h-inherit mb-40">
+    <div class="row">
+      <div class="col-lg-8 h-inherit pb-40">
         <div class="card h-100 p-none">
           <div class="flex-col h-100">
-            <div class="flex-1 w-100">
+            <div class="flex-1 w-100 image-flex">
               <img
                 src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
                 class="br-20 w-100"
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 h-inherit mb-40">
+      <div class="col-lg-4 h-inherit pb-40">
         <div class="card h-100">
           <div class="flex-col h-100 justify-content-between">
             <div class="tab-nav-underline mb-25 w-100">
