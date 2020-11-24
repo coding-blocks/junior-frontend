@@ -86,82 +86,27 @@
       </div>
     </div>
     <div class="heading-5 bold mb-40">Assignments, Quizzes and more...</div>
-    <div class="row c-card-carousel">
-      <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-        <div
-          class="card bg-grey-light-1 position-relative"
-          style="height: 200px"
-        >
-          <div class="position-absolute w-100 h-100 z-pos all-center tl">
-            <span
-              class="py-10 px-15 br-50 heading-6 bold white bg-gradient-green-light"
-            >
-              Assignment
-            </span>
+    <v-async :task="fetchResourcesTask">
+      <template v-slot="{ value: resources }">
+        <div class="row c-card-carousel">
+          <div 
+            class="col-lg-3 col-md-4 col-sm-5 col-8"
+            v-for="resource in resources"
+            :key="resource.id"
+          >
+            <ResourceCardThumbnail 
+              :resource="resource"
+            />
           </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-        <div
-          class="card bg-grey-light-1 position-relative"
-          style="height: 200px"
-        >
-          <div class="position-absolute w-100 h-100 z-pos all-center tl">
-            <span
-              class="py-10 px-15 br-50 heading-6 bold white bg-gradient-pink-light"
-            >
-              Video
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-        <div
-          class="card bg-grey-light-1 position-relative"
-          style="height: 200px"
-        >
-          <div class="position-absolute w-100 h-100 z-pos all-center tl">
-            <span
-              class="py-10 px-15 br-50 heading-6 bold white bg-gradient-green-light"
-            >
-              Assignment
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-        <div
-          class="card bg-grey-light-1 position-relative"
-          style="height: 200px"
-        >
-          <div class="position-absolute w-100 h-100 z-pos all-center tl">
-            <span
-              class="py-10 px-15 br-50 heading-6 bold white bg-gradient-blue-light"
-            >
-              Quiz
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-5 col-8">
-        <div
-          class="card bg-grey-light-1 position-relative"
-          style="height: 200px"
-        >
-          <div class="position-absolute w-100 h-100 z-pos all-center tl">
-            <span
-              class="py-10 px-15 br-50 heading-6 bold white bg-gradient-pink-light"
-            >
-              Video
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>  
+        </div>  
+      </template>
+    </v-async>
   </div>  
 </template>
 <script>
 import Vue from 'vue'
+import CourseRepository from '@/repositories/courses';
+import ResourceCardThumbnail from '@/components/Resources/ResourceCardThumbnail.vue';
 
 export default Vue.extend({
   props: {
@@ -169,6 +114,9 @@ export default Vue.extend({
       type: Object,
       required: true
     }
+  },
+  components: {
+    ResourceCardThumbnail
   },
   computed: {
     videoCount() {
@@ -182,6 +130,13 @@ export default Vue.extend({
     },
     quizCount() {
       return this.course?.meta?.resourceCount.quizCount || 0;
+    }
+  },
+  tasks(t) {
+    return {
+      fetchResourcesTask: t(function *() {
+        return CourseRepository.fetchResources(this.course.id)
+      })
     }
   }
 })
