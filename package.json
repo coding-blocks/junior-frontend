@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.12.2",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
+    "rsvp": "^4.8.5",
     "vue-form-generator": "^2.3.4",
     "vuency": "^0.1.7",
     "vuex-module-decorators": "^1.0.1"

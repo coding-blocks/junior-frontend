@@ -12,89 +12,20 @@
             <div class="flex-1 pl-30">
               <div class="font-5">RECOMMENDED FOR 7-9</div>
               <div class="mt-10 white heading-2 bold">
-                Introduction to Python
+                {{course.title}}
               </div>
             </div>
           </div>
-          <div v-if="!user">
-            <div class="font-5 mt-40">
-              Python is a great programming language with which to start
-              learning to code. Short, colorful apps and games you &amp; your
-              child can program right away!
-            </div>
-            <div class="heading-6 bold mt-40">What will you learn?</div>
-            <div class="mt-40 row no-gutters align-items-center">
-              <div class="pill-tag mr-20 mb-20">Introduction to Python</div>
-              <div class="pill-tag mr-20 mb-20">Animations</div>
-              <div class="pill-tag mr-20 mb-20">Desktop Games</div>
-              <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
-              <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
-            </div>
+          <div class="font-5 mt-40">
+            {{course.subTitle}}
           </div>
-          <div v-if="!user && !course">
-            <div class="mt-30 heading-6 bold">Projects you will build</div>
-            <div class="mt-30 row c-card-carousel">
-              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-                <div class="bg-white br-20" style="height: 150px"></div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-                <div class="bg-white br-20" style="height: 150px"></div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-                <div class="bg-white br-20" style="height: 150px"></div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-                <div class="bg-white br-20" style="height: 150px"></div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-                <div class="bg-white br-20" style="height: 150px"></div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-                <div class="bg-white br-20" style="height: 150px"></div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-                <div class="bg-white br-20" style="height: 150px"></div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-3 col-6">
-                <div class="bg-white br-20" style="height: 150px"></div>
-              </div>
-            </div>
-          </div>
-          <div v-if="user">
-            <div class="mt-50">
-              <div class="heading-5 bold">
-                Lecture 6: Python | Classes & Objects
-              </div>
-              <div class="mt-30">
-                <div class="row no-gutters align-items-center">
-                  <div
-                    class="br-50 py-15 px-20 font-5 bold mr-20 mb-20"
-                    style="background: rgba(255, 255, 255, 0.2)"
-                  >
-                    Thursday, 12th September
-                  </div>
-                  <div
-                    class="br-50 py-15 px-20 font-5 bold mr-20 mb-20"
-                    style="background: rgba(255, 255, 255, 0.2)"
-                  >
-                    8:00 PM Onwards
-                  </div>
-                </div>
-              </div>
-              <div class="mt-30">
-                <div class="row no-gutters align-items-center">
-                  <button class="button-primary mr-20 mb-20">
-                    Set Reminder
-                  </button>
-                  <button class="button-primary button-primary--white mb-20 text-orange">
-                    Start Learning
-                  </button>
-                </div>
-              </div>
-              <div class="font-4">
-                Note: Class will unlock on 12 September 2020, 7:00PM
-              </div>
-            </div>
+          <div class="heading-6 bold mt-40">What will you learn?</div>
+          <div class="mt-40 row no-gutters align-items-center">
+            <div class="pill-tag mr-20 mb-20">Introduction to Python</div>
+            <div class="pill-tag mr-20 mb-20">Animations</div>
+            <div class="pill-tag mr-20 mb-20">Desktop Games</div>
+            <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
+            <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
           </div>
         </div>
         <div class="col-lg-5 mt-lg-none mt-50">
@@ -113,85 +44,6 @@
               Start Learning
             </button>
           </div>
-          <div v-if="!course && !user">
-            <div class="mt-70 mx-auto" style="width: fit-content">
-              <div class="heading-5 bold">What you will get!</div>
-              <ul
-                class="divided-list mt-30 d-xl-flex d-lg-none d-sm-flex d-none"
-              >
-                <li class="px-25">
-                  <div class="row no-gutters align-items-center">
-                    <img
-                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
-                      class="mr-20"
-                    />
-                    <div class="flex-1">
-                      <div class="heading-5 bold">12+</div>
-                      <div class="font-4 mt-10">Projects</div>
-                    </div>
-                  </div>
-                </li>
-                <li class="px-25">
-                  <div class="row no-gutters align-items-center">
-                    <img
-                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/pdf_notes.svg"
-                      class="mr-20"
-                    />
-                    <div class="flex-1">
-                      <div class="heading-5 bold">40+</div>
-                      <div class="font-4 mt-10">PDF Notes</div>
-                    </div>
-                  </div>
-                </li>
-                <li class="px-25">
-                  <div class="row no-gutters align-items-center">
-                    <img
-                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats_quizzes.svg"
-                      class="mr-20"
-                    />
-                    <div class="flex-1">
-                      <div class="heading-5 bold">25+</div>
-                      <div class="font-4 mt-10">Quizzes</div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="d-xl-none d-lg-block d-sm-none d-block mt-30">
-                <div class="row no-gutters align-items-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
-                    class="mr-20"
-                  />
-                  <div class="flex-1">
-                    <div class="heading-5 bold">12+</div>
-                    <div class="font-4 mt-10">Projects</div>
-                  </div>
-                </div>
-                <div class="divider-h my-20"></div>
-                <div class="row no-gutters align-items-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/pdf_notes.svg"
-                    class="mr-20"
-                  />
-                  <div class="flex-1">
-                    <div class="heading-5 bold">40+</div>
-                    <div class="font-4 mt-10">PDF Notes</div>
-                  </div>
-                </div>
-                <div class="divider-h my-20"></div>
-                <div class="row no-gutters align-items-center">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats_quizzes.svg"
-                    class="mr-20"
-                  />
-                  <div class="flex-1">
-                    <div class="heading-5 bold">25+</div>
-                    <div class="font-4 mt-10">Quizzes</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -199,23 +51,14 @@
 </template>
 
 <script>
-export default {
-  // props: ['user', 'course'],
-  props: {
-    user: {
-      type: Boolean,
-      default: false,
-    },
-    course: {
-      type: Boolean,
-      default: false,
-    },
-  },
-}
-</script>
+import Vue from 'vue';
 
-<style scoped>
-body {
-  background: rgba(red, green, blue, alpha);
-}
-</style>
+export default Vue.extend({
+  props: {
+    course: {
+      type: Object,
+      required: true
+    }
+  }
+})
+</script>
