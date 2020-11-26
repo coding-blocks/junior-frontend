@@ -1,24 +1,24 @@
 <template>
   <div>
-    <ResourceEditor 
-      :resource="resource"
+    <LectureEditor 
+      :lecture="lecture"
     />
   </div>
 </template>
  
 <script>
 import Vue from 'vue';
-import ResourceEditor from '@/components/Resources/ResourceEditor';
+import LectureEditor from '@/components/Lectures/LectureEditor';
 
 export default Vue.extend({
-  name: 'ResourceAddPage',
+  name: 'LectureAddPage',
   layout: 'admin',
   components: {
-    ResourceEditor
+    LectureEditor
   },
   data() {
     return {
-      resource: {
+      lecture: {
         title: '',
         type: '',
       }
