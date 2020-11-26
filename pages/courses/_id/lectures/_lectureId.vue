@@ -1,14 +1,13 @@
 <template>
   <div class="container mt-50">
-    <div class="row">
-      <div class="col-lg-8 h-inherit mb-40">
-        <div class="card h-100 p-none">
+    <div class="row" style="height: calc(100vh - 150px)">
+      <div class="col-lg-8 h-inherit pb-40">
+        <div class="card h-100 p-none overflow-hidden">
           <div class="flex-col h-100">
-            <div class="flex-1 w-100">
-              <img
-                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
-                class="br-20 w-100"
-              />
+            <div
+              class="flex-1 w-100 image-flex"
+              style="background: url(https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg);"
+            >
               <div class="lecture-tag">Lecture 1</div>
             </div>
             <div class="p-sm-40 p-25 w-100">
@@ -31,78 +30,82 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 h-inherit mb-40">
-        <div class="card h-100">
-          <div class="flex-col h-100 justify-content-between">
-            <div class="tab-nav-underline mb-25 w-100">
-              <div class="tab active">Resources</div>
-              <div class="tab">Homework</div>
-            </div>
-            <div
-              class="br-10 p-20 w-100 pointer mb-25"
-              style="background-color: rgba(85, 194, 92, 0.1)"
-            >
-              <div class="row no-gutters align-items-center">
-                <div class="mr-20">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="flex-1">
-                  <div class="font-5 bold">Code Problem</div>
-                  <div class="text-grey">Problem name goes here</div>
-                </div>
+      <div class="col-lg-4 h-inherit pb-40">
+        <div class="card h-100 p-none">
+          <div class="flex-col h-100">
+            <div class="position-sticky tl p-30 w-100">
+              <div class="tab-nav-underline">
+                <div class="tab active">Resources</div>
+                <div class="tab">Homework</div>
               </div>
             </div>
-            <div
-              class="br-10 p-20 w-100 pointer mb-25"
-              style="background-color: #e9f0fc"
-            >
-              <div class="row no-gutters align-items-center">
-                <div class="mr-20">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="flex-1">
-                  <div class="font-5 bold">Quiz</div>
-                  <div class="text-grey">Problem name goes here</div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="br-10 p-20 w-100 pointer mb-25"
-              style="background-color: #f9e9f0"
-            >
-              <div class="row no-gutters align-items-center">
-                <div class="mr-20">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/play-red.svg"
-                    style="height: 50px"
-                  />
-                </div>
-                <div class="flex-1">
-                  <div class="font-5 bold">Video Lecture</div>
-                  <div class="text-grey">Problem name goes here</div>
+            <div class="overflow-y-auto px-30 pb-30 w-100">
+              <div
+                class="br-10 p-20 pointer mb-25"
+                style="background-color: rgba(85, 194, 92, 0.1)"
+              >
+                <div class="row no-gutters align-items-center">
+                  <div class="mr-20">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg"
+                      style="height: 50px"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-5 bold">Code Problem</div>
+                    <div class="text-grey">Problem name goes here</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="br-10 p-20 w-100 pointer"
-              style="background-color: #e9f0fc"
-            >
-              <div class="row no-gutters align-items-center">
-                <div class="mr-20">
-                  <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg"
-                    style="height: 50px"
-                  />
+              <div
+                class="br-10 p-20 pointer mb-25"
+                style="background-color: #e9f0fc"
+              >
+                <div class="row no-gutters align-items-center">
+                  <div class="mr-20">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg"
+                      style="height: 50px"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-5 bold">Quiz</div>
+                    <div class="text-grey">Problem name goes here</div>
+                  </div>
                 </div>
-                <div class="flex-1">
-                  <div class="font-5 bold">Quiz</div>
-                  <div class="text-grey">Problem name goes here</div>
+              </div>
+              <div
+                class="br-10 p-20 pointer mb-25"
+                style="background-color: #f9e9f0"
+              >
+                <div class="row no-gutters align-items-center">
+                  <div class="mr-20">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/play-red.svg"
+                      style="height: 50px"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-5 bold">Video Lecture</div>
+                    <div class="text-grey">Problem name goes here</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="br-10 p-20 w-100 pointer"
+                style="background-color: #e9f0fc"
+              >
+                <div class="row no-gutters align-items-center">
+                  <div class="mr-20">
+                    <img
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg"
+                      style="height: 50px"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-5 bold">Quiz</div>
+                    <div class="text-grey">Problem name goes here</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -301,3 +304,10 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.image-flex {
+  max-height: calc(100vh - 300px);
+  background-size: cover !important;
+}
+</style>
