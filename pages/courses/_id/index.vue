@@ -2,6 +2,7 @@
   <div class="pt-50">
     <CourseBannerWithAttempt
       :course="course"
+      :batchAttempt="currentBatchAttempt"
       v-if="currentBatchAttempt"
     />
     <CourseBanner 
@@ -17,53 +18,9 @@
           <div class="heading-5 bold t-align-c">Recorded Lectures</div>
         </div>
       </div>
-      <div class="row c-card-carousel mt-40 pb-xl-100 pb-lg-75 pb-md-50 pb-30">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-8">
-          <div class="card course-video-card p-0">
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
-            />
-            <div class="lecture-tag">Lecture 1</div>
-            <button class="button-primary floating-button">Start Learning</button>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-8">
-          <div class="card course-video-card p-0">
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
-            />
-            <div class="lecture-tag">Lecture 1</div>
-            <button class="button-primary floating-button">Start Learning</button>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-8">
-          <div class="card course-video-card p-0">
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
-            />
-            <div class="lecture-tag">Lecture 1</div>
-            <button class="button-primary floating-button">Start Learning</button>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-8">
-          <div class="card course-video-card p-0 course-video-card--unwatched">
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
-            />
-            <div class="lecture-tag">Lecture 1</div>
-            <button class="button-primary floating-button">Start Learning</button>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-8">
-          <div class="card course-video-card p-0 course-video-card--unwatched">
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
-            />
-            <div class="lecture-tag">Lecture 1</div>
-            <button class="button-primary floating-button">Start Learning</button>
-          </div>
-        </div>
-      </div>
+      <CourseRecordedLectureCarousel 
+        :lectures="lectures"
+      />
     </div>
 
     <div class="divider-h"></div>
@@ -119,7 +76,9 @@ import CourseResourceSection from '@/components/Course/CourseResourceSection.vue
 import CourseReview from '@/components/Course/CourseReview.vue';
 import CourseBanner from '@/components/Course/CourseBanner.vue';
 import CourseBannerWithAttempt from '@/components/Course/CourseBannerWithAttempt.vue';
+import CourseRecordedLectureCarousel from '@/components/Course/CourseRecordedLectureCarousel.vue';
 import CourseRepository from '@/repositories/courses.ts';
+import BatchRepository from '@/repositories/batches.ts';
 
 export default Vue.extend({
   components: {
@@ -128,11 +87,13 @@ export default Vue.extend({
     CourseResourceSection,
     CourseReview,
     CourseBanner,
+    CourseRecordedLectureCarousel,
   },
   data() {
     return {
       course: null,
-      currentBatchAttempt: null
+      currentBatchAttempt: null,
+      lectures: []
     }
   },
   computed: {
@@ -141,11 +102,16 @@ export default Vue.extend({
   async asyncData({ params, store }) {
     const user = store.state.session.user;
     const course = CourseRepository.fetchById(Number(params.id));
-    const currentBatchAttempt = user ? CourseRepository.fetchCurrentBatchAttempt(Number(params.id)) : null;
+    const currentBatchAttempt = await (user ? CourseRepository.fetchCurrentBatchAttempt(Number(params.id)) : null);
+    let lectures;
+    if (currentBatchAttempt) {
+      lectures = BatchRepository.fetchLectures(currentBatchAttempt.batch.id);
+    }
 
     return hash({
       course,
-      currentBatchAttempt
+      currentBatchAttempt,
+      lectures
     })
   },
 })

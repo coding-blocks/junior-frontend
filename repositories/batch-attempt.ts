@@ -1,4 +1,4 @@
-import { Batch } from "./batch";
+import { Batch } from "./batches";
 import { Course } from "./courses";
 import { User } from "./users";
 
