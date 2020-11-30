@@ -16,7 +16,7 @@ import CourseLectureCard from '@/components/Lectures/CourseLectureCard.vue';
 export default Vue.extend({
   props: {
     lectures: {
-      type: Object,
+      type: Array,
       required: true
     }
   },
