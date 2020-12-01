@@ -9,12 +9,11 @@
           />
           <div class="flex-1 pl-25">
             <div>RECOMMENDED FOR 4-6</div>
-            <div class="heading-5 bold">Python for kids</div>
+            <div class="heading-5 bold">{{course.title}}</div>
           </div>
         </div>
         <div class="mb-30">
-          Python is a great programming language with which to start learning to
-          code.
+          {{course.subTitle}}
         </div>
         <ul class="divided-list">
           <li class="px-25">
@@ -52,7 +51,24 @@
           </div>
         </div>
       </div>
-      <div class="button-primary button-primary--white">View Course</div>
+      <nuxt-link 
+        class="button-primary button-primary--white"
+        :to="`/courses/${course.id}`"
+      >
+        View Course
+      </nuxt-link>
     </div>
   </div>
 </template>
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  props: {
+    course: {
+      type: Object,
+      required: true
+    }
+  }
+})
+</script>

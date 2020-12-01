@@ -6,7 +6,8 @@ export default ({ $axios }) => {
   const repos = [
     'courses',
     'resources',
-    'users'
+    'users',
+    'batches'
   ]
 
   repos.forEach(repo => {

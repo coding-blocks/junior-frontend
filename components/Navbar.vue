@@ -26,8 +26,8 @@
           </nuxt-link>
         </li>
         <li class="hoverable px-3" v-if="user">
-          <div class="img-desc align-items-center font-sm">
-            <div class="description ml-4 font-sm bold">Hi, {{user.name}}</div>
+          <div class="font-5 bold">
+            Hi, {{user.name}}
           </div>
           <div class="pop-up border-card p-3 br-5">
             <ul class="t-align-l">

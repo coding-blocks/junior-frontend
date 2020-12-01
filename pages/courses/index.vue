@@ -189,11 +189,14 @@
       <div class="container">
         <div class="heading-4 bold mb-40 t-align-c">Other Popular Courses</div>
         <div class="row">
-          <div class="col-md-6 mb-md-none mb-40">
-            <CourseCard />
-          </div>
-          <div class="col-md-6">
-            <CourseCard />
+          <div 
+            class="col-md-6 mb-md-none mb-40"
+            v-for="course in courses"
+            :key="course.id"
+          >
+            <CourseCard 
+              :course="course"
+            />
           </div>
         </div>
       </div>
@@ -201,12 +204,26 @@
   </div>
 </template>
 
-<script>
-import CourseCard from '@/components/Course/CourseCard.vue'
+<script lang="ts">
+import Vue from 'vue';
+import CourseCard from '@/components/Course/CourseCard.vue';
+import CourseRepository from '@/repositories/courses';
 
-export default {
+export default Vue.extend({
   components: {
     CourseCard,
   },
-}
+  data() {
+    return {
+      courses: []
+    }
+  },
+  async asyncData() {
+    const courses = await CourseRepository.fetchAll();
+    
+    return {
+      courses
+    }
+  }
+})
 </script>
