@@ -25,10 +25,9 @@ export default (opts: FormSchemaOpts = {}) => {
             help: 'Give the description for webinar',
           },
           {
-            type: "DateTimePicker",
+            type: "DTPicker",
             label: "Start Time",
             model: `${modelPrefix}start_time`,
-            min: Date.now()
           },
           {
             type: 'input',

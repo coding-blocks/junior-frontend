@@ -5,8 +5,8 @@
       :model="resource"
       :options="formOptions"
     />
-    <button 
-      class="d-flex justify-content-end button-solid button-orange mx-auto" 
+    <button
+      class="d-flex justify-content-end button-solid button-orange mx-auto"
       :disabled="saveResource.isActive"
     >
       {{ saveResource.isActive ? 'Saving...' : 'Save' }}
@@ -14,55 +14,56 @@
   </form>
 </template>
 <script>
-import Vue from 'vue';
-import { mapActions, mapGetters } from 'vuex';
+import Vue from 'vue'
+import { mapActions, mapGetters } from 'vuex'
 import resourceForm from '@/forms/resource'
 import pdfForm from '@/forms/pdf'
 import videoForm from '@/forms/video'
-import ResourceRepository from '@/repositories/admin/resources';
+import ResourceRepository from '@/repositories/admin/resources'
 
-import DocumentRepository from '@/repositories/admin/documents';
+import DocumentRepository from '@/repositories/admin/documents'
 
 export default Vue.extend({
-  props: {
-    resource: {
-      type: Object,
-      required: true
-    }
-  },
+  props: 
+    {
+      resource: {
+        type: Object,
+        required: true,
+      },
+    },
   computed: {
     resourceTypeRepository() {
-      switch(this.resource.type) {
+      switch (this.resource.type) {
         case 'pdf':
-          return DocumentRepository;
+          return DocumentRepository
         case 'quiz':
-          return DocumentRepository;
+          return DocumentRepository
         case 'hb_content':
-          return DocumentRepository;
+          return DocumentRepository
         case 'video':
-          return DocumentRepository;
+          return DocumentRepository
       }
     },
     resourceTypePayload() {
-      switch(this.resource.type) {
+      switch (this.resource.type) {
         case 'pdf':
-          return this.resource.document;
+          return this.resource.document
         case 'quiz':
-          return this.resource.quiz;
+          return this.resource.quiz
         case 'hb_content':
-          return this.resource.hb_content;
+          return this.resource.hb_content
         case 'video':
-          return this.resource.video;
+          return this.resource.video
       }
     },
     resourceTypeForm() {
-      switch(this.resource.type) {
+      switch (this.resource.type) {
         case 'pdf':
-          return pdfForm({ modelPrefix: 'document.' });
+          return pdfForm({ modelPrefix: 'document.' })
         case 'quiz':
-          return pdfForm({ modelPrefix: 'document.' });
+          return pdfForm({ modelPrefix: 'document.' })
         case 'hb_content':
-          return pdfForm({ modelPrefix: 'document.' });
+          return pdfForm({ modelPrefix: 'document.' })
         case 'video':
           return videoForm({ modelPrefix: 'video.' })
       }
@@ -72,29 +73,32 @@ export default Vue.extend({
         return resourceForm({ extraGroups: this.resourceTypeForm.groups })
       }
       return resourceForm()
-    }
+    },
   },
   data() {
     return {
       formOptions: {
         validateAfterLoad: true,
         validateAfterChanged: true,
-        validateAsync: true
-      }
+        validateAsync: true,
+      },
     }
   },
   tasks(t) {
     return {
-      saveResource: t(function *() {
+      saveResource: t(function* () {
         if (this.resource.id) {
-          yield ResourceRepository.update(this.resource.id, this.resource);
-          yield this.resourceTypeRepository.update(this.resourceTypePayload.id, this.resourceTypePayload);
+          yield ResourceRepository.update(this.resource.id, this.resource)
+          yield this.resourceTypeRepository.update(
+            this.resourceTypePayload.id,
+            this.resourceTypePayload
+          )
         } else {
           yield ResourceRepository.create(this.resource)
+          this.$emit('onAfterSave')
         }
-      })
-      .flow('drop')
+      }).flow('drop'),
     }
-  }
+  },
 })
 </script>

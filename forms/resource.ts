@@ -28,6 +28,9 @@ export default (opts: FormSchemaOpts = {}) => {
               { name: 'PDF', value: 'pdf' },
               { name: 'HB Content', value: 'hb_content' },
             ],
+            disabled: function(model) {
+              return model.id;
+            }
           },
         ],
       },

@@ -12,7 +12,7 @@ export default (opts: FormSchemaOpts = {}) => {
             type: 'input',
             inputType: 'text',
             label: 'Resource Name',
-            model: `${modelPrefix}url`,
+            model: `${modelPrefix}video_id`,
             placeholder: 'Enter video url',
             help: 'Give the video url from youtube'
           },
