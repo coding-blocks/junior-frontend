@@ -1,7 +1,7 @@
 <template>
   <div>
     <nuxt-link
-      class="button-solid button-orange my-3 px-5 float-right"
+      class="button-solid button-orange my-3 px-5"
       :to="`/admin/courses/${this.$route.params.id}/batches`"
       >Batches</nuxt-link
     >
