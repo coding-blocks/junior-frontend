@@ -1,9 +1,11 @@
 <template>
   <div class="row c-card-carousel mt-40 pb-xl-100 pb-lg-75 pb-md-50 pb-30">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-8">
+    <div 
+      class="col-lg-3 col-md-4 col-sm-6 col-8"
+      v-for="lecture in lectures"
+      :key="lecture.id"
+    >
       <CourseLectureCard 
-        v-for="lecture in lectures"
-        :key="lecture.id"
         :lecture="lecture"
       />
     </div>
