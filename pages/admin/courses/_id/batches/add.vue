@@ -1,28 +1,32 @@
 <template>
   <div>
-    <CourseEditor 
-      :course="course"
+    <BatchEditor 
+      :batch="batch"
     />
   </div>
 </template>
  
 <script>
 import Vue from 'vue';
-import CourseEditor from '@/components/Course/CourseEditor';
+import BatchEditor from '@/components/Batches/BatchEditor';
 
 export default Vue.extend({
-  name: 'CourseAddPage',
+  name: 'BatchAddPage',
   layout: 'admin',
   components: {
-    CourseEditor
+    BatchEditor
   },
   data() {
     return {
-      course: {
+      batch: {
         title: '',
-        description: '',
-        slug: '',
-        syllabus: '',
+        type: '',
+        start: '',
+        end: '',
+        registrationStart: '',
+        registrationEnd: '',
+        maxSize:'',
+        courseId:this.$route.params.id
       }
     }
   }

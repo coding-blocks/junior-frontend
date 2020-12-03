@@ -49,15 +49,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/redirect-module'
   ],
-
-  redirect: [
-    {
-      from: '^.*(?<!\/)$',
-      to: (from, req) => req.url + '/'
-  }
-],
 
   router: {
     linkActiveClass: 'active',
