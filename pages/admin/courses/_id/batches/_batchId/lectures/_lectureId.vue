@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ResourceEditor 
-      :resource="resource"
+    <LectureEditor 
+      :lecture="lecture"
     />
   </div>
 </template>
@@ -9,25 +9,25 @@
 <script>
 import Vue from 'vue'
 import { mapActions, mapGetters } from 'vuex';
-import ResourceEditor from '@/components/Resources/ResourceEditor';
-import ResourceRepository from '@/repositories/admin/resources';
+import LectureEditor from '@/components/Lectures/LectureEditor';
+import LectureRepository from '@/repositories/admin/lectures';
 
 export default Vue.extend({
-  name: 'CourseEditPage',
+  name: 'LectureEditPage',
   layout: 'admin',
   components: {
-    ResourceEditor
+    LectureEditor
   },
   data() {
     return {
-      resource: null
+      lecture: null
     }
   },
   async asyncData({ params }) {
-    const resource = await ResourceRepository.fetchById(params.id)
+    const lecture = await LectureRepository.fetchById(params.lectureId)
 
     return {
-      resource
+      lecture
     }
   }
 })

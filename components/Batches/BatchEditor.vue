@@ -26,9 +26,6 @@ export default Vue.extend({
       required: true,
     },
   },
-  mounted(){
-      console.log("******************" + this.batch)
-  },
   data() {
     return {
       schema: batchForm(),
