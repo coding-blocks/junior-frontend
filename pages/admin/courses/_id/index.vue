@@ -2,7 +2,7 @@
   <div>
     <nuxt-link
       class="button-solid button-orange my-3 px-5"
-      :to="`/admin/courses/${this.$route.params.id}/batches`"
+      :to="`${this.$route.params.id}/batches`"
       >Batches</nuxt-link
     >
     <CourseEditor :course="course" />

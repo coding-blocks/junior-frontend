@@ -26,6 +26,9 @@ export default Vue.extend({
       required: true,
     },
   },
+  mounted(){
+      console.log("******************" + this.batch)
+  },
   data() {
     return {
       schema: batchForm(),
@@ -39,8 +42,8 @@ export default Vue.extend({
   tasks(t) {
     return {
       saveBatch: t(function* () {
-        if (this.course.id) {
-          yield BatchRepository.update(this.course.id, this.batch)
+        if (this.batch.id) {
+          yield BatchRepository.update(this.batch.id, this.batch)
         } else {
           yield BatchRepository.create(this.batch)
         }

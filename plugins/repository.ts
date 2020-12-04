@@ -21,6 +21,7 @@ export default ({ $axios }) => {
     'courses',
     'resources',
     'documents',
+    'batches',
     'lectures'
   ]
 

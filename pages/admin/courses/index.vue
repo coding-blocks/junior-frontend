@@ -5,14 +5,14 @@
       <i class="fas fa-search icon"></i>
     </div>
     <ul class="list-divided mt-4">
-      <li class="courses flex items-center px-4 py-3" v-for="course in courses" :key="course.id">
+      <li class="courses flex-row justify-content-around items-center px-4 py-3" v-for="course in courses" :key="course.id">
         <div>{{ course.title }} </div>
         <div> 
-          <nuxt-link class="button-solid button-orange mx-auto" :to="`/admin/courses/${course.id}`"> Edit</nuxt-link>
+          <nuxt-link class="button-solid button-orange mx-auto" :to="`courses/${course.id}`"> Edit</nuxt-link>
         </div>
       </li>
     </ul>
-    <nuxt-link class="button-solid button-orange mx-auto mt-4" to="/admin/courses/add"> Create Course </nuxt-link>
+    <nuxt-link class="button-solid button-orange mx-auto mt-4" to="courses/add"> Create Course </nuxt-link>
   </div>
 </template>
 

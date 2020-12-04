@@ -6,7 +6,7 @@
     </div>
     <ul class="list-divided mt-4">
       <li
-        class="courses flex items-center px-4 py-3"
+        class="batches flex-row justify-content-around items-center px-4 py-3"
         v-for="batch in batches"
         :key="batch.id"
       >
@@ -15,14 +15,14 @@
         <div>
           <nuxt-link
             class="button-solid button-orange mx-auto"
-            :to="`/admin/courses/${this.$route.params.id}/batches/${batch.id}`"
+            :to="`batches/${batch.id}`"
           >
             Edit</nuxt-link
           >
         </div>
       </li>
     </ul>
-    <nuxt-link class="button-solid button-orange mx-auto mt-4" :to="`/admin/courses/${this.$route.params.id}/batches/add`">
+    <nuxt-link class="button-solid button-orange mx-auto mt-4" :to="`batches/add`">
       Create Batch
     </nuxt-link>
 
