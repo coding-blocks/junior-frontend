@@ -1,5 +1,6 @@
 import { BaseRepository } from '@/repositories/base';
 import { BatchAttempt } from './batch-attempt';
+import { CourseFeature } from './course-features';
 import { Resource } from './resources';
 
 export interface Course {
@@ -8,6 +9,7 @@ export interface Course {
   description: string;
   slug: string;
   syllabus: object;
+  courseFeatures: CourseFeature;
 }
 
 class CourseRepository extends BaseRepository<Course> {
