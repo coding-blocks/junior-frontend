@@ -43,34 +43,24 @@
       :course="course"
     />
 
-    <div
-      class="pt-xl-100 pt-lg-75 pt-md-50 pt-30 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
-    >
-      <div class="container">
-        <div class="heading-5 bold t-align-c">
-          Choose from available batches
-        </div>
+    <div v-if="currentBatchAttempt">
+      <div v-if="!isPaidBatch">
+
       </div>
     </div>
-    <div class="row c-card-carousel mt-40 pb-xl-100 pb-lg-75 pb-md-50 pb-30">
-      <div class="col-xl-3 col-md-5 col-sm-7 col-10">
-        <CourseBatchCardSmall :premium="true" />
-      </div>
-      <div class="col-xl-3 col-md-5 col-sm-7 col-10">
-        <CourseBatchCardSmall :premium="false" />
-      </div>
-      <div class="col-xl-3 col-md-5 col-sm-7 col-10">
-        <CourseBatchCardSmall :premium="false" />
-      </div>
+    <div v-else>
+      <CourseBatchSection 
+        :course="course"
+      />
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import { mapState } from 'vuex';
 import { hash } from 'rsvp';
-import CourseBatchCardSmall from '@/components/Course/CourseBatchCardSmall.vue';
+import CourseBatchSection from '@/components/Course/CourseBatchSection.vue';
 import CourseDescriptionSection from '@/components/Course/CourseDescriptionSection.vue';
 import CourseResourceSection from '@/components/Course/CourseResourceSection.vue';
 import CourseReview from '@/components/Course/CourseReview.vue';
@@ -79,10 +69,13 @@ import CourseBannerWithAttempt from '@/components/Course/CourseBannerWithAttempt
 import CourseRecordedLectureCarousel from '@/components/Course/CourseRecordedLectureCarousel.vue';
 import CourseRepository from '@/repositories/courses.ts';
 import BatchRepository from '@/repositories/batches.ts';
+import { Course } from '~/repositories/admin/courses';
+import { BatchAttempt } from '~/repositories/batch-attempt';
+import { Lecture } from '~/repositories/lectures';
 
 export default Vue.extend({
   components: {
-    CourseBatchCardSmall,
+    CourseBatchSection,
     CourseDescriptionSection,
     CourseResourceSection,
     CourseReview,
@@ -97,7 +90,13 @@ export default Vue.extend({
     }
   },
   computed: {
-    ...mapState('session', ['user'])
+    ...mapState('session', ['user']),
+    currentBatch() {
+      return this.currentBatchAttempt.batch;
+    },
+    isPaidBatch() {
+      return this.currentBatch?.type === 'paid'
+    }
   },
   async asyncData({ params, store }) {
     const user = store.state.session.user;
