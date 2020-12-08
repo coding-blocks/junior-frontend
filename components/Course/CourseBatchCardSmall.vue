@@ -12,17 +12,29 @@
       </div>
     </div>
     <div class="mt-20">
-      <div class="heading-4 bold">Introduction to python</div>
-      <div class="mt-10 font-5 bold">Language: Hindi | Size: 01</div>
+      <div class="heading-4 bold">{{batch.title}}</div>
+      <div class="mt-10 font-5 bold">Language: Hindi | Size: {{batch.maxSize}}</div>
     </div>
     <button class="button-primary mt-30">Start Learning</button>
   </div>
 </template>
 
 <script>
-export default {
-  props: ['premium'],
-}
+import Vue from 'vue'
+
+export default Vue.extend({
+  props: {
+    batch: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    premium() {
+      return this.batch.type === 'paid';
+    }
+  }
+})
 </script>
 
 <style scoped>

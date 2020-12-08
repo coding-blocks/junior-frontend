@@ -1,6 +1,8 @@
 import { BaseRepository } from '@/repositories/base';
 import { BatchAttempt } from './batch-attempt';
+import { Batch } from './batches';
 import { CourseFeature } from './course-features';
+import { CourseProject } from './course-projects';
 import { Resource } from './resources';
 
 export interface Course {
@@ -9,17 +11,23 @@ export interface Course {
   description: string;
   slug: string;
   syllabus: object;
-  courseFeatures: CourseFeature;
+  courseFeatures: CourseFeature[];
+  courseProjects: CourseProject[];
 }
 
 class CourseRepository extends BaseRepository<Course> {
   async fetchResources(id: number): Promise<Resource> {
-    const resources = await this.axios!.$get(this.buildUrl(`${id}/relationship/resources`))
+    const resources = await this.axios!.$get(this.buildUrl(`${id}/relationship/resources`));
     return resources.data;
   }
 
+  async fetchBatches(id: number): Promise<Batch> {
+    const batches = await this.axios!.$get(this.buildUrl(`${id}/relationship/batches`));
+    return batches.data;
+  }
+
   async fetchCurrentBatchAttempt(id: number): Promise<BatchAttempt> {
-    const currentBatchAttempt = await this.axios!.$get(this.buildUrl(`${id}/current-batch-attempt`))
+    const currentBatchAttempt = await this.axios!.$get(this.buildUrl(`${id}/current-batch-attempt`));
     return currentBatchAttempt.data;
   }
 }

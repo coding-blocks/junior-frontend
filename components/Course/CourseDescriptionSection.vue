@@ -27,26 +27,32 @@
           <div class="mt-20 font-5 bold t-align-c">{{courseFeature.title}}</div>
         </div>
       </div>
-      <div class="heading-5 bold mb-40">Capstone Project</div>
-      <div class="card">
-        <div
-          class="row no-gutters align-items-center justify-content-between"
-        >
-          <div class="flex-1 d-sm-block d-none">
-            <div class="heading-5 bold mb-10">Project Name</div>
-            <div class="text-grey-light-1 font-5">
-              Description goes in this placeholder
+      <div v-if="capstoneProject">
+        <div class="heading-5 bold mb-40">Capstone Project</div>
+        <div class="card">
+          <div
+            class="row no-gutters align-items-center justify-content-between"
+          >
+            <div class="flex-1 d-sm-block d-none">
+              <div class="heading-5 bold mb-10">{{capstoneProject.title}}</div>
+              <div class="text-grey-light-1 font-5">
+                {{capstoneProject.description}}
+              </div>
             </div>
-          </div>
-          <div class="col-12 d-sm-none d-block mb-25">
-            <div class="heading-5 bold mb-10">Project Name</div>
-            <div class="text-grey-light-1 font-5">
-              Description goes in this placeholder
+            <div class="col-12 d-sm-none d-block mb-25">
+              <div class="heading-5 bold mb-10">{{capstoneProject.title}}</div>
+              <div class="text-grey-light-1 font-5">
+                {{capstoneProject.description}}
+              </div>
             </div>
+            <a 
+              :href="capstoneProject.url"
+              target="_blank"
+              class="button-secondary button-secondary--light"
+            >
+              View Live Demo
+            </a>
           </div>
-          <button class="button-secondary button-secondary--light">
-            View Live Demo
-          </button>
         </div>
       </div>
     </div>
@@ -65,6 +71,9 @@ export default Vue.extend({
   computed: {
     courseFeatures() {
       return this.course.courseFeatures || []
+    },
+    capstoneProject() {
+      return this.course.courseProjects.find(project => project.capstone);
     }
   }
 })

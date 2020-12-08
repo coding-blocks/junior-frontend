@@ -19,13 +19,17 @@
           <div class="font-5 mt-40">
             {{course.subTitle}}
           </div>
-          <div class="heading-6 bold mt-40">What will you learn?</div>
-          <div class="mt-40 row no-gutters align-items-center">
-            <div class="pill-tag mr-20 mb-20">Introduction to Python</div>
-            <div class="pill-tag mr-20 mb-20">Animations</div>
-            <div class="pill-tag mr-20 mb-20">Desktop Games</div>
-            <div class="pill-tag mr-20 mb-20">Introduction to AI</div>
-            <div class="pill-tag mr-20 mb-20">Falana Dhimaka</div>
+          <div v-if="tags.length">
+            <div class="heading-6 bold mt-40">What will you learn?</div>
+            <div class="mt-40 row no-gutters align-items-center">
+              <div 
+                class="pill-tag mr-20 mb-20"
+                v-for="tag in tags"
+                :key="tag"
+              >
+                {{tag}}
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-lg-5 mt-lg-none mt-50">
@@ -58,6 +62,11 @@ export default Vue.extend({
     course: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    tags() {
+      return this.course.tags.map(tag => tag.title);
     }
   }
 })
