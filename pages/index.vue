@@ -329,16 +329,20 @@
         </div>
       </div>
     </div>
+
+    <RadialProgress :progress="45" />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import CourseBanner from '@/components/Course/CourseBanner.vue'
+import RadialProgress from '@/components/Base/RadialProgress.vue'
 
 export default Vue.extend({
   components: {
     CourseBanner,
+    RadialProgress,
   },
 })
 </script>
