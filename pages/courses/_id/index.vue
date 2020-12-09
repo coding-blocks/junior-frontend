@@ -45,7 +45,7 @@
 
     <div v-if="currentBatchAttempt">
       <div v-if="!isPaidBatch">
-
+        <!-- Add upgrade to premium batch card -->
       </div>
     </div>
     <div v-else>

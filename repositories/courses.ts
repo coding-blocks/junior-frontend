@@ -1,4 +1,4 @@
-import { BaseRepository } from '@/repositories/base';
+import { BaseRepository, QueryParams } from '@/repositories/base';
 import { BatchAttempt } from './batch-attempt';
 import { Batch } from './batches';
 import { CourseFeature } from './course-features';
@@ -16,13 +16,17 @@ export interface Course {
 }
 
 class CourseRepository extends BaseRepository<Course> {
-  async fetchResources(id: number): Promise<Resource> {
-    const resources = await this.axios!.$get(this.buildUrl(`${id}/relationship/resources`));
+  async fetchResources(id: number, params: QueryParams = {}): Promise<Resource[]> {
+    const resources = await this.axios!.$get(this.buildUrl(`${id}/relationship/resources`), {
+      params
+    });
     return resources.data;
   }
 
-  async fetchBatches(id: number): Promise<Batch> {
-    const batches = await this.axios!.$get(this.buildUrl(`${id}/relationship/batches`));
+  async fetchBatches(id: number, params: QueryParams = {}): Promise<Batch> {
+    const batches = await this.axios!.$get(this.buildUrl(`${id}/relationship/batches`), {
+      params
+    });
     return batches.data;
   }
 
