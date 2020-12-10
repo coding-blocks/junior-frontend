@@ -67,8 +67,21 @@
     </div>
   </div>
 </template>
-<script lang="ts">
+
+<script>
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  props: {
+    course: {
+      type: Object,
+      required: true,
+    },
+  },
+  computed: {
+    courseFeatures() {
+      return this.course.courseFeatures || []
+    },
+  },
+})
 </script>
