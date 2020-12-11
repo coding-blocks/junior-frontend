@@ -16,5 +16,18 @@
 <script>
 export default {
   props: ['progress'],
+  mounted: function () {
+    var max = -219.99078369140625
+
+    value = document.querySelector('.radial-progress')
+    percent = value.getAttribute('data-progress')
+
+    value
+      .querySelector('.fill')
+      .setAttribute(
+        'style',
+        'stroke-dashoffset: ' + ((100 - percent) / 100) * max
+      )
+  },
 }
 </script>
