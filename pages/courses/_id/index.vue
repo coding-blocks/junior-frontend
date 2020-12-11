@@ -91,6 +91,7 @@ export default Vue.extend({
   },
   computed: {
     ...mapState('session', ['user']),
+    ...mapState('route-data', ['routeDataMap']),
     currentBatch() {
       return this.currentBatchAttempt.batch;
     },
@@ -98,10 +99,10 @@ export default Vue.extend({
       return this.currentBatch?.type === 'paid'
     },
     course() {
-      return this.$store.state['route-data'].routeDataMap['courses-id'].course
+      return this.routeDataMap['courses-id'].course
     },
     currentBatchAttempt() {
-      return this.$store.state['route-data'].routeDataMap['courses-id'].currentBatchAttempt
+      return this.routeDataMap['courses-id'].currentBatchAttempt
     }
   },
   tasks(t) {
