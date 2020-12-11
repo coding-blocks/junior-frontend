@@ -38,12 +38,13 @@ export default Vue.extend({
   },
   tasks(t) {
     return {
-      saveBatch: t(function* () {
+      saveBatch: t(async function () {
         if (this.batch.id) {
-          yield BatchRepository.update(this.batch.id, this.batch)
+          await BatchRepository.update(this.batch.id, this.batch)
         } else {
-          yield BatchRepository.create(this.batch)
+          await BatchRepository.create(this.batch)
         }
+        this.$emit('onAfterSave')
       }).flow('drop'),
     }
   },

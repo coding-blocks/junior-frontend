@@ -18,6 +18,7 @@ import Vue from 'vue';
 import { mapActions, mapGetters } from 'vuex';
 import lectureForm from '@/forms/lectures'
 import zoomForm from '@/forms/zoomMeeting'
+import youtubeLiveForm from '@/forms/youtubeLive';
 import LectureRepository from '@/repositories/admin/lectures';
 
 import DocumentRepository from '@/repositories/admin/documents';
@@ -32,24 +33,24 @@ export default Vue.extend({
   computed: {
     lectureTypeRepository() {
       switch(this.lecture.type) {
-        case 'pdf':
+        case 'youtube':
           return DocumentRepository;
-        case 'quiz':
+        case 'zoom':
           return DocumentRepository;
       }
     },
     lectureTypePayload() {
       switch(this.lecture.type) {
         case 'youtube':
-          return this.lecture.youtube;
+          return this.lecture.youtubeLive;
         case 'zoom':
-          return this.lecture.zoom;
+          return this.lecture.zoomMeeting;
       }
     },
     lectureTypeForm() {
       switch(this.lecture.type) {
         case 'youtube':
-          return pdfForm({ modelPrefix: 'yt.'});
+          return youtubeLiveForm({ modelPrefix: 'youtubeLive.'});
         case 'zoom':
           return zoomForm({ modelPrefix: 'zoomMeeting.' })
       }
@@ -72,13 +73,19 @@ export default Vue.extend({
   },
   tasks(t) {
     return {
-      saveLecture: t(function *() {
-        if (this.lecture.id) {
-          yield LectureRepository.update(this.lecture.id, this.lecture);
-          yield this.lectureTypeRepository.update(this.lectureTypePayload.id, this.lectureTypePayload);
-        } else {
-          yield LectureRepository.create(this.lecture)
+      saveLecture: t(async function () {
+        if (this.lecture.type === 'zoom') {
+          this.lecture.zoomMeeting.start_time = this.lecture.start_time
         }
+
+        if (this.lecture.id) {
+          await LectureRepository.update(this.lecture.id, this.lecture);
+          await this.lectureTypeRepository.update(this.lectureTypePayload.id, this.lectureTypePayload);
+        } else {
+          await LectureRepository.create(this.lecture)
+        }
+
+        this.$emit('onAfterSave');
       })
       .flow('drop')
     }

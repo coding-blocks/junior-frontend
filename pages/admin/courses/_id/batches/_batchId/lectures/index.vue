@@ -21,7 +21,7 @@
 import Vue from 'vue';
 import { mapGetters, mapActions } from 'vuex';
 import Button from '@/components/Base/Button.vue';
-import LectureRepository from '@/repositories/admin/lectures';
+import BatchRepository from '@/repositories/admin/batches';
 
 export default Vue.extend({
   components: {},
@@ -30,8 +30,8 @@ export default Vue.extend({
       lectures: []
     }
   },
-  async asyncData() {
-    const lectures = await LectureRepository.fetchAll();
+  async asyncData({ params }) {
+    const lectures = await BatchRepository.fetchLectures(Number(params.batchId));
 
     return {
       lectures

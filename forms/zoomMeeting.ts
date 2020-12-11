@@ -25,11 +25,6 @@ export default (opts: FormSchemaOpts = {}) => {
             help: 'Give the description for webinar',
           },
           {
-            type: "DTPicker",
-            label: "Start Time",
-            model: `${modelPrefix}start_time`,
-          },
-          {
             type: 'input',
             inputType: 'number',
             label: 'Duration',

@@ -19,6 +19,11 @@ export default (opts: FormSchemaOpts = {}) => {
             validators: ['string', 'required'],
           },
           {
+            type: "DTPicker",
+            label: "Start Time",
+            model: "start_time",
+          },
+          {
             type: 'radios',
             label: 'Type of the lecture',
             model: 'type',

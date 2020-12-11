@@ -29,6 +29,17 @@ export default Vue.extend({
     return {
       lecture
     }
+  },
+  methods: {
+    onAfterSave() {
+      const {
+        id: courseId,
+        batchId
+      } = this.$router.params
+      this.$router.push({
+        path: `/admin/courses/${courseId}/batches/${batchId}/lectures`,
+      })
+    }
   }
 })
 </script>

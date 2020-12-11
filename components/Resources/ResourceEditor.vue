@@ -76,8 +76,8 @@ export default Vue.extend({
           )
         } else {
           await ResourceRepository.create(this.resource)
-          this.$emit('onAfterSave')
         }
+        this.$emit('onAfterSave')
       }).flow('drop'),
     }
   },

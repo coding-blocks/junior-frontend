@@ -27,6 +27,8 @@ export default ({ $axios }) => {
     'quizzes',
     'code-challenges',
     'project-challenges',
+    'youtube-lives',
+    'zoom-meetings',
   ]
 
   adminRepos.forEach(repo => {
