@@ -39,17 +39,15 @@
         </div>
       </div>
       <div class="flex-1 pl-md-30">
-        <div class="row mb-25" v-if="courseFeatures.length">
+        <div class="row mb-25">
           <div
             class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25"
-            v-for="courseFeature in courseFeatures"
-            :key="courseFeature.id"
           >
             <div class="card all-center">
-              <img :src="courseFeature.logo" style="height: 50px" />
+              <img src="https://minio.codingblocks.com/public/feature-code.png" style="height: 50px" />
             </div>
             <div class="mt-20 font-5 bold t-align-c">
-              {{ courseFeature.title }}
+              Feature 1
             </div>
           </div>
         </div>
@@ -57,8 +55,8 @@
     </div>
     <div class="row no-gutters justify-content-between align-items-center">
       <div class="col-md-6 col-12 mb-md-none mb-25">
-        <div class="heading-4 bold mb-10">{{course.title}}</div>
-        <div class="heading-6">Language: Hindi | Size: 01</div>
+        <div class="heading-4 bold mb-10">{{batch.title}}</div>
+        <div class="heading-6">Language: Hindi | Size: {{batch.maxSize}}</div>
       </div>
       <div class="v-align-ma flex-1 t-align-r">
         <span class="text-orange bold heading-5">Rs 149 / Class</span>
@@ -73,15 +71,10 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
-    course: {
+    batch: {
       type: Object,
       required: true,
     },
-  },
-  computed: {
-    courseFeatures() {
-      return this.course.courseFeatures || []
-    },
-  },
+  }
 })
 </script>

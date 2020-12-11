@@ -49,7 +49,15 @@
 
     <div v-if="currentBatchAttempt">
       <div v-if="!isPaidBatch">
-        <!-- Add upgrade to premium batch card -->
+        <VAsync>
+          <template v-slot="{ value: batches }">
+            <CourseUpgradeToPremium 
+              v-for="batch in batches"
+              :key="batch.id"
+              :batch="batch"
+            />
+          </template>
+        </VAsync>
       </div>
     </div>
     <div v-else>
@@ -71,6 +79,7 @@ import CourseReview from '@/components/Course/CourseReview.vue';
 import CourseBanner from '@/components/Course/CourseBanner.vue';
 import CourseBannerWithAttempt from '@/components/Course/CourseBannerWithAttempt.vue';
 import CourseRecordedLectureCarousel from '@/components/Course/CourseRecordedLectureCarousel.vue';
+import CourseUpgradeToPremium from '@/components/Course/CourseUpgradeToPremium.vue';
 import CourseRepository from '@/repositories/courses.ts';
 import BatchRepository from '@/repositories/batches.ts';
 import VAsync from '@/components/Base/VAsync.vue';
@@ -87,6 +96,7 @@ export default Vue.extend({
     CourseReview,
     CourseBanner,
     CourseRecordedLectureCarousel,
+    CourseUpgradeToPremium,
     VAsync,
   },
   computed: {
@@ -111,6 +121,13 @@ export default Vue.extend({
         if (this.currentBatchAttempt) {
           return BatchRepository.fetchLectures(this.currentBatchAttempt.batch.id);
         }
+      }),
+      fetchPremiumBatches: t(function *() {
+        return CourseRepository.fetchBatches(this.course.id, {
+          filter: {
+            type: 'paid'
+          }
+        })
       })
     }
   }
