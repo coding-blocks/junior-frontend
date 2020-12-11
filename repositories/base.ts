@@ -1,5 +1,10 @@
 import { NuxtAxiosInstance } from "@nuxtjs/axios";
 
+export interface QueryParams {
+  filter?: object,
+  include?: object
+}
+
 export class BaseRepository<T> {
   private _axios?: NuxtAxiosInstance;
   private _modelName?: string;
@@ -51,8 +56,10 @@ export class BaseRepository<T> {
     }
   }
 
-  async fetchAll(): Promise<T> {
-    const response = await this.axios!.$get(this.buildUrl());
+  async fetchAll(params: QueryParams = {}): Promise<T> {
+    const response = await this.axios!.$get(this.buildUrl(), {
+      params
+    });
     const modelObj = response.data;
     if (response.meta) {
       modelObj.meta = response.meta
@@ -61,8 +68,10 @@ export class BaseRepository<T> {
     return modelObj;
   }
 
-  async fetchById(id: number): Promise<T> {
-    const response = await this.axios!.$get(this.buildUrl(id.toString()));
+  async fetchById(id: number, params: QueryParams = {}): Promise<T> {
+    const response = await this.axios!.$get(this.buildUrl(id.toString()), {
+      params
+    });
     const modelObj = response.data;
     if (response.meta) {
       modelObj.meta = response.meta

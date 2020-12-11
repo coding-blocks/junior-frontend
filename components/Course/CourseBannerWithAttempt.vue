@@ -115,7 +115,6 @@ export default Vue.extend({
   tasks(t) {
     return {
       fetchCurrentLectureTask: t(function *() {
-        console.log(this.batchAttempt);
         return BatchesRepository.fetchCurrentLecture(this.batchAttempt.batchId);
       })
     }

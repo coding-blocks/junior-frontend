@@ -18,6 +18,7 @@
     "luxon": "^1.25.0",
     "moment": "^2.29.1",
     "nuxt": "^2.14.6",
+    "qs": "^6.9.4",
     "rsvp": "^4.8.5",
     "vue-datetime": "^1.0.0-beta.14",
     "vue-form-generator": "^2.3.4",
