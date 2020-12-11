@@ -22,7 +22,11 @@ export default ({ $axios }) => {
     'resources',
     'documents',
     'batches',
-    'lectures'
+    'lectures',
+    'videos',
+    'quizzes',
+    'code-challenges',
+    'project-challenges',
   ]
 
   adminRepos.forEach(repo => {

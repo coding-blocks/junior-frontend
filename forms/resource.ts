@@ -25,8 +25,9 @@ export default (opts: FormSchemaOpts = {}) => {
             values: [
               { name: 'YT Video', value: 'video' },
               { name: 'Quiz', value: 'quiz' },
-              { name: 'PDF', value: 'pdf' },
-              { name: 'HB Content', value: 'hb_content' },
+              { name: 'PDF', value: 'document' },
+              { name: 'Code Challenge', value: 'code-challenge' },
+              { name: 'Project Challenge', value: 'project-challenge' },
             ],
             disabled: function(model) {
               return model.id;

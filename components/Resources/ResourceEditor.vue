@@ -1,27 +1,35 @@
 <template>
-  <form action="" @submit.prevent="() => saveResource.run()">
+  <div>
     <vue-form-generator
       :schema="schema"
       :model="resource"
       :options="formOptions"
     />
+    <div v-if="saveResource.lastStarted && saveResource.lastStarted.isRejected">
+      <div 
+        class="red"
+        v-for="error in saveResource.lastStarted.error.response.data.errors"
+        :key="error"
+      >
+        {{error.title}}
+      </div>
+    </div>
     <button
       class="d-flex justify-content-end button-solid button-orange mx-auto"
+      type="submit"
+      @click="saveResource.run()"
       :disabled="saveResource.isActive"
     >
       {{ saveResource.isActive ? 'Saving...' : 'Save' }}
     </button>
-  </form>
+  </div>
 </template>
 <script>
 import Vue from 'vue'
-import { mapActions, mapGetters } from 'vuex'
-import resourceForm from '@/forms/resource'
-import pdfForm from '@/forms/pdf'
-import videoForm from '@/forms/video'
-import ResourceRepository from '@/repositories/admin/resources'
-
-import DocumentRepository from '@/repositories/admin/documents'
+import { mapActions, mapGetters } from 'vuex';
+import resourceForm from '@/forms/resource';
+import ResourceRepository from '@/repositories/admin/resources';
+import { getResourceTypeForm, getResourceTypeRepository, getResourceTypePayload } from '@/utils/resource';
 
 export default Vue.extend({
   props: 
@@ -33,40 +41,13 @@ export default Vue.extend({
     },
   computed: {
     resourceTypeRepository() {
-      switch (this.resource.type) {
-        case 'pdf':
-          return DocumentRepository
-        case 'quiz':
-          return DocumentRepository
-        case 'hb_content':
-          return DocumentRepository
-        case 'video':
-          return DocumentRepository
-      }
+      return getResourceTypeRepository(this.resource)
     },
     resourceTypePayload() {
-      switch (this.resource.type) {
-        case 'pdf':
-          return this.resource.document
-        case 'quiz':
-          return this.resource.quiz
-        case 'hb_content':
-          return this.resource.hb_content
-        case 'video':
-          return this.resource.video
-      }
+      return getResourceTypePayload(this.resource)
     },
     resourceTypeForm() {
-      switch (this.resource.type) {
-        case 'pdf':
-          return pdfForm({ modelPrefix: 'document.' })
-        case 'quiz':
-          return pdfForm({ modelPrefix: 'document.' })
-        case 'hb_content':
-          return pdfForm({ modelPrefix: 'document.' })
-        case 'video':
-          return videoForm({ modelPrefix: 'video.' })
-      }
+      return getResourceTypeForm(this.resource)
     },
     schema() {
       if (this.resourceTypeForm) {
@@ -86,15 +67,15 @@ export default Vue.extend({
   },
   tasks(t) {
     return {
-      saveResource: t(function* () {
+      saveResource: t(async function () {
         if (this.resource.id) {
-          yield ResourceRepository.update(this.resource.id, this.resource)
-          yield this.resourceTypeRepository.update(
+          await ResourceRepository.update(this.resource.id, this.resource)
+          await this.resourceTypeRepository.update(
             this.resourceTypePayload.id,
             this.resourceTypePayload
           )
         } else {
-          yield ResourceRepository.create(this.resource)
+          await ResourceRepository.create(this.resource)
           this.$emit('onAfterSave')
         }
       }).flow('drop'),
