@@ -16,13 +16,13 @@ export default Vue.extend({
   components: {
     LectureEditor
   },
-  data({params}) {
+  data() {
     return {
       lecture: {
         title: '',
         type: '',
         start_time:'',
-        batchId:params.batchId
+        batchId:this.$route.params.batchId
       }
     }
   }
