@@ -18,9 +18,13 @@
           <div class="heading-5 bold t-align-c">Recorded Lectures</div>
         </div>
       </div>
-      <CourseRecordedLectureCarousel 
-        :lectures="lectures"
-      />
+      <VAsync :task="fetchLecturesTask">
+        <template v-slot="{ value: lectures }">
+          <CourseRecordedLectureCarousel 
+            :lectures="lectures"
+          />
+        </template>
+      </VAsync>
     </div>
 
     <div class="divider-h"></div>
@@ -69,9 +73,11 @@ import CourseBannerWithAttempt from '@/components/Course/CourseBannerWithAttempt
 import CourseRecordedLectureCarousel from '@/components/Course/CourseRecordedLectureCarousel.vue';
 import CourseRepository from '@/repositories/courses.ts';
 import BatchRepository from '@/repositories/batches.ts';
+import VAsync from '@/components/Base/VAsync.vue';
 import { Course } from '~/repositories/admin/courses';
 import { BatchAttempt } from '~/repositories/batch-attempt';
 import { Lecture } from '~/repositories/lectures';
+import { cachableAsyncData } from '~/utils/store';
 
 export default Vue.extend({
   components: {
@@ -81,13 +87,7 @@ export default Vue.extend({
     CourseReview,
     CourseBanner,
     CourseRecordedLectureCarousel,
-  },
-  data() {
-    return {
-      course: null,
-      currentBatchAttempt: null,
-      lectures: []
-    }
+    VAsync,
   },
   computed: {
     ...mapState('session', ['user']),
@@ -96,22 +96,22 @@ export default Vue.extend({
     },
     isPaidBatch() {
       return this.currentBatch?.type === 'paid'
+    },
+    course() {
+      return this.$store.state['route-data'].routeDataMap['courses-id'].course
+    },
+    currentBatchAttempt() {
+      return this.$store.state['route-data'].routeDataMap['courses-id'].currentBatchAttempt
     }
   },
-  async asyncData({ params, store }) {
-    const user = store.state.session.user;
-    const course = CourseRepository.fetchById(Number(params.id));
-    const currentBatchAttempt = await (user ? CourseRepository.fetchCurrentBatchAttempt(Number(params.id)) : null);
-    let lectures;
-    if (currentBatchAttempt) {
-      lectures = BatchRepository.fetchLectures(currentBatchAttempt.batch.id);
+  tasks(t) {
+    return {
+      fetchLecturesTask: t(function *() {
+        if (this.currentBatchAttempt) {
+          return BatchRepository.fetchLectures(this.currentBatchAttempt.batch.id);
+        }
+      })
     }
-
-    return hash({
-      course,
-      currentBatchAttempt,
-      lectures
-    })
-  },
+  }
 })
 </script>
