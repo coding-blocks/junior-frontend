@@ -12,6 +12,7 @@
               </div>
             </div>
           </div>
+          <img src="https://minio.cb.lk/public/logo.png" alt="Logo">
         </div>
       </div>
       <ul class="d-md-flex d-none align-items-center">
@@ -23,6 +24,11 @@
         <li class="px-3 font-5 bold">
           <nuxt-link to="/courses">
             All Courses
+          </nuxt-link>
+        </li>
+        <li class="px-3 font-5 bold" v-if="user">
+          <nuxt-link to="/dashboard">
+            Dashboard
           </nuxt-link>
         </li>
         <li class="hoverable px-3" v-if="user">

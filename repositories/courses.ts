@@ -34,6 +34,11 @@ class CourseRepository extends BaseRepository<Course> {
     const currentBatchAttempt = await this.axios!.$get(this.buildUrl(`${id}/current-batch-attempt`));
     return currentBatchAttempt.data;
   }
+
+  async fetchEnrolledCourses(): Promise<Course[]> {
+    const courses = await this.axios!.$get(this.buildUrl('enrolled-courses'));
+    return courses.data
+  }
 }
 
 export default new CourseRepository();
