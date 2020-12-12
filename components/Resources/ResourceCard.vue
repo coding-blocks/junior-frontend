@@ -17,7 +17,7 @@
     </div>
   </div>
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -30,26 +30,46 @@ export default Vue.extend({
   computed: {
     resourceTypeClass() {
       switch(this.resource.type) {
-        case 'pdf': return 'notes-card'
-        case 'hb_content': return 'code-card'
-        case 'video': return 'video-card'
-        default: return 'notes-card'
+        case 'document': 
+          return 'notes-card'
+        case 'code-challenge': 
+        case 'project-challenge': 
+          return 'code-card'
+        case 'video': 
+          return 'video-card'
+        case 'quiz': 
+          return 'quiz-card'
+        default: 
+          return 'notes-card'
       }
     },
     resourceTypeIcon() {
       switch(this.resource.type) {
-        case 'pdf': return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg'
-        case 'hb_content': return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg'
-        case 'video': return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/play-red.svg'
-        default: return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg'
+        case 'document': 
+          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg'
+        case 'code-challenge': 
+        case 'project-challenge': 
+          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg'
+        case 'video': 
+          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/play-red.svg'
+        case 'quiz': 
+          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg'
+        default: 
+          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg'
       }
     },
     resourceTypeName() {
       switch(this.resource.type) {
-        case 'pdf': return 'PDF Notes'
-        case 'hb_content': return 'Problem'
-        case 'video': return 'Video Lecture'
-        default: return 'notes-card'
+        case 'document': 
+          return 'PDF Note'
+        case 'code-challenge':
+          return 'Code Challenge' 
+        case 'project-challenge': 
+          return 'Project Challenge'
+        case 'video': 
+          return 'Video'
+        case 'quiz': 
+          return 'Quiz'
       }
     }
   }

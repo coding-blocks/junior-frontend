@@ -21,72 +21,30 @@
     </div>
     <div class="container z-neg">
 
-      <!-- PDF Notes -->
       <div 
-        class="row no-gutters align-items-center mb-40"
-        v-if="pdfNotes.length"
+        v-for="{name, resources} in resourceTypeGroups"
+        :key="name"
       >
-        <h6 class="bold">Notes</h6>
-        <div class="bg-grey-light-3 flex-1 mx-20" style="height: 2px;"></div>
-        <a href="#" class="font-4 bold text-orange">View All</a>
-      </div>
-      <div class="row justify-content-center">
         <div 
-          class="col-lg-3 col-md-4 col-sm-6 col-10 mb-30 h-inherit"
-          v-for="resource in pdfNotes"
-          :key="resource.id"
+          class="row no-gutters align-items-center mb-40"
+          v-if="resources.length"
         >
-          <nuxt-link :to="`/courses/${courseId}/resources/${resource.id}`">
-            <ResourceCard 
-              :resource="resource"
-            />
-          </nuxt-link>
+          <h6 class="bold">{{name}}</h6>
+          <div class="bg-grey-light-3 flex-1 mx-20" style="height: 2px;"></div>
+          <a href="#" class="font-4 bold text-orange">View All</a>
         </div>
-      </div>
-
-      <!-- Hackerblocks problems (quizzes, code, code.org) -->
-      <div 
-        class="row no-gutters align-items-center mb-40"
-        v-if="problems.length"
-      >
-        <h6 class="bold">Problems</h6>
-        <div class="bg-grey-light-3 flex-1 mx-20" style="height: 2px;"></div>
-        <a href="#" class="font-4 bold text-orange">View All</a>
-      </div>
-      <div class="row justify-content-center">
-        <div 
-          class="col-lg-3 col-md-4 col-sm-6 col-10 mb-30 h-inherit"
-          v-for="resource in problems"
-          :key="resource.id"
-        >
-          <nuxt-link :to="`/courses/${courseId}/resources/${resource.id}`">
-            <ResourceCard 
-              :resource="resource"
-            />
-          </nuxt-link>
-        </div>
-      </div>
-
-      <!-- Videos -->
-      <div 
-        class="row no-gutters align-items-center mb-40"
-        v-if="videos.length"
-      >
-        <h6 class="bold">Videos</h6>
-        <div class="bg-grey-light-3 flex-1 mx-20" style="height: 2px;"></div>
-        <a href="#" class="font-4 bold text-orange">View All</a>
-      </div>
-      <div class="row justify-content-center">
-        <div 
-          class="col-lg-3 col-md-4 col-sm-6 col-10 mb-30 h-inherit"
-          v-for="resource in videos"
-          :key="resource.id"
-        >
-          <nuxt-link :to="`/courses/${courseId}/resources/${resource.id}`">
-            <ResourceCard 
-              :resource="resource"
-            />
-          </nuxt-link>
+        <div class="row justify-content-center">
+          <div 
+            class="col-lg-3 col-md-4 col-sm-6 col-10 mb-30 h-inherit"
+            v-for="resource in resources"
+            :key="resource.id"
+          >
+            <nuxt-link :to="`/courses/${courseId}/resources/${resource.id}`">
+              <ResourceCard 
+                :resource="resource"
+              />
+            </nuxt-link>
+          </div>
         </div>
       </div>
 
@@ -94,7 +52,7 @@
   </div>
 </template>
 <script>
-import Vue from 'vue'
+import Vue from 'vue';
 import CourseRepository from '@/repositories/courses';
 import ResourceCard from '@/components/Resources/ResourceCard.vue';
 import { Resource } from '~/repositories/admin/resources';
@@ -132,14 +90,29 @@ export default Vue.extend({
     }
   },
   computed: {
-    pdfNotes() {
-      return this.resources.filter(resource => resource.type === 'pdf');
+    documents() {
+      return this.resources.filter(resource => resource.type === 'document');
     },
-    problems() {
-      return this.resources.filter(resource => resource.type === 'hb_content');
+    codeChallenges() {
+      return this.resources.filter(resource => resource.type === 'code-challenge');
+    },
+    quizzes() {
+      return this.resources.filter(resource => resource.type === 'quiz')
     },
     videos() {
       return this.resources.filter(resource => resource.type === 'video')
+    },
+    projectChallenges() {
+      return this.resources.filter(resource => resource.type === 'project-challenge')
+    },
+    resourceTypeGroups() {
+      return [
+        { name: 'Videos', resources: this.videos },
+        { name: 'PDF Notes', resources: this.documents },
+        { name: 'Quizzes', resources: this.quizzes },
+        { name: 'Code Challenges', resources: this.codeChallenges },
+        { name: 'Project Challenges', resources: this.projectChallenges },
+      ]
     }
   },
   methods: {

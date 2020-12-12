@@ -6,12 +6,18 @@ export interface Resource {
   id: number;
   title: string;
   type: ResourceType;
-  //document?: DocumentAttributes;
-  //quiz?: QuizAttributes;
-  //video?: VideoAttributes;
-  //hb_content?: HBContentAttributes
 }
 
-class ResourceRepository extends BaseRepository<Resource> {}
+class ResourceRepository extends BaseRepository<Resource> {
+  // create interface for hackerblocks content
+  async fetchResourceTypePayload(id: number, courseId: number): Promise<object> {
+    const payload = await this.axios!.$get(this.buildUrl(`${id}/payload`), {
+      params: {
+        courseId
+      }
+    })
+    return payload.data
+  }
+}
 
 export default new ResourceRepository();
