@@ -6,6 +6,14 @@
     >
       Batches
     </nuxt-link>
+
+    <nuxt-link
+      class="button-solid button-orange my-3 px-5"
+      :to="`${this.$route.params.id}/resources`"
+    >
+      Resources
+    </nuxt-link>
+    
     
     <CourseEditor :course="course" />
   </div>

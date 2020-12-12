@@ -14,7 +14,7 @@ export default Vue.extend({
       currentBatchAttempt: null,
     }
   },
-  asyncData: cachableAsyncData(async ({ params, store }) => {
+  asyncData: cachableAsyncData('courses-id', async ({ params, store }) => {
     const user = store.state.session.user;
     const course = CourseRepository.fetchById(Number(params.id));
     const currentBatchAttempt = await (user ? CourseRepository.fetchCurrentBatchAttempt(Number(params.id)) : null);

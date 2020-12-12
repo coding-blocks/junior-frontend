@@ -5,6 +5,7 @@
 import Vue from 'vue'
 import CourseRepository from '@/repositories/courses';
 import { cachableAsyncData } from '~/utils/store';
+import { mapState } from 'vuex';
 
 export default Vue.extend({
   data() {
@@ -12,7 +13,10 @@ export default Vue.extend({
       course: null,
     }
   },
-  asyncData: cachableAsyncData(async ({ params }) => {
+  computed: {
+    ...mapState('route-data', ['routeDataMap']),
+  },
+  asyncData: cachableAsyncData('admin-courses-id', async ({ params }) => {
     const course = await CourseRepository.fetchById(Number(params.id))
 
     return {
