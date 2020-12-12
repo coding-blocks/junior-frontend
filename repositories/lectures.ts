@@ -9,6 +9,11 @@ export interface Lecture {
   start_time: string;
 }
 
-class LectureRepository extends BaseRepository<Lecture> {}
+class LectureRepository extends BaseRepository<Lecture> {
+  async fetchUpcomingLectures(): Promise<Lecture[]> {
+    const lectures = await this.axios!.$get(this.buildUrl('upcoming-lectures'));
+    return lectures.data;
+  }
+}
 
 export default new LectureRepository();
