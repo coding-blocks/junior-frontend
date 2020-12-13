@@ -5,7 +5,7 @@ import { Module, Mutation, VuexModule } from 'vuex-module-decorators';
   stateFactory: true,
   namespaced: true
 })
-export default class SessionModule extends VuexModule {
+export default class RouteDataModule extends VuexModule {
   routeDataMap = {};
 
   @Mutation

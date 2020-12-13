@@ -4,7 +4,7 @@
       <VAsync 
         :task="fetchQuizTask"
       >
-        <template v-slot="{ value: troublemakerQuiz }">
+        <template v-slot="{ value: { troublemakerQuiz, contentAttempt } }">
           <div>
             <div v-if="state === 'detail'">
               <QuizDetail 
@@ -15,6 +15,15 @@
             <div v-else-if="state === 'attempt'">
               <QuizAttempt
                 :troublemakerQuiz="troublemakerQuiz"
+                :contentAttempt="contentAttempt"
+                @onSubmit="onSubmit()"
+              />
+            </div>
+            <div v-else-if="state === 'result' && submissionId">
+              <QuizResult 
+                :troublemakerQuiz="troublemakerQuiz"
+                :submissionId="submissionId"
+                @onBack="onBack()"
               />
             </div>
           </div>
@@ -41,9 +50,11 @@
 </template>
 <script>
 import Vue from 'vue';
+import { mapState } from 'vuex';
 import VAsync from '@/components/Base/VAsync';
 import QuizDetail from '@/components/Resources/ResourceView/QuizView/Detail.vue';
 import QuizAttempt from '@/components/Resources/ResourceView/QuizView/Attempt.vue';
+import QuizResult from '@/components/Resources/ResourceView/QuizView/Result.vue';
 import ResourceRepository from '@/repositories/resources';
 import HackerblocksRepository from '@/repositories/hackerblocks';
 
@@ -61,12 +72,17 @@ export default Vue.extend({
   components: {
     VAsync,
     QuizDetail,
-    QuizAttempt
+    QuizAttempt,
+    QuizResult
   },
   data() {
     return {
-      state: 'detail'
+      state: 'detail',
+      submissionId: null
     }
+  },
+  computed: {
+    ...mapState('current-batch-attempt', ['currentBatchAttempt'])
   },
   tasks(t) {
     return {
@@ -74,13 +90,30 @@ export default Vue.extend({
         this.state = 'detail'
         const payload = await ResourceRepository.fetchResourceTypePayload(this.resource.id, this.course.id)
         const troublemakerQuiz = await HackerblocksRepository.fetchTroublemakerQuiz(payload.quiz.id, this.course.id)
-        return troublemakerQuiz
+
+        const contentAttempt = await HackerblocksRepository.fetchContentAttempt(this.currentBatchAttempt.batch.hbContestId, payload.id)
+        return {
+          troublemakerQuiz,
+          contentAttempt
+        }
+      }),
+      submitQuizTask: t(async function() {
+        const payload = await ResourceRepository.fetchResourceTypePayload(this.resource.id, this.course.id)
+        const { submissionId } = await HackerblocksRepository.submitContent({ contestId: this.currentBatchAttempt.batch.hbContestId, contentId: payload.id })
+        this.submissionId = submissionId
+        this.state = 'result'
       })
     }
   },
   methods: {
     onStart() {
       this.state = 'attempt'
+    },
+    onSubmit() {
+      this.submitQuizTask.run()
+    },
+    onBack() {
+      this.state = 'detail'
     }
   }
 })

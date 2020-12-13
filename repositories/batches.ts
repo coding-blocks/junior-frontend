@@ -10,6 +10,7 @@ export interface Batch {
   end: string;
   registrationStart: string;
   registrationEnd: string;
+  hbContestId: number;
   maxSize: number;
 }
 

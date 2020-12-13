@@ -19,6 +19,8 @@ export default Vue.extend({
     const course = CourseRepository.fetchById(Number(params.id));
     const currentBatchAttempt = await (user ? CourseRepository.fetchCurrentBatchAttempt(Number(params.id)) : null);
 
+    store.commit('current-batch-attempt/setCurrentBatchAttempt', { batchAttempt: currentBatchAttempt })
+
     return hash({
       course,
       currentBatchAttempt

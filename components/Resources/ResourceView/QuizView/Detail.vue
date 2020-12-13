@@ -10,7 +10,7 @@
           <span>Timed</span>
         </div>
         <div class="font-4 text-grey-light-1">
-          The questions are timed, you will get 30 seconds for one question.
+          The questions are timed, higher time will lead to higher leaderboard rank.
         </div>
       </div>
       <div class="col-sm-4 mb-sm-none mb-20">

@@ -1,15 +1,9 @@
 <template>
   <div>
-    <div class="row no-gutters align-items-center justify-content-between mb-20">
+    <div class="row no-gutters mb-20">
       <div class="flex-1 pr-20">
         <div class="heading-6 bold">
           Q. {{troublemakerQuestion.title}}
-        </div>
-      </div>
-      <div class="s-60x60 border b-pink all-center round">
-        <div class="t-align-c pink">
-          <h5 class="bold">30</h5>
-          <div class="font-3">SEC</div>
         </div>
       </div>
     </div>
@@ -19,9 +13,11 @@
       />
     </div>
     <div 
-      class="card py-10 px-20 mb-20 hover-grey pointer row no-gutters align-items-center justify-content-between"
       v-for="choice in choices"
       :key="choice.id"
+      class="card py-10 px-20 mb-20 hover-grey pointer row no-gutters align-items-center justify-content-between"
+      :class="questionSubmission['answer-ids'].includes(choice.id) && 'bg-green white'"
+      @click="choiceSelected(choice)"
     >
       <div class="font-5 flex-1 pr-20">
         <VMarkdown 
@@ -40,6 +36,10 @@ export default Vue.extend({
     troublemakerQuestion: {
       type: Object,
       required: true
+    },
+    questionSubmission: {
+      type: Object,
+      required: true
     }
   },
   components: {
@@ -48,6 +48,11 @@ export default Vue.extend({
   computed: {
     choices() {
       return this.troublemakerQuestion.choices;
+    }
+  },
+  methods: {
+    choiceSelected(choice) {
+      this.$emit('onChoiceSelect', choice);
     }
   }
 })
