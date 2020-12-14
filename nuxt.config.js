@@ -1,4 +1,5 @@
 const config = require('./config');
+const MonacoEditorPlugin = require('monaco-editor-webpack-plugin')
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -42,7 +43,8 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -58,8 +60,26 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: config.axios,
 
+  // Fontawesome configuration
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      solid: ['faCheck', 'faTimes', 'faExclamation']
+    }
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    standalone: true
+    standalone: true,
+    plugins: [
+      new MonacoEditorPlugin({
+        features: ['!gotoSymbol'],
+        // https://github.com/Microsoft/monaco-editor-webpack-plugin#options
+        // Include a subset of languages support
+        // Some language extensions like typescript are so huge that may impact build performance
+        // e.g. Build full languages support with webpack 4.0 takes over 80 seconds
+        // Languages are loaded on demand at runtime
+      })  
+    ]
   }
 }

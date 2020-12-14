@@ -93,8 +93,18 @@ class HackerblocksRepository extends BaseRepository<object> {
   }
 
   async fetchSubmission(submissionId: number): Promise<Submission> {
-    const response = await this.axios!.$get(this.buildUrl(`submissions/${submissionId}`))
-    return response.data
+    const response = await this.axios!.$get(this.buildUrl(`submissions/${submissionId}`));
+    return response.data;
+  }
+
+  async fetchSubmissions(contestId: number, contentId: number): Promise<Submission[]> {
+    const response = await this.axios!.$get(this.buildUrl('submissions'), {
+      params: {
+        contestId,
+        contentId
+      }
+    });
+    return response.data;
   }
 }
 
