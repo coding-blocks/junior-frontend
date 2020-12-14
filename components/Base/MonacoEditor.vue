@@ -41,8 +41,7 @@ export default Vue.extend({
   },
   methods: {
     setValue(value) {
-      debugger
-      this.editor && this.setValue(value);
+      this.editor && this.editor.setValue(value);
     },
     getValue() {
       return this.editor && this.editor!.getValue();
@@ -59,7 +58,7 @@ export default Vue.extend({
       const editor = monaco.editor.create(document.getElementById('editor')!, {
         value: this.value,
         theme: 'vs-dark',
-        language: 'javascript'
+        language: this.language
       });
       this.editor = editor;
       this.monaco = monaco

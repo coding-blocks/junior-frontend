@@ -46,6 +46,13 @@ export interface SubmitContentParams {
   language?: string;
 }
 
+export interface RunContentParams {
+  contentId: number;
+  source: string;
+  language: string;
+  input: string;
+}
+
 export interface Submission {
   id: number;
   solution: object;
@@ -89,6 +96,11 @@ class HackerblocksRepository extends BaseRepository<object> {
 
   async submitContent(params: SubmitContentParams): Promise<{ submissionId }> {
     const response = await this.axios!.$post(this.buildUrl('content-submit'), params);
+    return response.data;
+  }
+
+  async runContent(params: RunContentParams): Promise<{ submissionId }> {
+    const response = await this.axios!.$post(this.buildUrl('content-run'), params);
     return response.data;
   }
 

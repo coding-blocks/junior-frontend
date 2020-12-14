@@ -14,11 +14,11 @@
               </template>
             </TabNavigation>
           </div>
+          <CodeEditor 
+            :problem="problem"
+          />
         </template>
       </VAsync>
-      <client-only>
-        <CodeEditor />
-      </client-only>
     </div>
     <div class="col-md-6 col-lg-4">
       <div class="card code-card">
@@ -73,7 +73,8 @@ export default Vue.extend({
     return {
       fetchProblemTask: t(async () => {
         return ResourceRepository.fetchResourceTypePayload(this.resource.id, this.course.id)
-      })
+      }),
+
     }
   }
 })
