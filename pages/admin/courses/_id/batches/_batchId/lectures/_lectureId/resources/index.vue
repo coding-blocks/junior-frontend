@@ -41,7 +41,7 @@
 </template>
 
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import { mapGetters, mapActions } from 'vuex'
 import VAsync from '@/components/Base/VAsync.vue'
