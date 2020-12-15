@@ -28,9 +28,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
+import { mapState } from 'vuex';
 import LectureCard from '@/components/Classroom/LectureCard/index.vue';
-import NotesCard from '@/components/Classroom/NotesCard.vue';
+import NotesCard from '@/components/Classroom/NotesCard/index.vue';
 import OtherLecturesCard from '@/components/Classroom/OtherLecturesCard.vue';
 import LectureResourcesCard from '@/components/Classroom/LectureResourcesCard.vue';
 import LectureRepository from '@/repositories/lectures';
@@ -44,19 +45,22 @@ export default Vue.extend({
     OtherLecturesCard,
     LectureResourcesCard,
   },
+  computed: {
+    ...mapState('current-batch-attempt', ['currentBatchAttempt']),
+    batch() {
+      return this.currentBatchAttempt.batch
+    }
+  },
   data() {
     return {
-      lecture: null,
-      batch: null
+      lecture: null
     }
   },
   async asyncData({ params }) {
     const lecture = LectureRepository.fetchById(Number(params.lectureId));
-    const currentBatchAttempt = await CourseRepository.fetchCurrentBatchAttempt(Number(params.id));
 
     return hash({
-      lecture,
-      batch: currentBatchAttempt.batch
+      lecture
     })
   }
 })
