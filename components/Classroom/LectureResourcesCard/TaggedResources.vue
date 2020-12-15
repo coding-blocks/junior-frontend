@@ -6,6 +6,7 @@
           v-for="resource in resources"
           :key="resource.id"
           :resource="resource"
+          :lecture="lecture"
         />
       </template>
     </VAsync>

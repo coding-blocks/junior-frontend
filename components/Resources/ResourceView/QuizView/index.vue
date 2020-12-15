@@ -63,10 +63,6 @@ export default Vue.extend({
     resource: {
       type: Object,
       required: true
-    },
-    course: {
-      type: Object,
-      required: true
     }
   },
   components: {
@@ -88,8 +84,8 @@ export default Vue.extend({
     return {
       fetchQuizTask: t(async function() {
         this.state = 'detail'
-        const payload = await ResourceRepository.fetchResourceTypePayload(this.resource.id, this.course.id)
-        const troublemakerQuiz = await HackerblocksRepository.fetchTroublemakerQuiz(payload.quiz.id, this.course.id)
+        const payload = await ResourceRepository.fetchResourceTypePayload(this.resource.id, this.currentBatchAttempt.course.id)
+        const troublemakerQuiz = await HackerblocksRepository.fetchTroublemakerQuiz(payload.quiz.id, this.currentBatchAttempt.course.id)
 
         const contentAttempt = await HackerblocksRepository.fetchContentAttempt(this.currentBatchAttempt.batch.hbContestId, payload.id)
         return {
@@ -98,7 +94,7 @@ export default Vue.extend({
         }
       }),
       submitQuizTask: t(async function() {
-        const payload = await ResourceRepository.fetchResourceTypePayload(this.resource.id, this.course.id)
+        const payload = await ResourceRepository.fetchResourceTypePayload(this.resource.id, this.currentBatchAttempt.course.id)
         const { submissionId } = await HackerblocksRepository.submitContent({ contestId: this.currentBatchAttempt.batch.hbContestId, contentId: payload.id })
         this.submissionId = submissionId
         this.state = 'result'

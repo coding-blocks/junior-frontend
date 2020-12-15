@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <ResourceView
+    <ResourceView 
       :resource="resource"
     />
   </div>
