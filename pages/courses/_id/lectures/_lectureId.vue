@@ -33,7 +33,7 @@ import { mapState } from 'vuex';
 import LectureCard from '@/components/Classroom/LectureCard/index.vue';
 import NotesCard from '@/components/Classroom/NotesCard/index.vue';
 import OtherLecturesCard from '@/components/Classroom/OtherLecturesCard.vue';
-import LectureResourcesCard from '@/components/Classroom/LectureResourcesCard.vue';
+import LectureResourcesCard from '@/components/Classroom/LectureResourcesCard/index.vue';
 import LectureRepository from '@/repositories/lectures';
 import CourseRepository from '@/repositories/courses';
 import { hash } from 'rsvp';
