@@ -8,7 +8,7 @@
             style="width: 45px"
           />
           <div class="flex-1 pl-25">
-            <div>RECOMMENDED FOR 4-6</div>
+            <div>RECOMMENDED FOR {{course.classTag}}</div>
             <div class="heading-5 bold">{{course.title}}</div>
           </div>
         </div>
