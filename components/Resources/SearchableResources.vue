@@ -26,16 +26,9 @@
 </template>
 
 <script>
-import axios from 'axios'
 import ResourcesRepository from '@/repositories/admin/resources'
 
 export default {
-  props: {
-    courseId: {
-      type: String,
-      required: true,
-    },
-  },
   data() {
     return {
       selectedItem: {},

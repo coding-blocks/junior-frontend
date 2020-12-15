@@ -3,39 +3,38 @@
     <h2 class="py-3">You are editing for {{ course.title }}</h2>
     <VAsync :task="fetchResourcesTask">
       <template v-slot="{ value: resources }">
-      <div class="d-flex">
-        <SearchableResources
-          :courseId="`${this.$route.params.lectureId}`"
-          @on-item-selected="dropdownSelection = $event"
-          @on-item-reset="dropdownSelection = {}"
-        />
+        <div class="d-flex">
+          <SearchableResources
+            @on-item-selected="dropdownSelection = $event"
+            @on-item-reset="dropdownSelection = {}"
+          />
 
-        {{ dropdownSelection.name }}
-        <button
-          v-if="dropdownSelection.name !== ''"
-          class="button-solid button-orange mx-auto"
-          @click="addResource(dropdownSelection.id)"
-        >
-          Add
-        </button>
-      </div>
-      <ul class="list-divided mt-4">
-        <li
-          class="resources flex-row justify-content-around items-center px-4 py-3"
-          v-for="resource in resources"
-          :key="resource.id"
-        >
-          <div>{{ resource.title }}</div>
-          <div>
-            <button
-              class="button-solid button-orange mx-auto"
-              @click="removeResource(resource.id)"
-            >
-              Remove
-            </button>
-          </div>
-        </li>
-      </ul>
+          {{ dropdownSelection.name }}
+          <button
+            v-if="dropdownSelection.name !== ''"
+            class="button-solid button-orange mx-auto"
+            @click="addResource(dropdownSelection.id)"
+          >
+            Add
+          </button>
+        </div>
+        <ul class="list-divided mt-4">
+          <li
+            class="resources flex-row justify-content-around items-center px-4 py-3"
+            v-for="resource in resources"
+            :key="resource.id"
+          >
+            <div>{{ resource.title }}</div>
+            <div>
+              <button
+                class="button-solid button-orange mx-auto"
+                @click="removeResource(resource.id)"
+              >
+                Remove
+              </button>
+            </div>
+          </li>
+        </ul>
       </template>
     </VAsync>
   </div>
@@ -75,18 +74,22 @@ export default Vue.extend({
     removeResource(id) {
       LectureRepository.removeResource(this.$route.params.id, {
         resource: { id },
+      }).then(() => {
+        this.fetchResourcesTask.run()
       })
     },
     addResource(id) {
       LectureRepository.addResource(this.$route.params.lectureId, {
         resource: { id },
+      }).then(() => {
+        this.fetchResourcesTask.run()
       })
     },
   },
   tasks(t) {
     return {
       fetchResourcesTask: t(function* () {
-        return LectureRepository.fetchResources(this.$route.params.lectureId)
+        return LectureRepository.fetchResources('7')
       }),
     }
   },
