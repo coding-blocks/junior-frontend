@@ -1,5 +1,11 @@
 <template>
   <div>
+    <nuxt-link
+      class="button-solid button-orange my-3 px-5"
+      :to="`${this.$route.params.lectureId}/resources`"
+    >
+      Resources
+    </nuxt-link>
     <LectureEditor 
       :lecture="lecture"
     />
