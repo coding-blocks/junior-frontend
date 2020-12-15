@@ -18,7 +18,8 @@
   </div>
 </template>
 <script>
-import Vue from 'vue'
+import Vue from 'vue';
+import { getResourceTypeIcon, getResourceTypeName, getResourceTypeClass } from '@/utils/resource';
 
 export default Vue.extend({
   props: {
@@ -29,48 +30,13 @@ export default Vue.extend({
   },
   computed: {
     resourceTypeClass() {
-      switch(this.resource.type) {
-        case 'document': 
-          return 'notes-card'
-        case 'code-challenge': 
-        case 'project-challenge': 
-          return 'code-card'
-        case 'video': 
-          return 'video-card'
-        case 'quiz': 
-          return 'quiz-card'
-        default: 
-          return 'notes-card'
-      }
+      return getResourceTypeClass(this.resource);
     },
     resourceTypeIcon() {
-      switch(this.resource.type) {
-        case 'document': 
-          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg'
-        case 'code-challenge': 
-        case 'project-challenge': 
-          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg'
-        case 'video': 
-          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/play-red.svg'
-        case 'quiz': 
-          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg'
-        default: 
-          return 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg'
-      }
+      return getResourceTypeIcon(this.resource);
     },
     resourceTypeName() {
-      switch(this.resource.type) {
-        case 'document': 
-          return 'PDF Note'
-        case 'code-challenge':
-          return 'Code Challenge' 
-        case 'project-challenge': 
-          return 'Project Challenge'
-        case 'video': 
-          return 'Video'
-        case 'quiz': 
-          return 'Quiz'
-      }
+      return getResourceTypeName(this.resource);
     }
   }
 })
