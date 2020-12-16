@@ -2,7 +2,8 @@
   <VAsync :task="fetchCurrentLectureTask">
     <template v-slot="{ value: currentLecture }">
       <div
-        class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
+        class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white"
+        :class="course.backgroundTheme"
         v-if="currentLecture"
       >
         <div class="container">

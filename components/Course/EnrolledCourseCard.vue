@@ -1,5 +1,8 @@
 <template>
-  <div class="card bg-gradient-purple white mb-50">
+  <div 
+    class="card white mb-50"
+    :class="course.backgroundTheme"
+  >
     <div class="row no-gutters align-items-center mb-40">
       <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python_white.svg" style="width: 55px;">
       <div class="flex-1 pl-25">

@@ -1,5 +1,8 @@
 <template>
-  <div :class="`card ${course.backgroundTheme} white`">
+  <div 
+    class="card white"
+    :class="course.backgroundTheme"
+  >
     <div class="row align-items-center">
       <div class="col-xl-7">
         <div class="row no-gutters align-items-center mb-30">
