@@ -38,7 +38,7 @@
   /* height: 100%; */
   /* max-height: 5000px;
   height: auto; */
-  max-height: 100vh;
+  max-height: 80vh;
   margin: 20px auto;
   background-color: #fff;
   border-radius: 2px;
