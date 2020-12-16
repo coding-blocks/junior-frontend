@@ -17,7 +17,7 @@
         </div>
         <ul class="divided-list">
           <li class="px-25">
-            <div class="heading-6 bold">12+</div>
+            <div class="heading-6 bold">{{course.courseProjects.length}}</div>
             <div class="font-3 mt-10">Projects</div>
           </li>
           <li class="px-25">

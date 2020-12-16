@@ -6,6 +6,7 @@ export type LectureType = 'zoom' | 'youtube';
 export interface Lecture {
   id: number;
   title: string;
+  thubmnail: string;
   type: LectureType;
   start_time: string;
 }

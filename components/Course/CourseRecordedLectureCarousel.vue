@@ -5,9 +5,11 @@
       v-for="lecture in lectures"
       :key="lecture.id"
     >
-      <CourseLectureCard 
-        :lecture="lecture"
-      />
+      <nuxt-link :to="`/courses/${course.slug}/lectures/${lecture.id}`">
+        <CourseLectureCard 
+          :lecture="lecture"
+        />
+      </nuxt-link>
     </div>
   </div>  
 </template>
@@ -19,6 +21,10 @@ export default Vue.extend({
   props: {
     lectures: {
       type: Array,
+      required: true
+    },
+    course: {
+      type: Object,
       required: true
     }
   },
