@@ -51,6 +51,11 @@ export default (opts: FormSchemaOpts = {}) => {
             validators: ['validSlug', 'required']
           },
           {
+            type: "ColorSelector",
+            label: "Course Background Theme",
+            model: "backgroundTheme",
+          },
+          {
             type: 'textArea',
             inputType: 'text',
             label: 'Course Syallabus',

@@ -17,6 +17,7 @@ export interface Course {
   isRecommended: boolean;
   courseFeatures: CourseFeature[];
   courseProjects: CourseProject[];
+  backgroundTheme: string;
 }
 
 class CourseRepository extends BaseRepository<Course> {
