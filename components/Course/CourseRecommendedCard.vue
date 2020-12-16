@@ -57,7 +57,7 @@
               class="br-20 w-100"
             />
             <nuxt-link
-              :to="`/courses/${course.id}`"
+              :to="`/courses/${course.slug}`"
               class="button-primary w-75 position-absolute justify-content-center"
               style="left: 12.5%; bottom: -20px"
             >

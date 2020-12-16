@@ -53,7 +53,7 @@
       </div>
       <nuxt-link 
         class="button-primary button-primary--white"
-        :to="`/courses/${course.id}`"
+        :to="`/courses/${course.slug}`"
       >
         View Course
       </nuxt-link>

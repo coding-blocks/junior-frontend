@@ -32,7 +32,7 @@
       </div>
       <nuxt-link 
         class="button-primary mt-md-none mt-30"
-        :to="`/courses/${course.id}`"
+        :to="`/courses/${course.slug}`"
       >
         Go to classroom
       </nuxt-link>

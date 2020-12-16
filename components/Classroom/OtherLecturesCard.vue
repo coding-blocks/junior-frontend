@@ -11,7 +11,7 @@
             >
               <nuxt-link 
                 class="row no-gutters align-items-center mb-25"
-                :to="`/courses/${currentBatchAttempt.course.id}/lectures/${lecture.id}`"
+                :to="`/courses/${currentBatchAttempt.course.slug}/lectures/${lecture.id}`"
               >
                 <div class="col-lg-6 col-sm-5 mb-sm-none mb-20">
                   <img

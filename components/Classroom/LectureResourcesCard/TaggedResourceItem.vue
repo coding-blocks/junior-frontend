@@ -4,7 +4,7 @@
     :class="resourceTypeClass"
   >
     <nuxt-link
-      :to="`/courses/${course.id}/lectures/${lecture.id}/resources/${resource.id}`"
+      :to="`/courses/${course.slug}/lectures/${lecture.id}/resources/${resource.id}`"
       target="_blank"
     >
       <div class="row no-gutters align-items-center">
