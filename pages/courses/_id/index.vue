@@ -22,6 +22,7 @@
         <template v-slot="{ value: lectures }">
           <CourseRecordedLectureCarousel 
             :lectures="lectures"
+            :course="course"
           />
         </template>
       </VAsync>
