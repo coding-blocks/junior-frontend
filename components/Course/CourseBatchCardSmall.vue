@@ -15,12 +15,19 @@
       <div class="heading-4 bold">{{batch.title}}</div>
       <div class="mt-10 font-5 bold">Language: Hindi | Size: {{batch.maxSize}}</div>
     </div>
-    <button class="button-primary mt-30">Start Learning</button>
+    <button 
+      class="button-primary mt-30"
+      @click="enrollInBatchTask.run()"
+      :disabled="enrollInBatchTask.isActive"
+    >
+      {{enrollInBatchTask.isActive ? 'Enrolling' : 'Start Learning'}}
+    </button>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
+import Vue from 'vue';
+import BatchRepository from '@/repositories/batches';
 
 export default Vue.extend({
   props: {
@@ -32,6 +39,17 @@ export default Vue.extend({
   computed: {
     premium() {
       return this.batch.type === 'paid';
+    }
+  },
+  tasks(t) {
+    return {
+      enrollInBatchTask: t(async function() {
+        const batchAttempt = await BatchRepository.enrollInBatch(this.batch.id);
+
+        this.$emit('onAfterEnroll', batchAttempt);
+        
+        return batchAttempt
+      })
     }
   }
 })

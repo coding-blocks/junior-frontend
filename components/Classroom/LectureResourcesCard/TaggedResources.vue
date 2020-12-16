@@ -25,6 +25,11 @@ export default Vue.extend({
       required: true
     }
   },
+  watch: {
+    lecture() {
+      this.fetchTaggedResources.run();
+    }
+  },
   components: {
     VAsync,
     TaggedResourceItem,
