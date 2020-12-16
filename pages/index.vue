@@ -268,37 +268,43 @@
           </div>
           <div class="col-lg-5">
             <div class="card br-20 mb-40">
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/discord.svg"
-                />
-                <div class="flex-1 pl-25">
-                  <div class="font-5 bold mb-10">Join Discord Community</div>
-                  <div class="font-4">
-                    Get your doubts clarified related to courses on our Discord
-                    Channel
+              <a href="" target="_blank">
+                <div class="row no-gutters align-items-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/discord.svg"
+                  />
+                  <div class="flex-1 pl-25">
+                    <div class="font-5 bold mb-10">Join Discord Community</div>
+                    <div class="font-4">
+                      Get your doubts clarified related to courses on our Discord
+                      Channel
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
             <div class="card br-20">
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/youtube.svg"
-                />
-                <div class="flex-1 pl-25">
-                  <div class="font-5 bold mb-10">Join Youtube Community</div>
-                  <div class="font-4">
-                    Live classes of our courses are conducted on CB Jr Youtube
-                    channel.
+              <a href="https://www.youtube.com/codingblocksindia" target="_blank">
+                <div class="row no-gutters align-items-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/youtube.svg"
+                  />
+                  <div class="flex-1 pl-25">
+                    <div class="font-5 bold mb-10">Join Youtube Community</div>
+                    <div class="font-4">
+                      Live classes of our courses are conducted on CB Jr Youtube
+                      channel.
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
     <Modal 
       @close="setShowBookSessionModal(false)"
       v-if="showBookSessionModal"
