@@ -17,10 +17,10 @@
 export default {
   props: ['progress'],
   mounted: function () {
-    var max = -219.99078369140625
+    const max = -219.99078369140625
 
-    value = document.querySelector('.radial-progress')
-    percent = value.getAttribute('data-progress')
+    const value = document.querySelector('.radial-progress')
+    const percent = value.getAttribute('data-progress')
 
     value
       .querySelector('.fill')

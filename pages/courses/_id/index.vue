@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-50">
+  <div>
     <CourseBannerWithAttempt
       :course="course"
       :batchAttempt="currentBatchAttempt"
