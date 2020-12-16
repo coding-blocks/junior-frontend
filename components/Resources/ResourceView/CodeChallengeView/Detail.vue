@@ -48,8 +48,6 @@ export default Vue.extend({
       required: true
     }
   },
-  components: {
-    VMarkdown
-  }
+
 })
 </script>
