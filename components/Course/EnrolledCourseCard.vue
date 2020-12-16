@@ -13,7 +13,11 @@
           <VAsync :task="fetchProgressTask">
             <template v-slot="{ value }">
               <div class="row no-gutters align-items-center">
+                <div v-if="value.percentage === 100">
+                  <fa :icon="faCheck" class="fa-2x orange" />
+                </div>
                 <RadialProgress 
+                  v-else
                   :progress="value.percentage"
                 />
                 <div class="flex-1 pl-sm-20 pl-10">
@@ -36,6 +40,7 @@
 </template>
 <script>
 import Vue from 'vue';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import CourseRepository from '@/repositories/courses';
 import BatchRepository from '@/repositories/batches';
 import VAsync from '@/components/Base/VAsync.vue';
@@ -47,6 +52,11 @@ export default Vue.extend({
     course: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    faCheck() {
+      return faCheck
     }
   },
   tasks(t) {
