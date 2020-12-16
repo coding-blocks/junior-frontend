@@ -1,19 +1,19 @@
 <template>
   <div class="dropdown">
+    <input
+      v-if="Object.keys(selectedItem).length === 0"
+      ref="dropdowninput"
+      v-model.trim="inputValue"
+      class="dropdown-input"
+      type="text"
+      placeholder="Find resources"
+      @keyup="onSearchChange"
+    />
+    <div v-else @click="resetSelection" class="dropdown-selected">
+      {{ selectedItem.title }}
+    </div>
     <VAsync :task="searchResourcesTask">
       <template v-slot="{ value: resources }">
-        <input
-          v-if="Object.keys(selectedItem).length === 0"
-          ref="dropdowninput"
-          v-model.trim="inputValue"
-          class="dropdown-input"
-          type="text"
-          placeholder="Find resources"
-          @keyup="onSearchChange"
-        />
-        <div v-else @click="resetSelection" class="dropdown-selected">
-          {{ selectedItem.title }}
-        </div>
         <div class="dropdown-list">
           <div
             @click="selectItem(item)"
@@ -33,9 +33,9 @@
 import ResourcesRepository from '@/repositories/admin/resources'
 import VAsync from '@/components/Base/VAsync.vue'
 export default {
-    components: {
-          VAsync,
-    },
+  components: {
+    VAsync,
+  },
   data() {
     return {
       selectedItem: {},
