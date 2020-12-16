@@ -15,6 +15,7 @@
               <button class="button-primary">Get Started</button>
               <button
                 class="ml-30 button-secondary button-secondary--light d-xl-inline-block d-md-none d-sm-inline-block d-none"
+                @click="setShowBookSessionModal(true)"
               >
                 Book counselling session
               </button>
@@ -22,7 +23,10 @@
               <div
                 class="d-xl-none d-md-inline-block d-sm-none d-inline-block mt-20"
               >
-                <button class="button-secondary button-secondary--light">
+                <button 
+                  class="button-secondary button-secondary--light"
+                  @click="setShowBookSessionModal(true)"
+                >
                   Book counselling session
                 </button>
               </div>
@@ -329,16 +333,37 @@
         </div>
       </div>
     </div>
+    <Modal 
+      @close="setShowBookSessionModal(false)"
+      v-if="showBookSessionModal"
+    >
+      <template>
+        <BookSessionModal />
+      </template>
+    </Modal>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import CourseBanner from '@/components/Course/CourseBanner.vue'
+import Vue from 'vue';
+import Modal from '@/components/Base/Modal.vue';
+import BookSessionModal from '@/components/LandingPage/BookSessionModal.vue';
+import CourseBanner from '@/components/Course/CourseBanner.vue';
 
 export default Vue.extend({
   components: {
+    Modal,
     CourseBanner,
   },
+  data() {
+    return {
+      showBookSessionModal: false
+    }
+  },
+  methods: {
+    setShowBookSessionModal(value) {
+      this.showBookSessionModal = value
+    }
+  }
 })
 </script>

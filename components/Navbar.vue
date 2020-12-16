@@ -14,7 +14,7 @@
           </div>
           <img src="https://minio.cb.lk/public/logo.png" alt="Logo" style="height: 36px;" />
         </div>
-        <div class="d-md-block d-none">
+        <div class="d-md-block d-none pl-4">
           <img src="https://minio.cb.lk/public/logo.png" alt="Logo" style="height: 36px;" />
         </div>
       </div>
