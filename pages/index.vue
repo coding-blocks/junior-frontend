@@ -50,52 +50,18 @@
     <div
       class="mt-lg-60 mt-sm-45 mt-30 row c-card-carousel mb-xl-100 mb-lg-75 mb-md-50 mb-sm-30 mb-20"
     >
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
+      <div 
+        class="col-lg-3 col-sm-4 col-6"
+        v-for="data in learningJourney"
+        :key="data.title"
+      >
+        <img 
+          :src="data.image"
+          class="br-20" 
+          style="height: 300px" 
+        />
         <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
+          {{data.title}}
         </div>
       </div>
     </div>
@@ -357,7 +323,15 @@ export default Vue.extend({
   },
   data() {
     return {
-      showBookSessionModal: false
+      showBookSessionModal: false,
+      learningJourney: [
+        { title: 'Get enrolld in a course', image: 'https://minio.cb.lk/public/learning-journey-1.png' },
+        { title: 'Live interactive learning', image: 'https://minio.cb.lk/public/learning-journey-2.png' },
+        { title: 'Reinforce concepts through various resources', image: 'https://minio.cb.lk/public/learning-journey-3.png' },
+        { title: 'Get instant Doubt Resolution', image: 'https://minio.cb.lk/public/learning-journey-4.png' },
+        { title: 'Interesting Projects for Hands on experience', image: 'https://minio.cb.lk/public/learning-journey-5.png' },
+        { title: 'Become a Certified Coder', image: 'https://minio.cb.lk/public/learning-journey-6.png' }
+      ]
     }
   },
   methods: {
