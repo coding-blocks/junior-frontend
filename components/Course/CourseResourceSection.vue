@@ -8,7 +8,7 @@
           skillifying and guiding College students and working.
         </div>
         <nuxt-link 
-          :to="`/courses/${course.id}/resources`"
+          :to="`/courses/${course.slug}/resources`"
           class="button-primary"
         >
           Explore All Resources

@@ -57,7 +57,7 @@
                     </button>
                     <nuxt-link 
                       class="button-primary button-primary--white mb-20 text-orange"
-                      :to="`/courses/${course.id}/lectures/${currentLecture.id}`"
+                      :to="`/courses/${course.slug}/lectures/${currentLecture.id}`"
                       v-else
                     >
                       Start Learning
