@@ -40,7 +40,14 @@
       </div>
     </div>
 
-    <!-- <CourseBanner /> -->
+    <VAsync :task="fetchRecommendedCourseTask">
+      <template v-slot="{ value: course }">
+        <CourseRecommendedCard 
+          v-if="course"
+          :course="course"
+        />
+      </template>
+    </VAsync>
 
     <div
       class="pt-xl-100 pt-lg-75 pt-md-50 pt-30 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
@@ -316,16 +323,19 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import Modal from '@/components/Base/Modal.vue';
+import VAsync from '@/components/Base/VAsync.vue';
 import BookSessionModal from '@/components/LandingPage/BookSessionModal.vue';
-import CourseBanner from '@/components/Course/CourseBanner.vue';
+import CourseRecommendedCard from '@/components/Course/CourseRecommendedCard.vue';
+import CourseRepository from '@/repositories/courses';
 
 export default Vue.extend({
   components: {
     Modal,
-    CourseBanner,
+    VAsync,
+    CourseRecommendedCard,
   },
   data() {
     return {
@@ -338,6 +348,18 @@ export default Vue.extend({
         { title: 'Interesting Projects for Hands on experience', image: 'https://minio.cb.lk/public/learning-journey-5.png' },
         { title: 'Become a Certified Coder', image: 'https://minio.cb.lk/public/learning-journey-6.png' }
       ]
+    }
+  },
+  tasks(t) {
+    return {
+      fetchRecommendedCourseTask: t(async function () {
+        const courses = await CourseRepository.fetchAll({
+          filter: {
+            isRecommended: true
+          }
+        });
+        return courses[0];
+      })
     }
   },
   methods: {

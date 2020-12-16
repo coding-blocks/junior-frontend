@@ -47,20 +47,14 @@
       </div>
     </div>
 
-    <div
-      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
-    >
-      <div class="container">
-        <VAsync :task="fetchRecommendedCourseTask">
-          <template v-slot="{ value: course }">
-            <CourseRecommendedCard 
-              v-if="course"
-              :course="course"
-            />
-          </template>
-        </VAsync>
-      </div>
-    </div>
+    <VAsync :task="fetchRecommendedCourseTask">
+      <template v-slot="{ value: course }">
+        <CourseRecommendedCard 
+          v-if="course"
+          :course="course"
+        />
+      </template>
+    </VAsync>
 
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
