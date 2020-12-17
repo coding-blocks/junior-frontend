@@ -5,7 +5,10 @@
       v-for="(lecture,index) in lectures"
       :key="lecture.id"
     >
-      <nuxt-link :to="`/courses/${course.slug}/lectures/${lecture.id}`">
+      <nuxt-link 
+        :event="hasStarted(lecture) ? 'click' : ''"
+        :to="`/courses/${course.slug}/lectures/${lecture.id}`"
+      >
         <CourseLectureCard 
           :lecture="lecture"
           :index = index+1
@@ -15,8 +18,9 @@
   </div>  
 </template>
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 import CourseLectureCard from '@/components/Lectures/CourseLectureCard.vue';
+import moment from 'moment';
 
 export default Vue.extend({
   props: {
@@ -31,6 +35,11 @@ export default Vue.extend({
   },
   components: {
     CourseLectureCard
+  },
+  methods: {
+    hasStarted(lecture) {
+      return moment(lecture.start_time).isBefore(moment());
+    }
   }
 })
 </script>

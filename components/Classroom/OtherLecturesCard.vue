@@ -11,6 +11,7 @@
             >
               <nuxt-link 
                 class="row no-gutters align-items-center mb-25"
+                :event="hasStarted(lecture) ? 'click' : ''"
                 :to="`/courses/${currentBatchAttempt.course.slug}/lectures/${lecture.id}`"
               >
                 <div class="col-lg-6 col-sm-5 mb-sm-none mb-20">
@@ -44,6 +45,7 @@ import { mapState } from 'vuex';
 import VAsync from '@/components/Base/VAsync.vue';
 import MomentFormat from '@/components/Base/Moment/MomentFormat.vue';
 import BatchRepository from '@/repositories/batches';
+import moment from 'moment';
 
 export default Vue.extend({
   props: {
@@ -64,6 +66,11 @@ export default Vue.extend({
       fetchLecturesTask: t(function *() {
         return BatchRepository.fetchLectures(this.batch.id);
       })
+    }
+  },
+  methods: {
+    hasStarted(lecture) {
+      return moment(lecture.start_time).isBefore(moment());
     }
   }
 })
