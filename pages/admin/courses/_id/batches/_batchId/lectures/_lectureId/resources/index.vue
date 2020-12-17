@@ -72,15 +72,16 @@ export default Vue.extend({
       this.$router.push('add')
     },
     removeResource(id) {
-      LectureRepository.removeResource(this.$route.params.id, {
-        resource: { id },
-      }).then(() => {
+      LectureRepository.removeResource(id).then(() => {
         this.fetchResourcesTask.run()
       })
     },
     addResource(id) {
-      LectureRepository.addResource(this.$route.params.lectureId, {
-        resource: { id },
+      LectureRepository.addResource({
+        data: {
+          lectureId: this.$route.params.lectureId,
+          resourceId: id,
+        },
       }).then(() => {
         this.fetchResourcesTask.run()
       })

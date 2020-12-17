@@ -19,13 +19,13 @@ class LectureRepository extends BaseRepository<Lecture> {
     return resources.data;
   } 
 
-  async addResource(id: string, obj:Object): Promise<Resource[]> {
-    const resources = await this.axios!.$post(this.buildUrl(`${id}/relationship/resources`), obj);
+  async addResource(obj:Object): Promise<Resource[]> {
+    const resources = await this.axios!.$post(`admin/lecture-resources`, obj);
     return resources.data;
   }
 
-  async removeResource(id: string, obj:Object): Promise<Resource[]> {
-    const resources = await this.axios!.$delete(this.buildUrl(`${id}/relationship/resources`), obj);
+  async removeResource(id: string): Promise<Resource[]> {
+    const resources = await this.axios!.$delete(`admin/lecture-resources/${id}`);
     return resources.data;
   }
 }
