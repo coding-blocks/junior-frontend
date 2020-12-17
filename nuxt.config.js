@@ -4,14 +4,14 @@ const MonacoEditorPlugin = require('monaco-editor-webpack-plugin')
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'junior-frontend',
+    title: 'Coding Blocks Junior',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/images/favicon.png' },
       { rel: 'stylesheet', type: 'text/css', href: 'https://unpkg.com/@coding-blocks/motley@2.6.4/dist/coding-blocks/app.min.css' }
     ],
     script: [
