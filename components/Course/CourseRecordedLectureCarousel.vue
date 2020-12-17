@@ -2,12 +2,13 @@
   <div class="row c-card-carousel mt-40 pb-xl-100 pb-lg-75 pb-md-50 pb-30">
     <div 
       class="col-lg-3 col-md-4 col-sm-6 col-8"
-      v-for="lecture in lectures"
+      v-for="(lecture,index) in lectures"
       :key="lecture.id"
     >
       <nuxt-link :to="`/courses/${course.slug}/lectures/${lecture.id}`">
         <CourseLectureCard 
           :lecture="lecture"
+          :index = index+1
         />
       </nuxt-link>
     </div>
