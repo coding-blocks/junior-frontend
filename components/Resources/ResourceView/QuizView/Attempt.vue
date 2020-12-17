@@ -44,7 +44,7 @@
 </template>
 <script>
 import Vue from 'vue'
-import VAsync from '@/components/base/VAsync';
+import VAsync from '@/components/Base/VAsync';
 import QuestionContainer from '@/components/Resources/ResourceView/QuizView/QuestionContainer.vue';
 import HackerblocksRepository from '@/repositories/hackerblocks';
 

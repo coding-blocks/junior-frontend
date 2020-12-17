@@ -19,6 +19,7 @@
           >
             <CourseBatchCardSmall 
               :batch="batch"
+              @onAfterEnroll="onAfterEnroll"
             />
           </div>
         </div>  
@@ -30,7 +31,7 @@
 import Vue from 'vue'
 import CourseBatchCardSmall from '@/components/Course/CourseBatchCardSmall.vue';
 import CourseRepository from '@/repositories/courses';
-import VAsync from '@/components/Base/VAsync';
+import VAsync from '@/components/Base/VAsync.vue';
 
 export default Vue.extend({
   props: {
@@ -48,6 +49,11 @@ export default Vue.extend({
       fetchBatchesTask: t(function *() {
         return CourseRepository.fetchBatches(this.course.id);
       })
+    }
+  },
+  methods: {
+    onAfterEnroll(batchAttempt) {
+      this.$nuxt.refresh()
     }
   }
 })

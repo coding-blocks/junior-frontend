@@ -7,9 +7,11 @@ import { Datetime } from 'vue-datetime';
 Vue.component('datetime', Datetime);
 
 import fieldDTPicker from './date-time-picker.vue';
+import fieldColorSelector from './color-selector.vue';
 // You need a specific loader for CSS files for date time picker
 import 'vue-datetime/dist/vue-datetime.css'
 
 Vue.component("fieldDTPicker", fieldDTPicker);
+Vue.component("fieldColorSelector", fieldColorSelector);
 
 Vue.use(VueFormGenerator)

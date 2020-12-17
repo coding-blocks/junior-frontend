@@ -3,7 +3,6 @@
     <component 
       :is="resourceTypeComponent" 
       :resource="resource"
-      :course="course"
     />
   </div>
 </template>
@@ -17,10 +16,6 @@ import CodeChallenge from '@/components/Resources/ResourceView/CodeChallengeView
 export default Vue.extend({
   props: {
     resource: {
-      type: Object,
-      required: true
-    },
-    course: {
       type: Object,
       required: true
     }

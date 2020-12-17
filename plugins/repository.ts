@@ -12,7 +12,8 @@ export default ({ $axios }) => {
     'zoom-accounts',
     'zoom-meetings',
     'hackerblocks',
-    'notes'
+    'notes',
+    'counselling-bookings'
   ]
 
   repos.forEach(repo => {

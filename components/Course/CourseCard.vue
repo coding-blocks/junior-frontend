@@ -1,5 +1,8 @@
 <template>
-  <div class="card bg-gradient-pink-dark white">
+  <div 
+    class="card white"
+    :class="course.backgroundTheme"
+  >
     <div class="row align-items-center">
       <div class="col-xl-7">
         <div class="row no-gutters align-items-center mb-30">
@@ -8,7 +11,7 @@
             style="width: 45px"
           />
           <div class="flex-1 pl-25">
-            <div>RECOMMENDED FOR 4-6</div>
+            <div>RECOMMENDED FOR {{course.classTag}}</div>
             <div class="heading-5 bold">{{course.title}}</div>
           </div>
         </div>
@@ -17,7 +20,7 @@
         </div>
         <ul class="divided-list">
           <li class="px-25">
-            <div class="heading-6 bold">12+</div>
+            <div class="heading-6 bold">{{course.courseProjects.length}}</div>
             <div class="font-3 mt-10">Projects</div>
           </li>
           <li class="px-25">
@@ -53,7 +56,7 @@
       </div>
       <nuxt-link 
         class="button-primary button-primary--white"
-        :to="`/courses/${course.id}`"
+        :to="`/courses/${course.slug}`"
       >
         View Course
       </nuxt-link>

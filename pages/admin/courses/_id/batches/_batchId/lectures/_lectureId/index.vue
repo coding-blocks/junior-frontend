@@ -14,7 +14,7 @@
  
 <script>
 import Vue from 'vue'
-import { mapActions, mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 import LectureEditor from '@/components/Lectures/LectureEditor';
 import LectureRepository from '@/repositories/admin/lectures';
 
@@ -23,6 +23,12 @@ export default Vue.extend({
   layout: 'admin',
   components: {
     LectureEditor
+  },
+  computed: {
+    ...mapState('route-data', ['routeDataMap']),
+    course() {
+      return this.routeDataMap['couses-id'].course
+    }
   },
   data() {
     return {
@@ -43,7 +49,7 @@ export default Vue.extend({
         batchId
       } = this.$router.params
       this.$router.push({
-        path: `/admin/courses/${courseId}/batches/${batchId}/lectures`,
+        path: `/admin/courses/${this.course.slug}/batches/${batchId}/lectures`,
       })
     }
   }

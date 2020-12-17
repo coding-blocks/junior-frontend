@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-50">
+  <div>
     <CourseBannerWithAttempt
       :course="course"
       :batchAttempt="currentBatchAttempt"
@@ -22,6 +22,7 @@
         <template v-slot="{ value: lectures }">
           <CourseRecordedLectureCarousel 
             :lectures="lectures"
+            :course="course"
           />
         </template>
       </VAsync>
@@ -44,18 +45,22 @@
     </div>
 
     <CourseReview 
+      v-if="!currentBatchAttempt"
       :course="course"
     />
 
     <div v-if="currentBatchAttempt">
       <div v-if="!isPaidBatch">
-        <VAsync>
+        <VAsync :task="fetchPremiumBatches">
           <template v-slot="{ value: batches }">
-            <CourseUpgradeToPremium 
-              v-for="batch in batches"
-              :key="batch.id"
-              :batch="batch"
-            />
+            <div class="container">
+              <CourseUpgradeToPremium
+                class="mt-4"
+                v-for="batch in batches"
+                :key="batch.id"
+                :batch="batch"
+              />
+            </div>
           </template>
         </VAsync>
       </div>
@@ -89,6 +94,7 @@ import { Lecture } from '~/repositories/lectures';
 import { cachableAsyncData } from '~/utils/store';
 
 export default Vue.extend({
+  scrollToTop: true,
   components: {
     CourseBatchSection,
     CourseDescriptionSection,

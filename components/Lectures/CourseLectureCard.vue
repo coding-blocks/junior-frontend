@@ -5,7 +5,7 @@
     :class="willHappen && 'course-video-card--unwatched'"
   >
     <img
-      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+      :src="lecture.thumbnail"
     />
     <div class="lecture-tag">Lecture 1 </div>
     <button 

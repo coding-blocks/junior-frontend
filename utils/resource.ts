@@ -46,3 +46,39 @@ export const getResourceTypePayload = (resource) => {
       return resource.projectChallenge
   }
 }
+
+const resourceTypeIconMap = {
+  document: 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/folder-yellow.svg',
+  video: 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/play-red.svg',
+  quiz: 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats-blue.svg',
+  'code-challenge': 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg',
+  'project-challenge': 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/calender-green.svg',
+}
+
+export const getResourceTypeIcon = (resource) => {
+  return resourceTypeIconMap[resource.type];
+}
+
+const resourceTypeNameMap = {
+  document: 'PDF Note',
+  video: 'Video',
+  quiz: 'Quiz',
+  'code-challenge':'Code Challenge',
+  'project-challenge': 'Project Challenge',
+}
+
+export const getResourceTypeName = (resource) => {
+  return resourceTypeNameMap[resource.type];
+}
+
+const resourceTypeClassMap = {
+  document: 'notes-card',
+  video: 'video-card',
+  quiz: 'quiz-card',
+  'code-challenge': 'code-card',
+  'project-challenge': 'code-card',
+}
+
+export const getResourceTypeClass = (resource) => {
+  return resourceTypeClassMap[resource.type];
+}

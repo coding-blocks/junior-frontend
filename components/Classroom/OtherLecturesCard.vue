@@ -11,11 +11,11 @@
             >
               <nuxt-link 
                 class="row no-gutters align-items-center mb-25"
-                :to="`/courses/${currentBatchAttempt.course.id}/lectures/${lecture.id}`"
+                :to="`/courses/${currentBatchAttempt.course.slug}/lectures/${lecture.id}`"
               >
                 <div class="col-lg-6 col-sm-5 mb-sm-none mb-20">
                   <img
-                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+                    :src="lecture.thumbnail"
                     class="br-20 w-100"
                   />
                 </div>

@@ -43,7 +43,7 @@ import Vue from 'vue';
 import ResourceRepository from '@/repositories/resources';
 import TabNavigation from '@/components/Base/TabNavigation.vue';
 import CodeEditor from '@/components/Resources/ResourceView/CodeChallengeView/CodeEditor.vue';
-import Detail from '@/components/Resources/ResourceView/CodeChallengeView/Detail.vue';
+import Detail from '@/components/Resources/ResourceView/CodeChallengeView/ProblemDetail.vue';
 import Submissions from '@/components/Resources/ResourceView/CodeChallengeView/Submissions.vue';
 
 export default Vue.extend({

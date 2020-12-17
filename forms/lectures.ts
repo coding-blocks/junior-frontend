@@ -19,6 +19,16 @@ export default (opts: FormSchemaOpts = {}) => {
             validators: ['string', 'required'],
           },
           {
+            type: 'input',
+            inputType: 'text',
+            label: 'Thumbnaik',
+            model: 'thumbnail',
+            placeholder: 'Enter Thumbnail URL',
+            help: 'This will be the thumbnail for the lecture',
+            required: true,
+            validators: ['string', 'required'],
+          },
+          {
             type: "DTPicker",
             label: "Start Time",
             model: "start_time",

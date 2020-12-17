@@ -5,7 +5,12 @@
       <div class="heading-6 my-40 text-grey">
         {{course.description}}
       </div>
-      <button class="button-primary">View Complete Syllabus</button>
+      <button 
+        class="button-primary"
+        @click="setShowSyllabusModal(true)"
+      >
+        View Complete Syllabus
+      </button>
     </div>
     <div class="col-md-6 mt-md-none mt-50">
       <div class="heading-5 bold mb-40">Course Features</div>
@@ -56,10 +61,17 @@
         </div>
       </div>
     </div>
+    <Modal v-if="showSyllabusModal" @close="setShowSyllabusModal(false)">
+      <CourseSyllabusModal 
+        :course="course"
+      />
+    </Modal>
   </div>
 </template>
 <script>
-import Vue from 'vue'
+import Vue from 'vue';
+import Modal from '@/components/Base/Modal.vue';
+import CourseSyllabusModal from '@/components/Course/CourseSyllabusModal.vue';
 
 export default Vue.extend({
   props: {
@@ -68,12 +80,26 @@ export default Vue.extend({
       required: true
     }
   },
+  components: {
+    Modal,
+    CourseSyllabusModal,
+  },
+  data() {
+    return {
+      showSyllabusModal: false
+    }
+  },
   computed: {
     courseFeatures() {
       return this.course.courseFeatures || []
     },
     capstoneProject() {
       return this.course.courseProjects.find(project => project.capstone);
+    }
+  },
+  methods: {
+    setShowSyllabusModal(value) {
+      this.showSyllabusModal = value
     }
   }
 })

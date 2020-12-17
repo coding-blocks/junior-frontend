@@ -5,14 +5,19 @@ import { CourseFeature } from './course-features';
 import { CourseProject } from './course-projects';
 import { Resource } from './resources';
 
+export type CourseClassTag = '1-3' | '4-6' | '7-9' | '10-12';
+
 export interface Course {
   id: number;
   title: string;
   description: string;
   slug: string;
   syllabus: object;
+  classTag: CourseClassTag;
+  isRecommended: boolean;
   courseFeatures: CourseFeature[];
   courseProjects: CourseProject[];
+  backgroundTheme: string;
 }
 
 class CourseRepository extends BaseRepository<Course> {

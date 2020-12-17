@@ -15,6 +15,7 @@
               <button class="button-primary">Get Started</button>
               <button
                 class="ml-30 button-secondary button-secondary--light d-xl-inline-block d-md-none d-sm-inline-block d-none"
+                @click="setShowBookSessionModal(true)"
               >
                 Book counselling session
               </button>
@@ -22,7 +23,10 @@
               <div
                 class="d-xl-none d-md-inline-block d-sm-none d-inline-block mt-20"
               >
-                <button class="button-secondary button-secondary--light">
+                <button 
+                  class="button-secondary button-secondary--light"
+                  @click="setShowBookSessionModal(true)"
+                >
                   Book counselling session
                 </button>
               </div>
@@ -36,7 +40,14 @@
       </div>
     </div>
 
-    <!-- <CourseBanner /> -->
+    <VAsync :task="fetchRecommendedCourseTask">
+      <template v-slot="{ value: course }">
+        <CourseRecommendedCard 
+          v-if="course"
+          :course="course"
+        />
+      </template>
+    </VAsync>
 
     <div
       class="pt-xl-100 pt-lg-75 pt-md-50 pt-30 px-xl-100 px-lg-75 px-md-50 px-sm-30 px-20"
@@ -46,52 +57,18 @@
     <div
       class="mt-lg-60 mt-sm-45 mt-30 row c-card-carousel mb-xl-100 mb-lg-75 mb-md-50 mb-sm-30 mb-20"
     >
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
+      <div 
+        class="col-lg-3 col-sm-4 col-6"
+        v-for="data in learningJourney"
+        :key="data.title"
+      >
+        <img 
+          :src="data.image"
+          class="br-20" 
+          style="height: 300px" 
+        />
         <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-4 col-6">
-        <div class="bg-grey br-20" style="height: 300px"></div>
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          Get enrolled in a course
+          {{data.title}}
         </div>
       </div>
     </div>
@@ -298,47 +275,97 @@
           </div>
           <div class="col-lg-5">
             <div class="card br-20 mb-40">
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/discord.svg"
-                />
-                <div class="flex-1 pl-25">
-                  <div class="font-5 bold mb-10">Join Discord Community</div>
-                  <div class="font-4">
-                    Get your doubts clarified related to courses on our Discord
-                    Channel
+              <a href="" target="_blank">
+                <div class="row no-gutters align-items-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/discord.svg"
+                  />
+                  <div class="flex-1 pl-25">
+                    <div class="font-5 bold mb-10">Join Discord Community</div>
+                    <div class="font-4">
+                      Get your doubts clarified related to courses on our Discord
+                      Channel
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
             <div class="card br-20">
-              <div class="row no-gutters align-items-center">
-                <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/youtube.svg"
-                />
-                <div class="flex-1 pl-25">
-                  <div class="font-5 bold mb-10">Join Youtube Community</div>
-                  <div class="font-4">
-                    Live classes of our courses are conducted on CB Jr Youtube
-                    channel.
+              <a href="https://www.youtube.com/codingblocksindia" target="_blank">
+                <div class="row no-gutters align-items-center">
+                  <img
+                    src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/youtube.svg"
+                  />
+                  <div class="flex-1 pl-25">
+                    <div class="font-5 bold mb-10">Join Youtube Community</div>
+                    <div class="font-4">
+                      Live classes of our courses are conducted on CB Jr Youtube
+                      channel.
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
+    <Modal 
+      @close="setShowBookSessionModal(false)"
+      v-if="showBookSessionModal"
+    >
+      <template>
+        <BookSessionModal />
+      </template>
+    </Modal>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import CourseBanner from '@/components/Course/CourseBanner.vue'
+<script>
+import Vue from 'vue';
+import Modal from '@/components/Base/Modal.vue';
+import VAsync from '@/components/Base/VAsync.vue';
+import BookSessionModal from '@/components/LandingPage/BookSessionModal.vue';
+import CourseRecommendedCard from '@/components/Course/CourseRecommendedCard.vue';
+import CourseRepository from '@/repositories/courses';
 
 export default Vue.extend({
   components: {
-    CourseBanner,
+    Modal,
+    VAsync,
+    CourseRecommendedCard,
   },
+  data() {
+    return {
+      showBookSessionModal: false,
+      learningJourney: [
+        { title: 'Get enrolld in a course', image: 'https://minio.cb.lk/public/learning-journey-1.png' },
+        { title: 'Live interactive learning', image: 'https://minio.cb.lk/public/learning-journey-2.png' },
+        { title: 'Reinforce concepts through various resources', image: 'https://minio.cb.lk/public/learning-journey-3.png' },
+        { title: 'Get instant Doubt Resolution', image: 'https://minio.cb.lk/public/learning-journey-4.png' },
+        { title: 'Interesting Projects for Hands on experience', image: 'https://minio.cb.lk/public/learning-journey-5.png' },
+        { title: 'Become a Certified Coder', image: 'https://minio.cb.lk/public/learning-journey-6.png' }
+      ]
+    }
+  },
+  tasks(t) {
+    return {
+      fetchRecommendedCourseTask: t(async function () {
+        const courses = await CourseRepository.fetchAll({
+          filter: {
+            isRecommended: true
+          }
+        });
+        return courses[0];
+      })
+    }
+  },
+  methods: {
+    setShowBookSessionModal(value) {
+      this.showBookSessionModal = value
+    }
+  }
 })
 </script>

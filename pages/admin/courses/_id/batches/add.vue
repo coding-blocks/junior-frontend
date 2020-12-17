@@ -41,7 +41,7 @@ export default Vue.extend({
   methods: {
     afterSave() {
       this.$router.push({
-        path: `/admin/courses/${this.course.id}/batches`,
+        path: `/admin/courses/${this.course.slug}/batches`,
       })
     },
   },

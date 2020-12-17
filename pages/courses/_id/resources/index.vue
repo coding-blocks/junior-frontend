@@ -1,6 +1,6 @@
 <template>
   <div class="position-relative">
-    <div class="bg-grey-light-3 py-30 px-30 position-sticky tl mb-40 z-pos">
+    <div class="bg-grey-light-3 py-30 px-30 tl mb-40 z-pos">
       <div class="container">
         <div class="row no-gutters align-items-center">
           <div class="flex-1 pr-sm-20">
@@ -39,7 +39,7 @@
             v-for="resource in resources"
             :key="resource.id"
           >
-            <nuxt-link :to="`/courses/${courseId}/resources/${resource.id}`">
+            <nuxt-link :to="`/courses/${course.slug}/resources/${resource.id}`">
               <ResourceCard 
                 :resource="resource"
               />
@@ -53,6 +53,7 @@
 </template>
 <script>
 import Vue from 'vue';
+import { mapState } from 'vuex';
 import CourseRepository from '@/repositories/courses';
 import ResourceCard from '@/components/Resources/ResourceCard.vue';
 import { Resource } from '~/repositories/admin/resources';
@@ -63,12 +64,12 @@ export default Vue.extend({
   },
   data() {
     return {
-      resources: [],
-      courseId: this.$route.params.id
+      resources: []
     }
   },
   async asyncData({ params }) {
-    const resources = await CourseRepository.fetchResources(Number(params.id));
+    const course = await CourseRepository.fetchById(params.id);
+    const resources = await CourseRepository.fetchResources(course.id);
 
     return {
       resources
@@ -77,8 +78,7 @@ export default Vue.extend({
   tasks(t) {
     return {
       searchResourcesTask: t(function *(query) {
-        const courseId = this.$route.params.id
-        const resources = yield CourseRepository.fetchResources(Number(courseId), {
+        const resources = yield CourseRepository.fetchResources(this.course.id, {
           filter: {
             title: {
               $iLike: `%${query}%`
@@ -113,6 +113,10 @@ export default Vue.extend({
         { name: 'Code Challenges', resources: this.codeChallenges },
         { name: 'Project Challenges', resources: this.projectChallenges },
       ]
+    },
+    ...mapState('route-data', ['routeDataMap']),
+    course() {
+      return this.routeDataMap['courses-id'].course
     }
   },
   methods: {

@@ -5,6 +5,10 @@
         :model="course"
         :options="formOptions"
       />
+      <h2 class="py-3">Syallabus</h2>
+       <VMarkdown
+        :markdown="course.syllabus"
+      />
       <button
         class="button-solid button-orange my-3 px-5 float-right"
         :disabled="saveCourse.isActive"
@@ -18,6 +22,7 @@ import Vue from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 import courseForm from '@/forms/course'
 import CourseRepository from '@/repositories/admin/courses'
+import VMarkdown from '@/components/Base/VMarkdown.vue';
 
 export default Vue.extend({
   props: {
@@ -25,6 +30,9 @@ export default Vue.extend({
       type: Object,
       required: true,
     },
+  },
+  components: {
+    VMarkdown
   },
   data() {
     return {
