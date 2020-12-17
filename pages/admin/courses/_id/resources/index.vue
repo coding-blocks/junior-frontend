@@ -10,13 +10,12 @@
           />
 
           {{ dropdownSelection.name }}
-          <button
-            v-if="dropdownSelection.name !== ''"
-            class="button-solid button-orange mx-auto"
-            @click="addResource(dropdownSelection.id)"
-          >
-            Add
-          </button>
+          <TaskButton 
+            :task="addResourceTask"
+            text="Add"
+            loadingText="Adding"
+            :params="[dropdownSelection.id]"
+          />
         </div>
         <ul class="list-divided mt-4">
           <li
@@ -26,12 +25,12 @@
           >
             <div>{{ resource.title }}</div>
             <div>
-              <button
-                class="button-solid button-orange mx-auto"
-                @click="removeResource(resource.id)"
-              >
-                Remove
-              </button>
+              <TaskButton 
+                :task="removeResourceTask"
+                text="Remove"
+                loadingText="Removing"
+                :params="[resource.id]"
+              />
             </div>
           </li>
         </ul>
@@ -45,7 +44,7 @@
 import Vue from 'vue'
 import { mapGetters, mapActions } from 'vuex'
 import VAsync from '@/components/Base/VAsync.vue'
-import Button from '@/components/Base/Button.vue'
+import TaskButton from '@/components/Base/TaskButton.vue';
 import CourseRepository from '@/repositories/admin/courses'
 import SearchableResources from '@/components/Resources/SearchableResources.vue'
 import { mapState } from 'vuex'
@@ -53,7 +52,7 @@ import { mapState } from 'vuex'
 export default Vue.extend({
   components: {
     SearchableResources,
-    Button,
+    TaskButton,
     VAsync,
   },
   data() {
@@ -72,26 +71,28 @@ export default Vue.extend({
       this.$router.push('add')
     },
     removeResource(id) {
-      CourseRepository.removeResource(id).then(() => {
-        this.fetchResourcesTask.run()
-      })
+      
     },
     addResource(id) {
-      CourseRepository.addResource({
-        data: {
-          courseId: this.$route.params.id,
-          resourceId: id,
-        },
-      }).then(() => {
-        this.fetchResourcesTask.run()
-      })
+      
     },
   },
   tasks(t) {
     return {
-      fetchResourcesTask: t(function* () {
-        return CourseRepository.fetchResources('3')
+      fetchResourcesTask: t(async function () {
+        return CourseRepository.fetchResources(this.course.id)
       }),
+      addResourceTask: t(async function (resourceId) {
+        await CourseRepository.addResource({
+          courseId: this.$route.params.id,
+          resourceId,
+        })
+        this.fetchResourcesTask.run()
+      }),
+      removeResourceTask: t(async function (resourceId) {
+        await CourseRepository.removeResource(this.course.id, resourceId)
+        this.fetchResourcesTask.run()
+      })
     }
   },
 })
