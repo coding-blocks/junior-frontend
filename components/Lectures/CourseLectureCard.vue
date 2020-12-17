@@ -7,7 +7,7 @@
     <img
       :src="lecture.thumbnail"
     />
-    <div class="lecture-tag">Lecture 1 </div>
+    <div class="lecture-tag">Lecture {{index}}</div>
     <button 
       class="button-primary floating-button"
       v-if="!willHappen"
@@ -24,6 +24,10 @@ export default Vue.extend({
   props: {
     lecture: {
       type: Object,
+      required: true
+    },
+     index: {
+      type: BigInt,
       required: true
     }
   },

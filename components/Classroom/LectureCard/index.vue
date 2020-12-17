@@ -13,7 +13,6 @@
           v-else-if="lecture.type === 'zoom'"
           :zoomMeeting="lecture.zoomMeeting"
         />
-        <div class="lecture-tag">Lecture 1</div>
       </div>
       <div class="p-sm-40 p-25 w-100">
         <div class="row no-gutters align-items-center">
