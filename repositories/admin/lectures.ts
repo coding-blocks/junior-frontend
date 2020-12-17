@@ -25,8 +25,13 @@ class LectureRepository extends BaseRepository<Lecture> {
     return resources.data;
   }
 
-  async removeResource(id: string): Promise<Resource[]> {
-    const resources = await this.axios!.$delete(`admin/lecture-resources/${id}`);
+  async removeResource(lectureId: string, resourceId: string): Promise<Resource[]> {
+    const resources = await this.axios!.$delete(`admin/lecture-resources/`, {
+      params: {
+        lectureId,
+        resourceId
+      }
+    });
     return resources.data;
   }
 }
