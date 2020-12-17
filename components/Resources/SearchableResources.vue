@@ -12,43 +12,46 @@
     <div v-else @click="resetSelection" class="dropdown-selected">
       {{ selectedItem.title }}
     </div>
-    <div v-show="inputValue && apiLoaded" class="dropdown-list">
-      <div
-        @click="selectItem(item)"
-        v-for="item in itemList"
-        :key="item.id"
-        class="dropdown-item"
-      >
-        {{ item.title }}
-      </div>
-    </div>
+    <VAsync :task="searchResourcesTask">
+      <template v-slot="{ value: resources }">
+        <div class="dropdown-list">
+          <div
+            @click="selectItem(item)"
+            v-for="item in resources"
+            :key="item.id"
+            class="dropdown-item"
+          >
+            {{ item.title }}
+          </div>
+        </div>
+      </template>
+    </VAsync>
   </div>
 </template>
 
 <script>
 import ResourcesRepository from '@/repositories/admin/resources'
-
+import VAsync from '@/components/Base/VAsync.vue'
 export default {
+  components: {
+    VAsync,
+  },
   data() {
     return {
       selectedItem: {},
       inputValue: '',
-      itemList: [],
-      apiLoaded: false,
     }
   },
   tasks(t) {
     return {
       searchResourcesTask: t(function* (query) {
-        const resources = yield ResourcesRepository.fetchAll({
+        return ResourcesRepository.fetchAll({
           filter: {
             title: {
               $iLike: `%${query}%`,
             },
           },
         })
-        this.itemList = resources
-        this.apiLoaded = true
       }).flow('restart', { delay: 400 }),
     }
   },
