@@ -175,52 +175,10 @@
               on empowering School students with Coding education in multiple
               streams of technology.
             </div>
-            <div class="mt-60 font-5">
-              <div class="border br-20 pointer">
-                <div class="br-20 bg-grey-light-2 py-20 px-30 bold">
-                  <div
-                    class="row no-gutters align-items-center justify-content-between"
-                  >
-                    <div class="flex-1">
-                      What is the eligibility for coding blocks junior?
-                    </div>
-                    <div>-</div>
-                  </div>
-                </div>
-                <div class="py-20 px-30">
-                  Anyone and everyone can join codingblocks junior.
-                </div>
-              </div>
-              <div class="border br-20 pointer mt-30">
-                <div class="br-20 bg-grey-light-2 py-20 px-30 bold">
-                  <div
-                    class="row no-gutters align-items-center justify-content-between"
-                  >
-                    <div class="flex-1">
-                      What is the eligibility for coding blocks junior?
-                    </div>
-                    <div>+</div>
-                  </div>
-                </div>
-                <div class="py-20 px-30 d-none">
-                  Anyone and everyone can join codingblocks junior.
-                </div>
-              </div>
-              <div class="border br-20 pointer mt-30">
-                <div class="br-20 bg-grey-light-2 py-20 px-30 bold">
-                  <div
-                    class="row no-gutters align-items-center justify-content-between"
-                  >
-                    <div class="flex-1">
-                      What is the eligibility for coding blocks junior?
-                    </div>
-                    <div>+</div>
-                  </div>
-                </div>
-                <div class="py-20 px-30 d-none">
-                  Anyone and everyone can join codingblocks junior.
-                </div>
-              </div>
+            <div class="mt-30 font-5">
+              <VAccordion 
+                :tabs="perspectiveTabs"
+              />
             </div>
           </div>
         </div>
@@ -327,6 +285,7 @@
 import Vue from 'vue';
 import Modal from '@/components/Base/Modal.vue';
 import VAsync from '@/components/Base/VAsync.vue';
+import VAccordion from '@/components/Base/VAccordion.vue';
 import BookSessionModal from '@/components/LandingPage/BookSessionModal.vue';
 import CourseRecommendedCard from '@/components/Course/CourseRecommendedCard.vue';
 import CourseRepository from '@/repositories/courses';
@@ -335,6 +294,7 @@ export default Vue.extend({
   components: {
     Modal,
     VAsync,
+    VAccordion,
     CourseRecommendedCard,
   },
   data() {
@@ -347,6 +307,11 @@ export default Vue.extend({
         { title: 'Get instant Doubt Resolution', image: 'https://minio.cb.lk/public/learning-journey-4.png' },
         { title: 'Interesting Projects for Hands on experience', image: 'https://minio.cb.lk/public/learning-journey-5.png' },
         { title: 'Become a Certified Coder', image: 'https://minio.cb.lk/public/learning-journey-6.png' }
+      ],
+      perspectiveTabs: [
+        { title: 'What is the eligibility for coding blocks junior?', description: 'Anyone and everyone can join codingblocks junior.' },
+        { title: 'What is the eligibility for coding blocks junior?', description: 'Anyone and everyone can join codingblocks junior.' },
+        { title: 'What is the eligibility for coding blocks junior?', description: 'Anyone and everyone can join codingblocks junior.' },
       ]
     }
   },
