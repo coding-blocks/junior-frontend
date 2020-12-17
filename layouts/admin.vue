@@ -1,8 +1,10 @@
 <template>
-  <div class="a-ocb pt-4">
-    <AdminNavbar />
-    <div class="container">
-      <Nuxt />
+  <div class="a-cbm pt-4">
+    <div class="a-cbj">
+      <AdminNavbar />
+      <div class="container">
+        <Nuxt />
+      </div>
     </div>
   </div>
 </template>
