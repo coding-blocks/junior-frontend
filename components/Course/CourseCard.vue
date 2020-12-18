@@ -7,7 +7,7 @@
       <div class="col-xl-7">
         <div class="row no-gutters align-items-center mb-30">
           <img
-            src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python_white.svg"
+            :src="course.logo"
             style="width: 45px"
           />
           <div class="flex-1 pl-25">

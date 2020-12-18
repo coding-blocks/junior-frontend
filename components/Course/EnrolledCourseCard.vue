@@ -4,7 +4,10 @@
     :class="course.backgroundTheme"
   >
     <div class="row no-gutters align-items-center mb-40">
-      <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python_white.svg" style="width: 55px;">
+      <img 
+        :src="course.logo" 
+        style="width: 55px;"
+      >
       <div class="flex-1 pl-25">
         <div class="font-4">RECOMMENDED FOR {{course.classTag}}</div>
         <div class="heading-4 bold mt-10">{{course.title}}</div>

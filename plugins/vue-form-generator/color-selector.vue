@@ -1,10 +1,13 @@
 <template>
-  <div>
-    <select class="dropdown d-inline-block" v-model="value">
-      <option v-for="spec in colorSpecs" :key="spec.name" :value="spec.name">
-        {{spec.name}}
-      </option>
-    </select>
+  <div class="row no-gutters">
+    <div class="mr-30">
+      <select class="dropdown d-inline-block" v-model="value">
+        <option v-for="spec in colorSpecs" :key="spec.name" :value="spec.name">
+          {{spec.name}}
+        </option>
+      </select>
+    </div>
+    <div :class="value" style="height: 20px; width: 80px"></div>
   </div>
 </template>
 

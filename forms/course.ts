@@ -20,6 +20,11 @@ export default (opts: FormSchemaOpts = {}) => {
   
           },
           {
+            type: 'FileUploader',
+            label: 'Logo',
+            model: 'logo',
+          },
+          {
             type: 'input',
             inputType: 'text',
             label: 'Course Subtitle',

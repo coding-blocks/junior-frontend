@@ -7,7 +7,8 @@
         <div class="col-lg-7">
           <div class="row no-gutters align-items-center">
             <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python-white-big.svg"
+              :src="course.logo"
+              style="width: 55px;"
             />
             <div class="flex-1 pl-30">
               <div class="font-5">RECOMMENDED FOR {{course.classTag}}</div>

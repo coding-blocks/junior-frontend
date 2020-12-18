@@ -2,12 +2,19 @@ import { BaseRepository,QueryParams } from '@/repositories/base';
 import { Batch } from './batches';
 import { Resource } from './resources';
 
+export type CourseClassTag = '1-3' | '4-6' | '7-9' | '10-12'; 
+
 export interface Course {
   id: number;
   title: string;
+  logo: string;
+  thumbnail: string;
   description: string;
   slug: string;
   syllabus: object;
+  classTag: CourseClassTag;
+  isRecommended: boolean;
+  backgroundTheme: string;
 }
 
 class CourseRepository extends BaseRepository<Course> {

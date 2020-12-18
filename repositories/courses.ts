@@ -10,6 +10,8 @@ export type CourseClassTag = '1-3' | '4-6' | '7-9' | '10-12';
 export interface Course {
   id: number;
   title: string;
+  logo: string;
+  thumbnail: string;
   description: string;
   slug: string;
   syllabus: object;

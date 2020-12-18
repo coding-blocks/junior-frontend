@@ -1,6 +1,7 @@
 <template>
   <button 
-    class="button-solid button-orange"
+    class="button-solid button-orange white"
+    type="button"
     @click="onClick"
     :disabled="task.isActive"
   >

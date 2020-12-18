@@ -13,7 +13,8 @@ export default ({ $axios }) => {
     'zoom-meetings',
     'hackerblocks',
     'notes',
-    'counselling-bookings'
+    'counselling-bookings',
+    'minio',
   ]
 
   repos.forEach(repo => {
