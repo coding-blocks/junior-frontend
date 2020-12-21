@@ -1,5 +1,5 @@
 <template>
-<h1>Welcome to Coding Blocks Junior Admin Page</h1>
+  <nuxt-child/>
 </template>
 
 <script lang="ts">
@@ -7,4 +7,3 @@ import Vue from 'vue'
 
 export default Vue.extend({})
 </script>
-

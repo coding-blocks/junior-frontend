@@ -33,6 +33,7 @@ export default ({ $axios }) => {
     'project-challenges',
     'youtube-lives',
     'zoom-meetings',
+    'instructors'
   ]
 
   adminRepos.forEach(repo => {
