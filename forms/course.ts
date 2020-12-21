@@ -9,6 +9,11 @@ export default (opts: FormSchemaOpts = {}) => {
         legend: 'Course Details',
         fields: [
           {
+            type: 'Toggle',
+            label: 'Listed?',
+            model: 'isListed',
+          },
+          {
             type: 'input',
             inputType: 'text',
             label: 'Course Name',

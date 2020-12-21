@@ -95,7 +95,11 @@ export default Vue.extend({
     }
   },
   async asyncData() {
-    const courses = await CourseRepository.fetchAll();
+    const courses = await CourseRepository.fetchAll({
+      filter: {
+        isListed: true
+      }
+    });
     
     return {
       courses
