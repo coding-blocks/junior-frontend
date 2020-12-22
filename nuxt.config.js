@@ -34,7 +34,8 @@ export default {
     '~/plugins/axios-accessor.ts',
     '~/plugins/vue-form-generator',
     '~/plugins/vuency.ts',
-    '~/plugins/repository.ts'
+    '~/plugins/repository.ts',
+    '~/plugins/unique-id.ts',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -17,6 +17,7 @@ export interface Course {
   syllabus: object;
   classTag: CourseClassTag;
   isRecommended: boolean;
+  isListed: boolean;
   courseFeatures: CourseFeature[];
   courseProjects: CourseProject[];
   backgroundTheme: string;

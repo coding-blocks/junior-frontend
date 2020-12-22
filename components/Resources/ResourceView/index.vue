@@ -3,6 +3,7 @@
     <component 
       :is="resourceTypeComponent" 
       :resource="resource"
+      :course="batchAttempt.course"
     />
   </div>
 </template>
@@ -16,6 +17,10 @@ import CodeChallenge from '@/components/Resources/ResourceView/CodeChallengeView
 export default Vue.extend({
   props: {
     resource: {
+      type: Object,
+      required: true
+    },
+    batchAttempt: {
       type: Object,
       required: true
     }
