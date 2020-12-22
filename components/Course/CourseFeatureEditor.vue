@@ -6,11 +6,12 @@
         :model="courseFeature"
         :options="formOptions"
       />
-
-      <Button
+      <TaskButton
         class="h-50"
-        @click="addFeatureTask(courseFeature)"
-      >Add</button>
+        :task="addFeatureTask"
+        text="Add"
+        loadingText="Adding"
+      />
     </div>
     <ul class="list-divided mt-4">
       <li
@@ -25,18 +26,17 @@
           {{ feature.title }}
         </div>
         <div>
-          <!-- <TaskButton
-            :task="removeResourceTask"
+          <TaskButton
+            class="h-50"
+            :task="removeFeatureTask"
+            :params="[feature]"
             text="Remove"
             loadingText="Removing"
-            :params="[feature.id]"
-          /> -->
+          />
         </div>
       </li>
     </ul>
-    <Button
-        @click="saveCourse()"
-    >Save</button>
+    <TaskButton :task="saveCourseTask" text="Save" loadingText="Saving" />
   </div>
 </template>
 
@@ -78,17 +78,23 @@ export default Vue.extend({
     features() {
       return this.routeDataMap['admin-courses-id']?.course.courseFeatures
     },
-   
   },
   methods: {
     navigateToCreate() {
       this.$router.push('add')
     },
-    addFeatureTask(courseFeature){
-        this.features.push(courseFeature)
-    },
-    saveCourse(){
-      return CourseRepository.updateFeatures(this.course.id,this.features)
+  },
+  tasks(t) {
+    return {
+      saveCourseTask: t(async function () {
+        return CourseRepository.updateFeatures(this.course.id, this.features)
+      }),
+      addFeatureTask: t(async function () {
+        return this.features.push(this.courseFeature)
+      }),
+      removeFeatureTask: t(async function (feature) {
+        return this.features.splice(this.features.indexOf(feature), 1);
+      }),
     }
   },
 })

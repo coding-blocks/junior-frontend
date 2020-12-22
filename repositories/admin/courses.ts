@@ -30,14 +30,7 @@ class CourseRepository extends BaseRepository<Course> {
     });
     return resources.data;
   } 
-
-  async fetchFeatures(id: string, params: QueryParams = {}): Promise<Resource[]> {
-    const features = await this.axios!.$get(this.buildUrl(`${id}/relationship/features`), {
-      params
-    });
-    return features.data;
-  } 
-
+  
   async updateFeatures(id: string, obj:Object,params: QueryParams = {}): Promise<Resource[]> {
     const features = await this.axios!.$put(this.buildUrl(`${id}/relationship/features`),obj, {
       params
