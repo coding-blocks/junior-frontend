@@ -14,7 +14,7 @@
       Resources
     </nuxt-link>
 
-    <TabNavigation class="tl p-30 w-100" :tabs="tabs">
+    <TabNavigation class="tl w-100" :tabs="tabs">
       <template v-slot="{ component }">
         <component :is="component" :course="course" />
       </template>
