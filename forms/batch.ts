@@ -31,22 +31,22 @@ export default (opts: FormSchemaOpts = {}) => {
             }
           },
           {
-            type: "DTPicker",
+            type: "DatePicker",
             label: "Start Time",
             model: 'start',
           },
           {
-            type: "DTPicker",
+            type: "DatePicker",
             label: "End time",
             model: 'end',
           },
           {
-            type: "DTPicker",
+            type: "DatePicker",
             label: "Enrollment start time",
             model: 'registrationStart',
           },
           {
-            type: "DTPicker",
+            type: "DatePicker",
             label: "Enrollment end time",
             model: 'registrationEnd',
           },

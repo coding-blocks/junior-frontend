@@ -70,12 +70,6 @@ export default Vue.extend({
     navigateToCreate() {
       this.$router.push('add')
     },
-    removeResource(id) {
-      
-    },
-    addResource(id) {
-      
-    },
   },
   tasks(t) {
     return {
