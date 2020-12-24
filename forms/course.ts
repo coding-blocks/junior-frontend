@@ -9,11 +9,6 @@ export default (opts: FormSchemaOpts = {}) => {
         legend: 'Course Details',
         fields: [
           {
-            type: 'Toggle',
-            label: 'Listed?',
-            model: 'isListed',
-          },
-          {
             type: 'input',
             inputType: 'text',
             label: 'Course Name',
@@ -23,6 +18,12 @@ export default (opts: FormSchemaOpts = {}) => {
             required: true,
             validators: ['string', 'required']
   
+          },
+          {
+            type: 'switch',
+            label: 'Listed?',
+            model: 'isListed',
+            help: 'Enabling will make this course visible to users',
           },
           {
             type: 'FileUploader',
@@ -74,6 +75,21 @@ export default (opts: FormSchemaOpts = {}) => {
             help: 'This will be the syllabus for the course',
             required: true,
             validators: ['string', 'required']
+          },
+          {
+            type: 'radios',
+            label: 'Type of the class',
+            model: 'classTag',
+            values: [
+              '1-3', '4-6', '7-9', '10-12'
+          ]
+          },
+          {
+            type: 'checkbox',
+            label: 'Course Recommended',
+            model: 'isRecommended',
+            default: false,
+            help: 'Course will be displayed on recommended section if checked',
           }
         ],
       },
