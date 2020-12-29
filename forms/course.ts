@@ -31,6 +31,11 @@ export default (opts: FormSchemaOpts = {}) => {
             model: 'logo',
           },
           {
+            type: 'FileUploader',
+            label: 'Thumbnail',
+            model: 'thumbnail',
+          },
+          {
             type: 'input',
             inputType: 'text',
             label: 'Course Subtitle',
@@ -90,7 +95,12 @@ export default (opts: FormSchemaOpts = {}) => {
             model: 'isRecommended',
             default: false,
             help: 'Course will be displayed on recommended section if checked',
-          }
+          },
+          {
+            type: 'SearchSelect',
+            label: 'Tags',
+            model: 'tags',
+          },
         ],
       },
       ...extraGroups

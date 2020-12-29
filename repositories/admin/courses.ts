@@ -38,6 +38,11 @@ class CourseRepository extends BaseRepository<Course> {
     return features.data;
   } 
 
+  async updateTags(id: string, obj:Object): Promise<Resource[]> {
+    const tags = await this.axios!.$post(this.buildUrl(`${id}/relationship/tags`), obj);
+    return tags.data;
+  } 
+
   async addResource(obj:Object): Promise<Resource[]> {
     const resources = await this.axios!.$post(`admin/course-resources`, obj);
     return resources.data;

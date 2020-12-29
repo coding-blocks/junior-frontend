@@ -30,6 +30,11 @@
             Instructors
           </nuxt-link>
         </li>
+        <li class="top-nav-option px-3">
+          <nuxt-link to="/admin/tags">
+            Tags
+          </nuxt-link>
+        </li>
         <li class="top-nav-option hoverable px-3" v-if="user">
           <div class="img-desc align-items-center font-sm">
             <div class="description ml-4 font-sm bold">Hi, {{user.name}}</div>
