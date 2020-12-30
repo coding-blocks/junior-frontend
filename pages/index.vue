@@ -55,11 +55,11 @@
       class="mt-lg-60 mt-sm-45 mt-30 row c-card-carousel mb-xl-100 mb-lg-75 mb-md-50 mb-sm-30 mb-20"
     >
       <div
-        class="col-lg-3 col-sm-4 col-6 t-align-c h-inherit"
+        class="col-lg-3 col-sm-4 col-6 h-inherit"
         v-for="data in learningJourney"
         :key="data.title"
       >
-        <div class="flex-col h-100 justify-content-between">
+        <div class="flex-col h-100 justify-content-between t-align-c">
           <img :src="data.image" class="br-20 w-80" />
           <div class="mt-40 heading-5 word-wrap t-align-c w-100">
             {{ data.title }}
