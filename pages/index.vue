@@ -58,7 +58,7 @@
       class="mt-lg-60 mt-sm-45 mt-30 row c-card-carousel mb-xl-100 mb-lg-75 mb-md-50 mb-sm-30 mb-20"
     >
       <div 
-        class="col-lg-3 col-sm-4 col-6"
+        class="col-lg-3 col-sm-4 col-6 t-align-c"
         v-for="data in learningJourney"
         :key="data.title"
       >
