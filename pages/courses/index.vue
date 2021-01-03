@@ -111,7 +111,8 @@ export default Vue.extend({
         const courses = await CourseRepository.fetchAll({
           filter: {
             isRecommended: true,
-            classTag: this.selectedClassTag
+            classTag: this.selectedClassTag,
+            isListed: true
           }
         })
 
