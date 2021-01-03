@@ -34,7 +34,11 @@
         </ul>
       </div>
       <div class="col-xl-5 mt-xl-none mt-40">
-        <div class="floating-video-pane" style="height: 170px"></div>
+        <div class="floating-video-pane" style="height: 170px">
+          <img
+            :src="course.thumbnail"
+          />
+        </div>
       </div>
     </div>
     <div class="my-40 divider-h"></div>
@@ -44,9 +48,7 @@
       >
         <div class="row no-gutters align-items-center">
           <div class="round s-30x30 border b-white">
-            <img
-              src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python_white.svg"
-            />
+            <img :src="course.logo"/>
           </div>
           <div class="flex-1 pl-15">
             <div class="font-4 bold">John Doe</div>

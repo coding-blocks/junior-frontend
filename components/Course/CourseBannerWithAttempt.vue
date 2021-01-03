@@ -80,7 +80,7 @@
                 style="max-width: 450px"
               >
                 <img
-                  src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
+                  :src="course.thumbnail"
                   class="br-20 w-100"
                 />
               </div>
