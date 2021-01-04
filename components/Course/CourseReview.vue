@@ -1,8 +1,8 @@
 <template>
-  <div
-    class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 white bg-gradient-blue-dark"
-  >
-    <div class="container">
+  <div class="container">
+    <div
+      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 white bg-gradient-blue-dark"
+    >
       <div class="row align-items-center">
         <div class="col-lg-7">
           <div class="heading-3 bold">Kids and parents love us!!</div>
@@ -30,13 +30,11 @@
           <div class="font-5">
             My daughter is in Grade 2 and we started attending the Block
             programming classes. I am very satisfied with the way she is
-            progressing. She has started making games on her own in SpriteLab.
-            I would like to congratulate the Coding Blocks Jr team and wish
-            you guys success.
+            progressing. She has started making games on her own in SpriteLab. I
+            would like to congratulate the Coding Blocks Jr team and wish you
+            guys success.
           </div>
-          <div class="mt-40 heading-6 bold">
-            John Doe, Father of Johny Doe
-          </div>
+          <div class="mt-40 heading-6 bold">John Doe, Father of Johny Doe</div>
         </div>
       </div>
     </div>
@@ -49,8 +47,8 @@ export default Vue.extend({
   props: {
     course: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>

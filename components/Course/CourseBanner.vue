@@ -1,34 +1,28 @@
 <template>
-  <div
-    class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white"
-    :class="course.backgroundTheme"
-  >
-    <div class="container">
+  <div class="container">
+    <div
+      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white"
+      :class="course.backgroundTheme"
+    >
       <div class="row align-items-center">
         <div class="col-lg-7">
           <div class="row no-gutters align-items-center">
-            <img
-              :src="course.logo"
-            />
+            <img :src="course.logo" />
             <div class="flex-1 pl-30">
               <div class="font-5">RECOMMENDED FOR {{course.classTag}}</div>
               <div class="mt-10 white heading-2 bold">
-                {{course.title}}
+                {{ course.title }}
               </div>
             </div>
           </div>
           <div class="font-5 mt-40">
-            {{course.subTitle}}
+            {{ course.subTitle }}
           </div>
           <div v-if="tags.length">
             <div class="heading-6 bold mt-40">What will you learn?</div>
             <div class="mt-40 row no-gutters align-items-center">
-              <div 
-                class="pill-tag mr-20 mb-20"
-                v-for="tag in tags"
-                :key="tag"
-              >
-                {{tag}}
+              <div class="pill-tag mr-20 mb-20" v-for="tag in tags" :key="tag">
+                {{ tag }}
               </div>
             </div>
           </div>
@@ -38,10 +32,7 @@
             class="br-20 position-relative mb-20 mx-auto"
             style="max-width: 450px"
           >
-            <img
-              :src="course.thumbnail"
-              class="br-20 w-100"
-            />
+            <img :src="course.thumbnail" class="br-20 w-100" />
             <button
               class="button-primary w-75 position-absolute justify-content-center"
               style="left: 12.5%; bottom: -20px"
@@ -56,19 +47,19 @@
 </template>
 
 <script>
-import Vue from 'vue';
+import Vue from 'vue'
 
 export default Vue.extend({
   props: {
     course: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     tags() {
-      return this.course.tags.map(tag => tag.title);
-    }
-  }
+      return this.course.tags.map((tag) => tag.title)
+    },
+  },
 })
 </script>
