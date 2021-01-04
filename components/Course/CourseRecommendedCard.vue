@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="font-5 mt-40">
-            {{ course.subtitle }}
+            {{ course.subTitle }}
           </div>
           <div class="heading-6 bold mt-40">What will you learn?</div>
           <div class="mt-40 row no-gutters align-items-center">
