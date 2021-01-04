@@ -8,10 +8,10 @@
           <div class="row no-gutters align-items-center">
             <div class="s-70x70 round">
               <img
-                src="https://minio.codingblocks.com/amoeba/prateek-min.webp"
+                :src="user.photo"
               />
             </div>
-            <div class="flex-1 heading-2 bold pl-30">Hi, Prateek</div>
+            <div class="flex-1 heading-2 bold pl-30">Hi, {{user.name}}</div>
           </div>
           <img
             src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/junior.svg"
@@ -27,7 +27,19 @@
     </div>
     <div class="row no-gutters align-items-center">
       <div class="font-5 mr-30 my-10">Enroll in a course to get started</div>
-      <button class="button-primary">Enroll Now</button>
+      <nuxt-link to="/courses" class="button-primary">Enroll Now</nuxt-link>
     </div>
   </div>
 </template>
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  props: {
+    user: {
+      type: Object,
+      required: true
+    }
+  }
+})
+</script>
