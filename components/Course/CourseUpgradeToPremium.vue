@@ -60,7 +60,7 @@
       </div>
       <div class="v-align-ma flex-1 t-align-r">
         <span class="text-orange bold heading-5">Rs 149 / Class</span>
-        <button class="button-primary ml-30">Upgrade Now</button>
+        <a :href="batch.productLink" class="button-primary ml-30">Upgrade Now</a>
       </div>
     </div>
   </div>

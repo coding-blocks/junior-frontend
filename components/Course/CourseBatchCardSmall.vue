@@ -15,8 +15,12 @@
       <div class="heading-4 bold">{{batch.title}}</div>
       <div class="mt-10 font-5 bold">Language: {{batch.language}} | Size: {{batch.maxSize}}</div>
     </div>
-    <button 
-      class="button-primary mt-30"
+
+    <a v-if="premium" :href="batch.productLink" class="button-primary mt-30">Buy Now</a>
+
+    <button
+      v-if="free"
+      class='button-primary mt-30'
       @click="enrollInBatchTask.run()"
       :disabled="enrollInBatchTask.isActive"
     >
@@ -39,6 +43,9 @@ export default Vue.extend({
   computed: {
     premium() {
       return this.batch.type === 'paid';
+    },
+    free() {
+      return this.batch.type === 'free';
     }
   },
   tasks(t) {
@@ -47,7 +54,7 @@ export default Vue.extend({
         const batchAttempt = await BatchRepository.enrollInBatch(this.batch.id);
 
         this.$emit('onAfterEnroll', batchAttempt);
-        
+
         return batchAttempt
       })
     }
