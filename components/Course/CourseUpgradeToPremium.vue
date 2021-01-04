@@ -1,5 +1,5 @@
 <template>
-  <div class="card bg-gradient-purple white">
+  <div class="card bg-gradient-purple white mb-50">
     <div class="row no-gutters align-items-center">
       <div class="col-md-6 side-tag side-tag--wide mb-50">
         <div class="row no-gutters align-items-center">
