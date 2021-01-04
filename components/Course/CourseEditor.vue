@@ -60,6 +60,10 @@ export default Vue.extend({
       saveCourse: t(function* () {
         if (this.course.id) {
           yield CourseRepository.update(this.course.id, this.course)
+          yield CourseRepository.updateTags(
+            this.course.id,
+            this.course.tags
+          )
         } else {
           yield CourseRepository.create(this.course)
         }

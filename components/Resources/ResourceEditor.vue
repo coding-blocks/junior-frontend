@@ -15,7 +15,7 @@
       </div>
     </div>
     <button
-      class="d-flex justify-content-end button-solid button-orange mx-auto"
+      class="button-solid button-orange my-3 px-5 float-right"
       type="submit"
       @click="saveResource.run()"
       :disabled="saveResource.isActive"
