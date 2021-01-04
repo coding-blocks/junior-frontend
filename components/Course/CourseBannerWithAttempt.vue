@@ -1,30 +1,26 @@
 <template>
   <VAsync :task="fetchCurrentLectureTask">
     <template v-slot="{ value: currentLecture }">
-      <div
-        class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white"
-        :class="course.backgroundTheme"
-        v-if="currentLecture"
-      >
-        <div class="container">
+      <div class="container">
+        <div
+          class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white"
+          :class="course.backgroundTheme"
+          v-if="currentLecture"
+        >
           <div class="row align-items-center">
             <div class="col-lg-7">
               <div class="row no-gutters align-items-center">
-                <img
-                  :src="course.logo"
-                />
+                <img :src="course.logo" />
                 <div class="flex-1 pl-30">
-                  <div class="font-5">
-                    Upcoming Lecture
-                  </div>
+                  <div class="font-5">Upcoming Lecture</div>
                   <div class="white heading-2 bold">
-                    {{course.title}}
+                    {{ course.title }}
                   </div>
                 </div>
               </div>
               <div class="mt-50">
                 <div class="heading-5 bold">
-                  {{currentLecture.title}}
+                  {{ currentLecture.title }}
                 </div>
                 <div class="mt-30">
                   <div class="row no-gutters align-items-center">
@@ -32,7 +28,7 @@
                       class="br-50 py-15 px-20 font-5 bold mr-20 mb-20"
                       style="background: rgba(255, 255, 255, 0.2)"
                     >
-                      <MomentFormat 
+                      <MomentFormat
                         :date="currentLecture.start_time"
                         :format="'dddd, Do MMMM'"
                       />
@@ -41,22 +37,23 @@
                       class="br-50 py-15 px-20 font-5 bold mr-20 mb-20"
                       style="background: rgba(255, 255, 255, 0.2)"
                     >
-                      <MomentFormat 
+                      <MomentFormat
                         :date="currentLecture.start_time"
                         :format="'hh:mm A'"
-                      /> Onwards
+                      />
+                      Onwards
                     </div>
                   </div>
                 </div>
                 <div class="mt-30">
                   <div class="row no-gutters align-items-center">
-                    <button 
+                    <button
                       class="button-primary mr-20 mb-20"
                       v-if="isAfter(currentLecture.start_time)"
                     >
                       Set Reminder
                     </button>
-                    <nuxt-link 
+                    <nuxt-link
                       class="button-primary button-primary--white mb-20 text-orange"
                       :to="`/courses/${course.slug}/lectures/${currentLecture.id}`"
                       v-else
@@ -65,8 +62,8 @@
                     </nuxt-link>
                   </div>
                   <div>
-                    Note: Class will unlock on 
-                    <MomentFormat 
+                    Note: Class will unlock on
+                    <MomentFormat
                       :date="currentLecture.start_time"
                       :format="'D MMMM YYYY, hh:mmA'"
                     />
@@ -79,49 +76,46 @@
                 class="br-20 position-relative mb-20 mx-auto"
                 style="max-width: 450px"
               >
-                <img
-                  :src="course.thumbnail"
-                  class="br-20 w-100"
-                />
+                <img :src="course.thumbnail" class="br-20 w-100" />
               </div>
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </template>
   </VAsync>
 </template>
 <script>
 import Vue from 'vue'
-import BatchesRepository from '@/repositories/batches';
-import VAsync from '@/components/Base/VAsync';
-import MomentFormat from '@/components/Base/Moment/MomentFormat';
-import moment from 'moment';
+import BatchesRepository from '@/repositories/batches'
+import VAsync from '@/components/Base/VAsync'
+import MomentFormat from '@/components/Base/Moment/MomentFormat'
+import moment from 'moment'
 
 export default Vue.extend({
   props: {
     course: {
       type: Object,
-      required: true
+      required: true,
     },
     batchAttempt: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
     VAsync,
-    MomentFormat
+    MomentFormat,
   },
   tasks(t) {
     return {
-      fetchCurrentLectureTask: t(function *() {
-        return BatchesRepository.fetchCurrentLecture(this.batchAttempt.batchId);
-      })
+      fetchCurrentLectureTask: t(function* () {
+        return BatchesRepository.fetchCurrentLecture(this.batchAttempt.batchId)
+      }),
     }
   },
   methods: {
-    isAfter: (dateA, dateB = moment()) => moment(dateA).isAfter(dateB)
-  }
+    isAfter: (dateA, dateB = moment()) => moment(dateA).isAfter(dateB),
+  },
 })
 </script>
