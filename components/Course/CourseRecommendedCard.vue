@@ -12,7 +12,7 @@
             />
             <div class="flex-1 pl-30">
               <div class="font-5">RECOMMENDED FOR {{course.classTag}}</div>
-              <div class="mt-5 white heading-2 bold">
+              <div class="mt-10 white heading-2 bold">
                 {{course.title}}
               </div>
             </div>
