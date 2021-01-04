@@ -56,12 +56,14 @@ export default Vue.extend({
   computed: {
     faTimes() {
       return faTimes
+    },
+    fileLocation() {
+      return this.value
     }
   },
   data() {
     return {
-      file: null,
-      fileLocation: null
+      file: null
     }
   },
   methods: {
@@ -73,7 +75,7 @@ export default Vue.extend({
     },
     resetFileAndFileLocation() {
       this.file = null;
-      this.fileLocation = null;
+      this.value = null;
     }
   },
   tasks(t) {
@@ -86,7 +88,6 @@ export default Vue.extend({
         })
         const fileLocation = url.split('?')[0]
         this.value = fileLocation
-        this.fileLocation = fileLocation
       })
     }
   }
