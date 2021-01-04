@@ -16,6 +16,8 @@ export interface Batch {
   registrationEnd: string;
   hbContestId: number;
   maxSize: number;
+  sellingPrice: number;
+  productId: number;
 }
 
 class BatchesRepository extends BaseRepository<Batch> {
