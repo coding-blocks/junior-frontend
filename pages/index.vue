@@ -23,7 +23,7 @@
               <div
                 class="d-xl-none d-md-inline-block d-sm-none d-inline-block mt-20"
               >
-                <button 
+                <button
                   class="button-secondary button-secondary--light"
                   @click="setShowBookSessionModal(true)"
                 >
@@ -42,10 +42,7 @@
 
     <VAsync :task="fetchRecommendedCourseTask">
       <template v-slot="{ value: course }">
-        <CourseRecommendedCard 
-          v-if="course"
-          :course="course"
-        />
+        <CourseRecommendedCard v-if="course" :course="course" />
       </template>
     </VAsync>
 
@@ -57,18 +54,16 @@
     <div
       class="mt-lg-60 mt-sm-45 mt-30 row c-card-carousel mb-xl-100 mb-lg-75 mb-md-50 mb-sm-30 mb-20"
     >
-      <div 
-        class="col-lg-3 col-sm-4 col-6"
+      <div
+        class="col-lg-3 col-sm-4 col-6 h-inherit"
         v-for="data in learningJourney"
         :key="data.title"
       >
-        <img 
-          :src="data.image"
-          class="br-20" 
-          style="height: 300px" 
-        />
-        <div class="mt-40 heading-5 word-wrap t-align-c">
-          {{data.title}}
+        <div class="flex-col h-100 justify-content-between t-align-c">
+          <img :src="data.image" class="br-20 w-80" />
+          <div class="mt-40 heading-5 word-wrap t-align-c w-100">
+            {{ data.title }}
+          </div>
         </div>
       </div>
     </div>
@@ -176,9 +171,7 @@
               streams of technology.
             </div>
             <div class="mt-30 font-5">
-              <VAccordion 
-                :tabs="perspectiveTabs"
-              />
+              <VAccordion :tabs="perspectiveTabs" />
             </div>
           </div>
         </div>
@@ -241,15 +234,18 @@
                   <div class="flex-1 pl-25">
                     <div class="font-5 bold mb-10">Join Discord Community</div>
                     <div class="font-4">
-                      Get your doubts clarified related to courses on our Discord
-                      Channel
+                      Get your doubts clarified related to courses on our
+                      Discord Channel
                     </div>
                   </div>
                 </div>
               </a>
             </div>
             <div class="card br-20">
-              <a href="https://www.youtube.com/codingblocksindia" target="_blank">
+              <a
+                href="https://www.youtube.com/codingblocksindia"
+                target="_blank"
+              >
                 <div class="row no-gutters align-items-center">
                   <img
                     src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/youtube.svg"
@@ -269,11 +265,7 @@
       </div>
     </div>
 
-
-    <Modal 
-      @close="setShowBookSessionModal(false)"
-      v-if="showBookSessionModal"
-    >
+    <Modal @close="setShowBookSessionModal(false)" v-if="showBookSessionModal">
       <template>
         <BookSessionModal />
       </template>
@@ -282,13 +274,13 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import Modal from '@/components/Base/Modal.vue';
-import VAsync from '@/components/Base/VAsync.vue';
-import VAccordion from '@/components/Base/VAccordion.vue';
-import BookSessionModal from '@/components/LandingPage/BookSessionModal.vue';
-import CourseRecommendedCard from '@/components/Course/CourseRecommendedCard.vue';
-import CourseRepository from '@/repositories/courses';
+import Vue from 'vue'
+import Modal from '@/components/Base/Modal.vue'
+import VAsync from '@/components/Base/VAsync.vue'
+import VAccordion from '@/components/Base/VAccordion.vue'
+import BookSessionModal from '@/components/LandingPage/BookSessionModal.vue'
+import CourseRecommendedCard from '@/components/Course/CourseRecommendedCard.vue'
+import CourseRepository from '@/repositories/courses'
 
 export default Vue.extend({
   components: {
@@ -301,18 +293,45 @@ export default Vue.extend({
     return {
       showBookSessionModal: false,
       learningJourney: [
-        { title: 'Get enrolld in a course', image: 'https://minio.cb.lk/public/learning-journey-1.png' },
-        { title: 'Live interactive learning', image: 'https://minio.cb.lk/public/learning-journey-2.png' },
-        { title: 'Reinforce concepts through various resources', image: 'https://minio.cb.lk/public/learning-journey-3.png' },
-        { title: 'Get instant Doubt Resolution', image: 'https://minio.cb.lk/public/learning-journey-4.png' },
-        { title: 'Interesting Projects for Hands on experience', image: 'https://minio.cb.lk/public/learning-journey-5.png' },
-        { title: 'Become a Certified Coder', image: 'https://minio.cb.lk/public/learning-journey-6.png' }
+        {
+          title: 'Get enrolld in a course',
+          image: 'https://minio.cb.lk/public/learning-journey-1.png',
+        },
+        {
+          title: 'Live interactive learning',
+          image: 'https://minio.cb.lk/public/learning-journey-2.png',
+        },
+        {
+          title: 'Reinforce concepts through various resources',
+          image: 'https://minio.cb.lk/public/learning-journey-3.png',
+        },
+        {
+          title: 'Get instant Doubt Resolution',
+          image: 'https://minio.cb.lk/public/learning-journey-4.png',
+        },
+        {
+          title: 'Interesting Projects for Hands on experience',
+          image: 'https://minio.cb.lk/public/learning-journey-5.png',
+        },
+        {
+          title: 'Become a Certified Coder',
+          image: 'https://minio.cb.lk/public/learning-journey-6.png',
+        },
       ],
       perspectiveTabs: [
-        { title: 'What is the eligibility for coding blocks junior?', description: 'Anyone and everyone can join codingblocks junior.' },
-        { title: 'What is the eligibility for coding blocks junior?', description: 'Anyone and everyone can join codingblocks junior.' },
-        { title: 'What is the eligibility for coding blocks junior?', description: 'Anyone and everyone can join codingblocks junior.' },
-      ]
+        {
+          title: 'What is the eligibility for coding blocks junior?',
+          description: 'Anyone and everyone can join codingblocks junior.',
+        },
+        {
+          title: 'What is the eligibility for coding blocks junior?',
+          description: 'Anyone and everyone can join codingblocks junior.',
+        },
+        {
+          title: 'What is the eligibility for coding blocks junior?',
+          description: 'Anyone and everyone can join codingblocks junior.',
+        },
+      ],
     }
   },
   tasks(t) {
@@ -320,17 +339,17 @@ export default Vue.extend({
       fetchRecommendedCourseTask: t(async function () {
         const courses = await CourseRepository.fetchAll({
           filter: {
-            isRecommended: true
-          }
-        });
-        return courses[0];
-      })
+            isRecommended: true,
+          },
+        })
+        return courses[0]
+      }),
     }
   },
   methods: {
     setShowBookSessionModal(value) {
       this.showBookSessionModal = value
-    }
-  }
+    },
+  },
 })
 </script>

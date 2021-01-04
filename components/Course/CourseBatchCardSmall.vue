@@ -13,7 +13,7 @@
     </div>
     <div class="mt-20">
       <div class="heading-4 bold">{{batch.title}}</div>
-      <div class="mt-10 font-5 bold">Language: Hindi | Size: {{batch.maxSize}}</div>
+      <div class="mt-10 font-5 bold">Language: {{batch.language}} | Size: {{batch.maxSize}}</div>
     </div>
 
     <a v-if="premium" :href="batch.productLink" class="button-primary mt-30">Buy Now</a>

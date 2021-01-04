@@ -12,7 +12,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/images/favicon.png' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://unpkg.com/@coding-blocks/motley@2.6.4/dist/coding-blocks/app.min.css' }
+      { rel: 'stylesheet', type: 'text/css', href: 'https://unpkg.com/@coding-blocks/motley@2.7.2/dist/coding-blocks/app.min.css' }
     ],
     script: [
       { src: 'https://unpkg.com/@coding-blocks/web-components@0.0.12/dist/index.js' }

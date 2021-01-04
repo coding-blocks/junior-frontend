@@ -2,15 +2,15 @@
   <div
     class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white bg-gradient-purple"
   >
-    <div class="container">
+    <div class="container pt-sm-none pt-20">
       <div class="row align-items-center">
         <div class="col-lg-7">
           <div class="row no-gutters align-items-center">
             <img :src="course.logo" style="width: 55px" />
             <div class="flex-1 pl-30">
-              <div class="font-5">RECOMMENDED FOR {{ course.classTag }}</div>
-              <div class="mt-2 white heading-2 bold">
-                {{ course.title }}
+              <div class="font-5">RECOMMENDED FOR {{course.classTag}}</div>
+              <div class="mt-10 white heading-2 bold">
+                {{course.title}}
               </div>
             </div>
           </div>
@@ -144,6 +144,7 @@
         </div>
       </div>
     </div>
+    <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/popular-tag.svg" class="popular-tag">
   </div>
 </template>
 <script lang="ts">
@@ -158,3 +159,11 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>  
+  .popular-tag {
+    position: absolute;
+    top: -11px;
+    right: 100px;
+  }
+</style>

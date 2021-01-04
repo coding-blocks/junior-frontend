@@ -56,7 +56,7 @@
     <div class="row no-gutters justify-content-between align-items-center">
       <div class="col-md-6 col-12 mb-md-none mb-25">
         <div class="heading-4 bold mb-10">{{batch.title}}</div>
-        <div class="heading-6">Language: Hindi | Size: {{batch.maxSize}}</div>
+        <div class="heading-6">Language: {{batch.language}} | Size: {{batch.maxSize}}</div>
       </div>
       <div class="v-align-ma flex-1 t-align-r">
         <span class="text-orange bold heading-5">Rs 149 / Class</span>

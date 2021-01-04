@@ -2,7 +2,7 @@
   <div>
     <BreadCrumbs class="my-5" />
     <div class="container">
-      <div class="row">
+      <div class="row" v-if="enrolledCourses">
         <div class="col-lg-8">
           <div class="heading-5 bold mb-40">My enrolled courses</div>
           <EnrolledCourseCard 
@@ -33,10 +33,13 @@
           </div>
         </div>
       </div>
+      <div v-else>
+        <ExploreCoursesCard :user="user" />
+      </div>
     </div>
     <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
       <div class="container">
-        <div class="heading-4 bold mb-40 t-align-c">Other Popular Courses</div>
+        <div class="heading-4 bold mb-40 t-align-c">Recommended courses for you</div>
         <div class="row">
           <div 
             class="col-md-6 mb-md-none mb-40"
@@ -58,6 +61,8 @@ import { mapState } from 'vuex';
 import BreadCrumbs from '@/components/Base/BreadCrumbs.vue';
 import UpcomingLectureCard from '@/components/Lectures/UpcomingLectureCard.vue';
 import EnrolledCourseCard from '@/components/Course/EnrolledCourseCard.vue';
+import ExploreCoursesCard from '@/components/Course/ExploreCoursesCard.vue';
+
 import CourseCard from '@/components/Course/CourseCard.vue';
 import LectureRepository from '@/repositories/lectures';
 import CourseRepository from '@/repositories/courses';
@@ -71,6 +76,7 @@ export default Vue.extend({
     CourseCard,
     UpcomingLectureCard,
     EnrolledCourseCard,
+    ExploreCoursesCard,
     BreadCrumbs
   },
   data() {
