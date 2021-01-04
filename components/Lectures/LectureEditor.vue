@@ -1,20 +1,15 @@
 <template>
-  <form action="" @submit.prevent="() => saveLecture.run()">
-    <vue-form-generator
-      :schema="schema"
+  <div>
+    <BaseEditor 
       :model="lecture"
-      :options="formOptions"
+      :formSchema="schema"
+      :saveTask="saveLecture"
     />
-    <button 
-      class="d-flex justify-content-end button-solid button-orange mx-auto" 
-      :disabled="saveLecture.isActive"
-    >
-      {{ saveLecture.isActive ? 'Saving...' : 'Save' }}
-    </button>
-  </form>
+  </div>
 </template>
 <script>
 import Vue from 'vue';
+import BaseEditor from '@/components/Base/BaseEditor.vue';
 import { mapActions, mapGetters } from 'vuex';
 import lectureForm from '@/forms/lectures'
 import zoomForm from '@/forms/zoomMeeting'
@@ -29,6 +24,9 @@ export default Vue.extend({
       type: Object,
       required: true
     }
+  },
+  components: {
+    BaseEditor
   },
   computed: {
     lectureTypeRepository() {

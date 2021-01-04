@@ -8,6 +8,7 @@
     </nuxt-link>
     <LectureEditor 
       :lecture="lecture"
+      @onAfterSave="afterSave"
     />
   </div>
 </template>
@@ -27,5 +28,13 @@ export default Vue.extend({
       return this.routeDataMap['admin-lectures-lectureId']?.lecture
     },
   },
+  methods: {
+    afterSave() {
+      this.$notify({
+        group: 'admin',
+        title: 'Saved Successfully !'
+      })
+    }
+  }
 })
 </script>

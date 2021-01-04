@@ -1,20 +1,15 @@
 <template>
-    <form action="" @submit.prevent="() => saveBatch.run()">
-      <vue-form-generator
-        :schema="schema"
-        :model="batch"
-        :options="formOptions"
-      />
-      <button
-        class="button-solid button-orange my-3 px-5 float-right"
-        :disabled="saveBatch.isActive"
-      >
-        {{ saveBatch.isActive ? 'Saving...' : 'Save' }}
-      </button>
-    </form>
+  <div>
+    <BaseEditor 
+      :model="batch"
+      :formSchema="schema"
+      :saveTask="saveBatch"
+    />
+  </div>
 </template>
 <script>
 import Vue from 'vue'
+import BaseEditor from '@/components/Base/BaseEditor.vue';
 import { mapActions, mapGetters } from 'vuex'
 import batchForm from '@/forms/batch'
 import BatchRepository from '@/repositories/admin/batches'
@@ -25,6 +20,9 @@ export default Vue.extend({
       type: Object,
       required: true,
     },
+  },
+  components: {
+    BaseEditor
   },
   data() {
     return {

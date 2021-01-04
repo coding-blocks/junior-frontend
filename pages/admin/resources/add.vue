@@ -1,6 +1,9 @@
 <template>
   <div>
-    <ResourceEditor @onAfterSave="afterSave" :resource="resource" />
+    <ResourceEditor 
+      :resource="resource" 
+      @onAfterSave="afterSave" 
+    />
   </div>
 </template>
  

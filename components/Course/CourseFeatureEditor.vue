@@ -87,7 +87,8 @@ export default Vue.extend({
   tasks(t) {
     return {
       saveCourseTask: t(async function () {
-        return CourseRepository.updateFeatures(this.course.id, this.features)
+        await CourseRepository.updateFeatures(this.course.id, this.features)
+        this.$emit('onAfterSave')
       }),
       addFeatureTask: t(async function () {
         return this.features.push(this.courseFeature)

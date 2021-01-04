@@ -5,11 +5,14 @@
       :to="`${this.$route.params.batchId}/lectures`"
       >Lectures</nuxt-link
     >
-    <BatchEditor :batch="batch" />
+    <BatchEditor 
+      :batch="batch" 
+      @onAfterSave="afterSave"
+    />
   </div>
 </template>
  
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import { mapActions, mapGetters } from 'vuex';
 import BatchEditor from '@/components/Batches/BatchEditor.vue';
@@ -31,6 +34,14 @@ export default Vue.extend({
 
     return {
       batch
+    }
+  },
+  methods: {
+    afterSave() {
+      this.$notify({
+        group: 'admin',
+        title: 'Saved Successfully !'
+      })
     }
   }
 })

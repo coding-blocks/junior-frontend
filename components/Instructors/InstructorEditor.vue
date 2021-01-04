@@ -1,20 +1,15 @@
 <template>
-    <form action="" @submit.prevent="() => saveInstructor.run()">
-      <vue-form-generator
-        :schema="schema"
-        :model="instructor"
-        :options="formOptions"
-      />
-      <button
-        class="button-solid button-orange my-3 px-5 float-right"
-        :disabled="saveInstructor.isActive"
-      >
-        {{ saveInstructor.isActive ? 'Saving...' : 'Save' }}
-      </button>
-    </form>
+  <div>
+    <BaseEditor 
+      :model="instructor"
+      :formSchema="schema"
+      :saveTask="saveInstructor"
+    />
+  </div>
 </template>
 <script>
 import Vue from 'vue'
+import BaseEditor from '@/components/Base/BaseEditor.vue';
 import { mapActions, mapGetters } from 'vuex'
 import instructorForm from '@/forms/instructor'
 import InstructorRepository from '@/repositories/admin/instructors'
@@ -25,6 +20,9 @@ export default Vue.extend({
       type: Object,
       required: true,
     },
+  },
+  components: {
+    BaseEditor
   },
   data() {
     return {

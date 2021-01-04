@@ -2,6 +2,7 @@
   <div>
     <ResourceEditor 
       :resource="resource"
+      @onAfterSave="afterSave" 
     />
   </div>
 </template>
@@ -28,6 +29,14 @@ export default Vue.extend({
 
     return {
       resource
+    }
+  },
+  methods: {
+    afterSave() {
+      this.$notify({
+        group: 'admin',
+        title: 'Saved Successfully !'
+      })
     }
   }
 })

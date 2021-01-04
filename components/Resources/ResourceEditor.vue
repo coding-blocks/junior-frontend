@@ -1,44 +1,30 @@
 <template>
   <div>
-    <vue-form-generator
-      :schema="schema"
+    <BaseEditor 
       :model="resource"
-      :options="formOptions"
+      :formSchema="schema"
+      :saveTask="saveResource"
     />
-    <div v-if="saveResource.lastStarted && saveResource.lastStarted.isRejected">
-      <div 
-        class="red"
-        v-for="error in saveResource.lastStarted.error.response.data.errors"
-        :key="error"
-      >
-        {{error.title}}
-      </div>
-    </div>
-    <button
-      class="button-solid button-orange my-3 px-5 float-right"
-      type="submit"
-      @click="saveResource.run()"
-      :disabled="saveResource.isActive"
-    >
-      {{ saveResource.isActive ? 'Saving...' : 'Save' }}
-    </button>
   </div>
 </template>
 <script>
 import Vue from 'vue'
+import BaseEditor from '@/components/Base/BaseEditor.vue';
 import { mapActions, mapGetters } from 'vuex';
 import resourceForm from '@/forms/resource';
 import ResourceRepository from '@/repositories/admin/resources';
 import { getResourceTypeForm, getResourceTypeRepository, getResourceTypePayload } from '@/utils/resource';
 
 export default Vue.extend({
-  props: 
-    {
-      resource: {
-        type: Object,
-        required: true,
-      },
+  props: {
+    resource: {
+      type: Object,
+      required: true,
     },
+  },
+  components: {
+    BaseEditor
+  },
   computed: {
     resourceTypeRepository() {
       return getResourceTypeRepository(this.resource)

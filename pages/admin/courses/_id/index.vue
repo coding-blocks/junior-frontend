@@ -16,19 +16,23 @@
 
     <TabNavigation class="tl w-100" :tabs="tabs">
       <template v-slot="{ component }">
-        <component :is="component" :course="course" />
+        <component 
+          :is="component" 
+          :course="course" 
+          @onAfterSave="afterSave"
+        />
       </template>
     </TabNavigation>
   </div>
 </template>
  
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import { mapState } from 'vuex'
 import CourseEditor from '@/components/Course/CourseEditor.vue'
 import CourseRepository from '@/repositories/admin/courses'
 import TabNavigation from '@/components/Base/TabNavigation.vue'
-import CourseFeatureEditorVue from '~/components/Course/CourseFeatureEditor.vue'
+import CourseFeatureEditor from '~/components/Course/CourseFeatureEditor.vue'
 
 export default Vue.extend({
   components: {
@@ -45,9 +49,17 @@ export default Vue.extend({
     return {
       tabs: [
         { name: 'Course Information', component: CourseEditor },
-        { name: 'Course Features', component: CourseFeatureEditorVue }
+        { name: 'Course Features', component: CourseFeatureEditor }
       ]
     }
   },
+  methods: {
+    afterSave() {
+      this.$notify({
+        group: 'admin',
+        title: 'Saved Successfully !'
+      })
+    }
+  }
 })
 </script>
