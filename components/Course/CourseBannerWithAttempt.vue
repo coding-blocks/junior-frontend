@@ -81,6 +81,41 @@
             </div>
           </div>
         </div>
+        <div
+          class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 position-relative white"
+          :class="course.backgroundTheme"
+          v-else
+        >
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7">
+              <div class="row no-gutters align-items-center">
+                <img :src="course.logo" />
+                <div class="flex-1 pl-30">
+                  <div class="font-5">Upcoming Lecture</div>
+                  <div class="white heading-2 bold">
+                    {{ course.title }}
+                  </div>
+                </div>
+              </div>
+              <div class="mt-50">
+                <div class="heading-5 bold mb-20">No Upcoming Lectures</div>
+                <div class="mb-40 font-5">
+                  The details of your next lecture will soon be updated. In the
+                  meanwhile, explore resources.
+                </div>
+                <nuxt-link
+                  :to="`/courses/${course.slug}/resources`"
+                  class="button-primary"
+                >
+                  Resources
+                </nuxt-link>
+              </div>
+            </div>
+            <div class="col-lg-5 mt-lg-none mt-50 t-align-c">
+              <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/no-lectures-vector.svg">
+            </div>
+          </div>
+        </div>
       </div>
     </template>
   </VAsync>
