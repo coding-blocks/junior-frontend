@@ -8,7 +8,7 @@
         :srcdoc="`
           <html>
             <head> 
-              <script src='https://unpkg.com/@coding-blocks/web-components@0.0.14/dist/zoomMeeting.js'></script>
+              <script src='https://unpkg.com/@coding-blocks/web-components@0.0.15/dist/zoomMeeting.js'></script>
             </head>
             <body>
               <zoom-meeting 
