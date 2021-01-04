@@ -26,6 +26,7 @@ export default (opts: FormSchemaOpts = {}) => {
               { name: 'Free', value: 'free' },
               { name: 'Paid', value: 'paid' },
             ],
+            required: true,
             disabled: function(model) {
               return model.id;
             }
@@ -34,6 +35,7 @@ export default (opts: FormSchemaOpts = {}) => {
             type: 'radios',
             label: 'Language of the batch',
             model: 'type',
+            required: true,
             values: [
               { name: 'English', value: 'English' },
               { name: 'Hindi', value: 'Hindi' },
@@ -43,21 +45,25 @@ export default (opts: FormSchemaOpts = {}) => {
             type: "DatePicker",
             label: "Start Time",
             model: 'start',
+            required: true,
           },
           {
             type: "DatePicker",
             label: "End time",
             model: 'end',
+            required: true,
           },
           {
             type: "DatePicker",
             label: "Enrollment start time",
             model: 'registrationStart',
+            required: true,
           },
           {
             type: "DatePicker",
             label: "Enrollment end time",
             model: 'registrationEnd',
+            required: true,
           },
           {
             type: 'input',
@@ -65,7 +71,8 @@ export default (opts: FormSchemaOpts = {}) => {
             label: 'Batch Size',
             model: 'maxSize',
             placeholder: 'Enter batch size',
-            help: 'Give the maximum size for this batchj',
+            help: 'Give the maximum size for this batch',
+            required: true,
           },
         ],
       },

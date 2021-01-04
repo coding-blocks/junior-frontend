@@ -40,27 +40,30 @@
       </div>
       <div class="flex-1 pl-md-30">
         <div class="row mb-25">
-          <div
-            class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25"
-          >
+          <div class="col-xl-3 col-md-6 col-sm-3 col-6 mb-25">
             <div class="card all-center">
-              <img src="https://minio.codingblocks.com/public/feature-code.png" style="height: 50px" />
+              <img
+                src="https://minio.codingblocks.com/public/feature-code.png"
+                style="height: 50px"
+              />
             </div>
-            <div class="mt-20 font-5 bold t-align-c">
-              Feature 1
-            </div>
+            <div class="mt-20 font-5 bold t-align-c">Feature 1</div>
           </div>
         </div>
       </div>
     </div>
     <div class="row no-gutters justify-content-between align-items-center">
       <div class="col-md-6 col-12 mb-md-none mb-25">
-        <div class="heading-4 bold mb-10">{{batch.title}}</div>
-        <div class="heading-6">Language: {{batch.language}} | Size: {{batch.maxSize}}</div>
+        <div class="heading-4 bold mb-10">{{ batch.title }}</div>
+        <div class="heading-6">
+          Language: {{ batch.language }} | Size: {{ batch.maxSize }}
+        </div>
       </div>
       <div class="v-align-ma flex-1 t-align-r">
-        <span class="text-orange bold heading-5">Rs 149 / Class</span>
-        <a :href="batch.productLink" class="button-primary ml-30">Upgrade Now</a>
+        <span class="text-orange bold heading-5">{{ batch.price }}</span>
+        <a :href="batch.productLink" class="button-primary ml-30"
+          >Upgrade Now</a
+        >
       </div>
     </div>
   </div>
@@ -75,6 +78,6 @@ export default Vue.extend({
       type: Object,
       required: true,
     },
-  }
+  },
 })
 </script>
