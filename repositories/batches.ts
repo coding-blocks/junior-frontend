@@ -2,11 +2,14 @@ import { BaseRepository } from './base';
 import { BatchAttempt } from './batch-attempt';
 import { Lecture } from './lectures';
 export type BatchType = 'free' | 'paid';
+export type BatchLanguage = 'Hindi' | 'English';
+
 
 export interface Batch {
   id: number;
   title: string;
   type: BatchType;
+  language: BatchLanguage;
   start: string;
   end: string;
   registrationStart: string;
