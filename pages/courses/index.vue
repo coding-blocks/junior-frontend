@@ -100,7 +100,6 @@ export default Vue.extend({
         isListed: true
       }
     });
-    
     return {
       courses
     }

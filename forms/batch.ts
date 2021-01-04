@@ -31,6 +31,15 @@ export default (opts: FormSchemaOpts = {}) => {
             }
           },
           {
+            type: 'radios',
+            label: 'Language of the batch',
+            model: 'type',
+            values: [
+              { name: 'English', value: 'English' },
+              { name: 'Hindi', value: 'Hindi' },
+            ],
+          },
+          {
             type: "DatePicker",
             label: "Start Time",
             model: 'start',

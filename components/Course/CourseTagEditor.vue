@@ -8,24 +8,26 @@
       />
       <TaskButton
         class="h-50"
-        :task="addFeatureTask"
+        :task="addTagTask"
         text="Add"
         loadingText="Adding"
       />
     </div>
+          <VAsync :task="fetchTagsTask">
+          <template v-slot="{ value: tags }">
     <ul class="list-divided mt-4">
       <li
         class="tags flex-row justify-content-around items-center px-4 py-3"
         v-for="tag in tags"
         :key="tag.id"
       >
-        <div class="mt-20 font-5 bold t-align-c">
-          {{ tags.title }}
+        <div class="mt-20 font-5 t-align-c">
+          {{ tag.title }}
         </div>
         <div>
           <TaskButton
             class="h-50"
-            :task="removeFeatureTask"
+            :task="removeTagTask"
             :params="[tag]"
             text="Remove"
             loadingText="Removing"
@@ -33,6 +35,8 @@
         </div>
       </li>
     </ul>
+          </template>
+          </VAsync>
   </div>
 </template>
 
@@ -66,25 +70,23 @@ export default Vue.extend({
       tags:[]
     }
   },
-  mounted() {
-    this.tags = TagRepository.fetchAll()
-  },
   methods: {
     navigateToCreate() {
       this.$router.push('add')
     },
-    fetchTags(){
-      tags = TagRepository.fetchAll()
-    }
   },
   tasks(t) {
     return {
-      addFeatureTask: t(async function () {
-        return TagRepository.create(this.tag) && fetchTags()
+      addTagTask: t(async function () {
+        return TagRepository.create(this.tag);
+                this.fetchTagsTask.run()
       }),
-      removeFeatureTask: t(async function (feature) {
+      removeTagTask: t(async function (feature) {
         return this.features.splice(this.features.indexOf(feature), 1);
       }),
+      fetchTagsTask: t(function *() {
+        return TagRepository.fetchAll();
+      })
     }
   },
 })

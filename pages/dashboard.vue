@@ -34,6 +34,22 @@
         </div>
       </div>
     </div>
+    <div class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20">
+      <div class="container">
+        <div class="heading-4 bold mb-40 t-align-c">Other Popular Courses</div>
+        <div class="row">
+          <div 
+            class="col-md-6 mb-md-none mb-40"
+            v-for="course in courses"
+            :key="course.id"
+          >
+            <CourseCard 
+              :course="course"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -42,6 +58,7 @@ import { mapState } from 'vuex';
 import BreadCrumbs from '@/components/Base/BreadCrumbs.vue';
 import UpcomingLectureCard from '@/components/Lectures/UpcomingLectureCard.vue';
 import EnrolledCourseCard from '@/components/Course/EnrolledCourseCard.vue';
+import CourseCard from '@/components/Course/CourseCard.vue';
 import LectureRepository from '@/repositories/lectures';
 import CourseRepository from '@/repositories/courses';
 import { hash } from 'rsvp';
@@ -51,22 +68,29 @@ export default Vue.extend({
     ...mapState('session', ['user'])
   },
   components: {
+    CourseCard,
     UpcomingLectureCard,
     EnrolledCourseCard,
     BreadCrumbs
   },
   data() {
     return {
+      courses: [],
       upcomingLectures: []
     }
   },
   async asyncData() {
     const upcomingLectures = LectureRepository.fetchUpcomingLectures();
     const enrolledCourses = CourseRepository.fetchEnrolledCourses();
-
+    const courses = await CourseRepository.fetchAll({
+      filter: {
+        isListed: true
+      }
+    });
     return hash({
       upcomingLectures,
-      enrolledCourses
+      enrolledCourses,
+      courses
     })
   }
 })

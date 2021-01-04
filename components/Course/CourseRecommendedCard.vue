@@ -6,10 +6,7 @@
       <div class="row align-items-center">
         <div class="col-lg-7">
           <div class="row no-gutters align-items-center">
-            <img
-              :src="course.logo"
-              style="width: 55px;"
-            />
+            <img :src="course.logo" style="width: 55px" />
             <div class="flex-1 pl-30">
               <div class="font-5">RECOMMENDED FOR {{course.classTag}}</div>
               <div class="mt-10 white heading-2 bold">
@@ -18,32 +15,32 @@
             </div>
           </div>
           <div class="font-5 mt-40">
-            {{course.subtitle}}
+            {{ course.subTitle }}
           </div>
           <div class="heading-6 bold mt-40">What will you learn?</div>
           <div class="mt-40 row no-gutters align-items-center">
-            <div 
+            <div
               class="pill-tag mr-20 mb-20"
               v-for="tag in course.tags"
               :key="tag.id"
             >
-              {{tag.title}}
+              {{ tag.title }}
             </div>
           </div>
           <div class="mt-30 heading-6 bold">Projects you will build</div>
           <div class="mt-30 row c-card-carousel">
-            <div 
+            <div
               class="col-xl-3 col-lg-4 col-md-3 col-6"
               v-for="project in course.courseProjects"
               :key="project.id"
             >
-              <img 
-                class="br-20" 
+              <img
+                class="br-20"
                 style="height: 150px"
                 :src="project.thumbnail"
               />
               <div class="white bold t-align-c">
-                {{project.title}}
+                {{ project.title }}
               </div>
             </div>
           </div>
@@ -67,9 +64,7 @@
           </div>
           <div class="mt-70 mx-auto" style="width: fit-content">
             <div class="heading-5 bold">What you will get!</div>
-            <ul
-              class="divided-list mt-30 d-xl-flex d-lg-none d-sm-flex d-none"
-            >
+            <ul class="divided-list mt-30 d-xl-flex d-lg-none d-sm-flex d-none">
               <li class="px-25">
                 <div class="row no-gutters align-items-center">
                   <img
@@ -77,7 +72,9 @@
                     class="mr-20"
                   />
                   <div class="flex-1">
-                    <div class="heading-5 bold">{{course.courseProjects.length}}</div>
+                    <div class="heading-5 bold">
+                      {{ course.courseProjects.length }}
+                    </div>
                     <div class="font-4 mt-10">Projects</div>
                   </div>
                 </div>
@@ -89,7 +86,7 @@
                     class="mr-20"
                   />
                   <div class="flex-1">
-                    <div class="heading-5 bold">{{0}}</div>
+                    <div class="heading-5 bold">{{ 0 }}</div>
                     <div class="font-4 mt-10">PDF Notes</div>
                   </div>
                 </div>
@@ -101,7 +98,7 @@
                     class="mr-20"
                   />
                   <div class="flex-1">
-                    <div class="heading-5 bold">{{0}}</div>
+                    <div class="heading-5 bold">{{ 0 }}</div>
                     <div class="font-4 mt-10">Quizzes</div>
                   </div>
                 </div>
@@ -114,7 +111,9 @@
                   class="mr-20"
                 />
                 <div class="flex-1">
-                  <div class="heading-5 bold">{{course.courseProjects.length}}</div>
+                  <div class="heading-5 bold">
+                    {{ course.courseProjects.length }}
+                  </div>
                   <div class="font-4 mt-10">Projects</div>
                 </div>
               </div>
@@ -125,7 +124,7 @@
                   class="mr-20"
                 />
                 <div class="flex-1">
-                  <div class="heading-5 bold">{{0}}</div>
+                  <div class="heading-5 bold">{{ 0 }}</div>
                   <div class="font-4 mt-10">PDF Notes</div>
                 </div>
               </div>
@@ -136,28 +135,28 @@
                   class="mr-20"
                 />
                 <div class="flex-1">
-                  <div class="heading-5 bold">{{0}}</div>
+                  <div class="heading-5 bold">{{ 0 }}</div>
                   <div class="font-4 mt-10">Quizzes</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
     <img src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/popular-tag.svg" class="popular-tag">
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue';
+import Vue from 'vue'
 
 export default Vue.extend({
   props: {
     course: {
       type: Object,
-      required: true
-    }
-  }  
+      required: true,
+    },
+  },
 })
 </script>
 
