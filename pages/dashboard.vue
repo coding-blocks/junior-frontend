@@ -2,7 +2,7 @@
   <div>
     <BreadCrumbs class="my-5" />
     <div class="container">
-      <div class="row" v-if="!enrolledCourses.length">
+      <div class="row" v-if="enrolledCourses.length">
         <div class="col-lg-8">
           <div class="heading-5 bold mb-40">My enrolled courses</div>
           <EnrolledCourseCard 
