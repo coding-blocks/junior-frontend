@@ -8,7 +8,7 @@
       </div>
       <div class="flex-1 t-align-r premium-tag side-tag side-tag--right">
         <div class="font-5">PREMIUM</div>
-        <div class="heading-5 bold text-orange">Rs 149 / Class</div>
+        <div class="heading-5 bold text-orange">Rs {{batch.sellingPrice}}</div>
       </div>
     </div>
     <div class="mt-20">
