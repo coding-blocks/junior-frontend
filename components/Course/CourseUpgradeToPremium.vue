@@ -52,20 +52,18 @@
         </div>
       </div>
     </div>
-    <div class="mentor-row mb-40">
+    <div class="mentor-row mb-40" v-if="batch.instructors.length">
       <div class="mentor-row__image-container">
         <img
-          src="https://minio.codingblocks.com/img/pulkit-min.webp"
-          class="mentor-row__image-container__mentor-image s-80x80"
-        />
-        <img
-          src="https://minio.codingblocks.com/amoeba/jatin-min.webp"
+          :src="batch.instructors[0].image"
           class="mentor-row__image-container__mentor-image s-80x80"
         />
       </div>
       <div class="mentor-row__text-container align-self-center">
         <div class="font-5">Instructors</div>
-        <div class="mt-10 heading-5 bold">Rishab Kapoor, Jatin Katyal</div>
+        <div class="mt-10 heading-5 bold">
+          {{ batch.instructors.map((instructor) => instructor.name).join() }}
+        </div>
       </div>
     </div>
     <div class="row no-gutters justify-content-between align-items-center">

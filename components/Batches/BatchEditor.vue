@@ -39,6 +39,10 @@ export default Vue.extend({
       saveBatch: t(async function () {
         if (this.batch.id) {
           await BatchRepository.update(this.batch.id, this.batch)
+          await BatchRepository.updateInstructors(
+            this.batch.id,
+            this.batch.instructors
+          )
         } else {
           await BatchRepository.create(this.batch)
         }
