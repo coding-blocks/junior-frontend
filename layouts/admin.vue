@@ -6,6 +6,12 @@
         <Nuxt />
       </div>
     </div>
+    <client-only>
+      <notifications 
+        group="admin" 
+        position="bottom right"  
+      />
+    </client-only>
   </div>
 </template>
 

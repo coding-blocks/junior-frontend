@@ -99,4 +99,8 @@ export class BaseRepository<T> {
 
     return modelObj;
   }
+
+  async delete(id: number): Promise<void> {
+    await this.axios!.$delete(this.buildUrl(id.toString()));
+  }
 }

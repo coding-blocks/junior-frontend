@@ -36,6 +36,7 @@ export default {
     '~/plugins/vuency.ts',
     '~/plugins/repository.ts',
     '~/plugins/unique-id.ts',
+    { src: '~/plugins/vue-notification.ts', mode: 'client' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

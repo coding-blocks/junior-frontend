@@ -1,6 +1,9 @@
 <template>
   <div>
-    <InstructorEditor @onAfterSave="afterSave" :instructor="instructor" />
+    <InstructorEditor 
+      @onAfterSave="afterSave" 
+      :instructor="instructor" 
+    />
   </div>
 </template>
  

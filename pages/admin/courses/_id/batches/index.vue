@@ -11,7 +11,7 @@
         :key="batch.id"
       >
         <div>{{ batch.title }}</div>
-        <div>{{ batch.start }}</div>
+        <MomentFormat :date="batch.start" :format="'dddd, Do MMMM'" />
         <div>
           <nuxt-link
             class="button-solid button-orange mx-auto"
@@ -22,10 +22,12 @@
         </div>
       </li>
     </ul>
-    <nuxt-link class="button-solid button-orange mx-auto mt-4" :to="`batches/add`">
+    <nuxt-link
+      class="button-solid button-orange mx-auto mt-4"
+      :to="`batches/add`"
+    >
       Create Batch
     </nuxt-link>
-
   </div>
 </template>
 
@@ -34,10 +36,13 @@
 import Vue from 'vue'
 import { mapGetters, mapActions } from 'vuex'
 import Button from '@/components/Base/Button.vue'
+import MomentFormat from '@/components/Base/Moment/MomentFormat.vue'
 import CourseRepository from '@/repositories/admin/courses'
 
 export default Vue.extend({
-  components: {},
+  components: {
+    MomentFormat,
+  },
   data() {
     return {
       courses: [],
@@ -52,8 +57,8 @@ export default Vue.extend({
   },
   methods: {
     navigateToCreate() {
-      this.$router.push('add');
-    }
-  }
+      this.$router.push('add')
+    },
+  },
 })
 </script>

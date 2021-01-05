@@ -2,6 +2,7 @@
   <div>
     <CourseEditor 
       :course="course"
+      @onAfterSave="afterSave" 
     />
   </div>
 </template>
@@ -25,6 +26,13 @@ export default Vue.extend({
         syllabus: '',
       }
     }
-  }
+  },
+  methods: {
+    afterSave() {
+      this.$router.push({
+        path: '/admin/courses',
+      })
+    },
+  },
 })
 </script>

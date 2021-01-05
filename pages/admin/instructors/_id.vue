@@ -2,6 +2,7 @@
   <div>
     <InstructorEditor 
       :instructor="instructor"
+      @onAfterSave="afterSave"
     />
   </div>
 </template>
@@ -28,6 +29,14 @@ export default Vue.extend({
 
     return {
       instructor
+    }
+  },
+  methods: {
+    afterSave() {
+      this.$notify({
+        group: 'admin',
+        title: 'Saved Successfully !'
+      })
     }
   }
 })

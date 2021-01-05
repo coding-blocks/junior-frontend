@@ -26,6 +26,7 @@ export default (opts: FormSchemaOpts = {}) => {
               { name: 'Free', value: 'free' },
               { name: 'Paid', value: 'paid' },
             ],
+            required: true,
             disabled: function(model) {
               return model.id;
             }
@@ -33,7 +34,8 @@ export default (opts: FormSchemaOpts = {}) => {
           {
             type: 'radios',
             label: 'Language of the batch',
-            model: 'type',
+            model: 'language',
+            required: true,
             values: [
               { name: 'English', value: 'English' },
               { name: 'Hindi', value: 'Hindi' },
@@ -43,21 +45,25 @@ export default (opts: FormSchemaOpts = {}) => {
             type: "DatePicker",
             label: "Start Time",
             model: 'start',
+            required: true,
           },
           {
             type: "DatePicker",
             label: "End time",
             model: 'end',
+            required: true,
           },
           {
             type: "DatePicker",
             label: "Enrollment start time",
             model: 'registrationStart',
+            required: true,
           },
           {
             type: "DatePicker",
             label: "Enrollment end time",
             model: 'registrationEnd',
+            required: true,
           },
           {
             type: 'input',
@@ -65,7 +71,32 @@ export default (opts: FormSchemaOpts = {}) => {
             label: 'Batch Size',
             model: 'maxSize',
             placeholder: 'Enter batch size',
-            help: 'Give the maximum size for this batchj',
+            help: 'Give the maximum size for this batch',
+            required: true,
+          },
+          {
+            type: 'input',
+            inputType: 'number',
+            label: 'Selling Price',
+            model: 'sellingPrice',
+            placeholder: 'Enter Selling Price',
+            help: 'Give the price for which batch would be sold',
+            required: true,
+            disabled: function(model) {
+              return model.type == 'free';
+            }
+          },
+          {
+            type: 'input',
+            inputType: 'number',
+            label: 'Product Id',
+            model: 'productId',
+            placeholder: 'Enter Product Id',
+            help: 'Give the product id from dukaan',
+            required: true,
+            disabled: function(model) {
+              return model.type == 'free';
+            }
           },
         ],
       },

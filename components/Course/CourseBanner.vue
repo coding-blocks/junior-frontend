@@ -9,7 +9,7 @@
           <div class="row no-gutters align-items-center">
             <img :src="course.logo" />
             <div class="flex-1 pl-30">
-              <div class="font-5">RECOMMENDED FOR 7-9</div>
+              <div class="font-5">RECOMMENDED FOR {{course.classTag}}</div>
               <div class="mt-10 white heading-2 bold">
                 {{ course.title }}
               </div>
