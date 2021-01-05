@@ -1,4 +1,13 @@
 import { FormSchemaOpts } from "./forms"
+import TagsRepository from "@/repositories/admin/tags";
+
+const fetchTags = (query) => TagsRepository.fetchAll({
+  filter: {
+    title: {
+      $iLike: `%${query}%`
+    }
+  }
+})
 
 export default (opts: FormSchemaOpts = {}) => {
   const { extraGroups = [], modelPrefix = '' } = opts
@@ -100,6 +109,8 @@ export default (opts: FormSchemaOpts = {}) => {
             type: 'SearchSelect',
             label: 'Tags',
             model: 'tags',
+            optionKey: 'title',
+            onSearch: fetchTags
           },
         ],
       },

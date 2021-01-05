@@ -1,4 +1,13 @@
 import { FormSchemaOpts } from "./forms"
+import InstructorRepository from "@/repositories/admin/instructors";
+
+const fetchInstructors = (query) => InstructorRepository.fetchAll({
+  filter: {
+    name: {
+      $iLike: `%${query}%`
+    }
+  }
+})
 
 export default (opts: FormSchemaOpts = {}) => {
   const { extraGroups = [], modelPrefix = '' } = opts
@@ -97,6 +106,13 @@ export default (opts: FormSchemaOpts = {}) => {
             disabled: function(model) {
               return model.type == 'free';
             }
+          },
+          {
+            type: 'SearchSelect',
+            label: 'Instructors',
+            model: 'instructors',
+            optionKey: 'name',
+            onSearch: fetchInstructors
           },
         ],
       },

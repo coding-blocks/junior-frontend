@@ -76,7 +76,7 @@
         </div>
       </div>
       <div class="v-align-ma flex-1 t-align-r">
-        <span class="text-orange bold heading-5">{{ batch.price }}</span>
+        <span class="text-orange bold heading-5">{{ batch.sellingPrice }}</span>
         <a :href="batch.productLink" class="button-primary ml-30"
           >Upgrade Now</a
         >
