@@ -68,7 +68,7 @@
               <ul
                 class="divided-list mt-30 d-xl-flex d-lg-none d-sm-flex d-none"
               >
-                <li class="px-25">
+                <li class="px-15">
                   <div class="row no-gutters align-items-center">
                     <img
                       src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
@@ -82,7 +82,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="px-25">
+                <li class="px-15">
                   <div class="row no-gutters align-items-center">
                     <img
                       src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/pdf_notes.svg"
@@ -94,7 +94,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="px-25">
+                <li class="px-15">
                   <div class="row no-gutters align-items-center">
                     <img
                       src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/stats_quizzes.svg"

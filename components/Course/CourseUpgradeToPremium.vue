@@ -52,6 +52,20 @@
         </div>
       </div>
     </div>
+    <div class="mentor-row mb-40" v-if="batch.instructors.length">
+      <div class="mentor-row__image-container">
+        <img
+          :src="batch.instructors[0].image"
+          class="mentor-row__image-container__mentor-image s-80x80"
+        />
+      </div>
+      <div class="mentor-row__text-container align-self-center">
+        <div class="font-5">Instructors</div>
+        <div class="mt-10 heading-5 bold">
+          {{ batch.instructors.map((instructor) => instructor.name).join() }}
+        </div>
+      </div>
+    </div>
     <div class="row no-gutters justify-content-between align-items-center">
       <div class="col-md-6 col-12 mb-md-none mb-25">
         <div class="heading-4 bold mb-10">{{ batch.title }}</div>
