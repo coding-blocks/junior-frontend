@@ -2,7 +2,7 @@
   <div>
     <BreadCrumbs class="my-5" />
     <div class="container">
-      <div class="row" v-if="enrolledCourses">
+      <div class="row" v-if="!enrolledCourses.length">
         <div class="col-lg-8">
           <div class="heading-5 bold mb-40">My enrolled courses</div>
           <EnrolledCourseCard 
@@ -42,7 +42,7 @@
         <div class="heading-4 bold mb-40 t-align-c">Recommended courses for you</div>
         <div class="row">
           <div 
-            class="col-md-6 mb-md-none mb-40"
+            class="col-md-6 mb-40"
             v-for="course in courses"
             :key="course.id"
           >

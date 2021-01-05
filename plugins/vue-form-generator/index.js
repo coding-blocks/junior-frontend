@@ -8,8 +8,9 @@ import fieldDTPicker from './date-time-picker.vue';
 import fieldColorSelector from './color-selector.vue';
 import fieldFileUploader from './file-uploader.vue';
 import fieldSearchSelect from './search-select.vue';
-// You need a specific loader for CSS files for date time picker
+
 import 'vue-datetime/dist/vue-datetime.css'
+import 'vue-multiselect/dist/vue-multiselect.min.css'
 
 
 Vue.component("fieldDTPicker", fieldDTPicker);

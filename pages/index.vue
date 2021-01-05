@@ -68,10 +68,10 @@
       </div>
     </div>
 
-    <div
-      class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 white bg-gradient-blue-dark"
-    >
-      <div class="container">
+    <div class="container">
+      <div
+        class="p-xl-100 p-lg-75 p-md-50 p-sm-30 p-20 br-20 white bg-gradient-blue-dark"
+      >
         <div class="row align-items-center">
           <div class="col-lg-7">
             <div class="heading-3 bold">Kids and parents love us!!</div>

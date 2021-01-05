@@ -83,7 +83,7 @@ export default (opts: FormSchemaOpts = {}) => {
           {
             type: 'textArea',
             inputType: 'text',
-            label: 'Course Syallabus',
+            label: 'Course syllabus',
             model: 'syllabus',
             placeholder: 'Enter course syllabus json',
             help: 'This will be the syllabus for the course',
