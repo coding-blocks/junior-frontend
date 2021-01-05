@@ -1,4 +1,13 @@
 import { FormSchemaOpts } from "./forms"
+import InstructorRepository from "@/repositories/admin/instructors";
+
+const fetchInstructors = (query) => InstructorRepository.fetchAll({
+  filter: {
+    name: {
+      $iLike: `%${query}%`
+    }
+  }
+})
 
 export default (opts: FormSchemaOpts = {}) => {
   const { extraGroups = [], modelPrefix = '' } = opts
@@ -66,6 +75,13 @@ export default (opts: FormSchemaOpts = {}) => {
             model: 'maxSize',
             placeholder: 'Enter batch size',
             help: 'Give the maximum size for this batchj',
+          },
+          {
+            type: 'SearchSelect',
+            label: 'Instructors',
+            model: 'instructors',
+            optionKey: 'name',
+            onSearch: fetchInstructors
           },
         ],
       },

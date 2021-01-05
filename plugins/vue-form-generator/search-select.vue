@@ -1,7 +1,32 @@
 <template>
 <div>
-  <multiselect v-model="value" label="title" track-by="id" placeholder="Type to search"  open-direction="bottom" :options="values" :multiple="true" :searchable="true" :loading="fetchTagTask.isActive" :internal-search="false" :clear-on-select="true" :close-on-select="false" :options-limit="300" :limit="6" :limit-text="limitText" :max-height="600" :show-no-results="false" :hide-selected="true" @search-change="asyncFind">
-    <template slot="tag" slot-scope="{ option, remove }"><span class="custom__tag"><span>{{ option.title }}</span><span class="custom__remove" @click="remove(option)">❌</span></span></template>
+  <multiselect 
+    v-model="value" 
+    :label="optionKey" 
+    track-by="id" 
+    placeholder="Type to search"  
+    open-direction="bottom" 
+    :options="values" 
+    :multiple="true" 
+    :searchable="true" 
+    :loading="fetchTask.isActive" 
+    :internal-search="false" 
+    :clear-on-select="true" 
+    :close-on-select="false" 
+    :options-limit="300" 
+    :limit="6" 
+    :limit-text="limitText" 
+    :max-height="600" 
+    :show-no-results="false" 
+    :hide-selected="true" 
+    @search-change="asyncFind"
+  >
+    <template slot="tag" slot-scope="{ option, remove }">
+      <span class="custom__tag">
+        <span>{{ option[optionKey] }}</span>
+        <span class="custom__remove" @click="remove(option)">❌</span>
+      </span>
+    </template>
     <span slot="noResult">Oops! No elements found. Consider changing the search query.</span>
   </multiselect>
 </div> 
@@ -17,6 +42,11 @@ export default Vue.extend({
   components: {
     Multiselect
   },
+  computed: {
+    optionKey() {
+      return this.schema.optionKey || 'title'
+    }
+  },
   data () {
     return {
       values: [],
@@ -28,25 +58,19 @@ export default Vue.extend({
       return `and ${count} other tags`
     },
     async asyncFind (query) {
-			this.fetchTagTask.run(query)
+			this.fetchTask.run(query)
     },
     clearAll () {
       this.value = []
     }
 	},
 	tasks(t, ){
-			return {
-				fetchTagTask: t(async (query) => {
-					const response = await TagRepository.fetchAll({
-          	filter: {
-            title: {
-              $iLike: `%${query}%`,
-            },
-         	},
-				})
-					this.values = response
-				}).flow('restart', { delay: 400 }),
-			}
+    return {
+      fetchTask: t(async (query) => {
+        const response = await this.schema.onSearch(query);
+        this.values = response
+      }).flow('restart', { delay: 400 }),
+    }
 	}
 })
 </script>
