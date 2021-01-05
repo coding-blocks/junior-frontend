@@ -19,15 +19,15 @@
           {{course.subTitle}}
         </div>
         <ul class="divided-list">
-          <li class="px-25">
+          <li class="px-15">
             <div class="heading-6 bold">{{course.courseProjects.length}}</div>
             <div class="font-3 mt-10">Projects</div>
           </li>
-          <li class="px-25">
+          <li class="px-15">
             <div class="heading-6 bold">40+</div>
             <div class="font-3 mt-10">PDF Notes</div>
           </li>
-          <li class="px-25">
+          <li class="px-15">
             <div class="heading-6 bold">25+</div>
             <div class="font-3 mt-10">Quizzes</div>
           </li>
