@@ -66,7 +66,7 @@
         </div>
       </div>
     </div>
-    <div class="row no-gutters justify-content-between align-items-center">
+    <div class="row no-gutters justify-content-between align-items-center" v-if="batch.acceptingAdmissions">
       <div class="col-md-6 col-12 mb-md-none mb-25">
         <div class="heading-4 bold mb-10">{{ batch.title }}</div>
         <div class="heading-6">
@@ -74,11 +74,14 @@
         </div>
       </div>
       <div class="v-align-ma flex-1 t-align-r">
-        <span class="text-orange bold heading-5">{{ batch.sellingPrice }}</span>
+        <span class="text-orange bold heading-5">₹{{ batch.sellingPrice }}</span>
         <a :href="batch.productLink" class="button-primary ml-30"
           >Upgrade Now</a
         >
       </div>
+    </div>
+    <div class="no-gutters align-items-right" v-else>
+      <div class="font-5 bold t-align-c">Currently not accepting any enrollments</div>
     </div>
   </div>
 </template>

@@ -26,6 +26,7 @@
     "rsvp": "^4.8.5",
     "vue-datetime": "^1.0.0-beta.14",
     "vue-form-generator": "^2.3.4",
+    "vue-js-toggle-button": "^1.3.3",
     "vue-multiselect": "^2.1.6",
     "vue-notification": "^1.3.20",
     "vue-unique-id": "^3.1.5",

@@ -12,6 +12,7 @@ export interface Batch {
   registrationStart: string;
   registrationEnd: string;
   maxSize: number;
+  acceptingAdmission: boolean;
 }
 
 class BatchesRepository extends BaseRepository<Batch> {

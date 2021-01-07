@@ -1,6 +1,14 @@
 <template>
   <div>
-    <h2 class="py-3">You are editing for {{ course.title }}</h2>
+      <div class="flex-row">
+      <button
+        class="button-solid button-orange my-3 px-5 float-right"
+        @click="$router.back()"
+      >
+        Go Back
+      </button>
+      <h4 class="py-4 mx-auto">You are editing course : {{ course.title }}</h4>
+    </div>
     <VAsync :task="fetchResourcesTask">
       <template v-slot="{ value: resources }">
         <div class="d-flex">

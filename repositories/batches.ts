@@ -18,6 +18,7 @@ export interface Batch {
   maxSize: number;
   sellingPrice: number;
   productId: number;
+  acceptingAdmission: boolean;
 }
 
 class BatchesRepository extends BaseRepository<Batch> {

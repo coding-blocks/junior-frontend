@@ -10,6 +10,12 @@
         <div> 
           <nuxt-link class="button-solid button-orange mx-auto" :to="`courses/${course.id}`"> Edit</nuxt-link>
         </div>
+         <div> 
+          <nuxt-link class="button-solid button-orange mx-auto" :to="`courses/${course.id}/batches`"> Batches</nuxt-link>
+        </div>
+         <div> 
+          <nuxt-link class="button-solid button-orange mx-auto" :to="`courses/${course.id}/resources`"> Resources</nuxt-link>
+        </div>
       </li>
     </ul>
     <nuxt-link class="button-solid button-orange mx-auto mt-4" to="courses/add"> Create Course </nuxt-link>
