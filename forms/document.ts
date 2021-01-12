@@ -9,8 +9,7 @@ export default (opts: FormSchemaOpts = {}) => {
         legend: 'Pdf Details',
         fields: [
           {
-            type: 'input',
-            inputType: 'text',
+            type: 'FileUploader',
             label: 'Pdf Name',
             model: `${modelPrefix}pdf_link`,
             placeholder: 'Enter PDF url',

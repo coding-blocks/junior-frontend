@@ -19,9 +19,8 @@ export default (opts: FormSchemaOpts = {}) => {
             validators: ['string', 'required'],
           },
           {
-            type: 'input',
-            inputType: 'text',
-            label: 'Thumbnaik',
+            type: 'FileUploader',
+            label: 'Thumbnail',
             model: 'thumbnail',
             placeholder: 'Enter Thumbnail URL',
             help: 'This will be the thumbnail for the lecture',

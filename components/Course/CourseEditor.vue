@@ -1,12 +1,10 @@
 <template>
   <div class="row">
-    <div class="col-6">
       <BaseEditor 
         :model="course"
         :formSchema="schema"
         :saveTask="saveCourse"
       />
-    </div>
     <div class="col-6">
       <CourseCard 
         :course="course"

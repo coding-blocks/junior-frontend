@@ -22,7 +22,7 @@ export default Vue.extend({
       instructor: {
         name: '',
         email: '',
-       'image': 'https://cb-thumbnails.s3.ap-south-1.amazonaws.com/python-white-big.svg',
+       'image': '',
         'description': ''
       },
     }
