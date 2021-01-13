@@ -44,7 +44,13 @@ export default Vue.extend({
             this.batch.instructors
           )
         } else {
-          await BatchRepository.create(this.batch)
+          const instructors = this.batch.instructors
+          delete this.batch['instructors']
+          const createdBatch = await BatchRepository.create(this.batch)
+          await BatchRepository.updateInstructors(
+            createdBatch.id,
+            instructors
+          )
         }
         this.$emit('onAfterSave')
       }).flow('drop'),

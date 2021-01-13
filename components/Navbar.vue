@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="row c-topnav justify-content-between align-items-center px-md-20 px-none py-20">
+    <div
+      class="row c-topnav justify-content-between align-items-center px-md-20 px-none py-20"
+    >
       <div class="col-md-6 px-0">
         <div class="d-md-none d-block d-flex align-items-center ml-3">
           <div class="hamburger-menu mr-3">
@@ -12,11 +14,21 @@
               </div>
             </div>
           </div>
-          <img src="https://minio.cb.lk/public/logo.png" alt="Logo" style="height: 36px;" />
+          <img
+            src="https://minio.cb.lk/public/logo.png"
+            alt="Logo"
+            style="height: 36px"
+          />
         </div>
+        <a href="/">
         <div class="d-md-block d-none pl-4">
-          <img src="https://minio.cb.lk/public/logo.png" alt="Logo" style="height: 36px;" />
+          <img
+            src="https://minio.cb.lk/public/logo.png"
+            alt="Logo"
+            style="height: 36px"
+          />
         </div>
+        </a>
       </div>
       <ul class="d-md-flex d-none align-items-center">
         <li class="px-3 font-5 bold">
