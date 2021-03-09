@@ -71,7 +71,7 @@
                 <li class="px-15">
                   <div class="row no-gutters align-items-center">
                     <img
-                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
+                      :src="course.thumbnail"
                       class="mr-20"
                     />
                     <div class="flex-1">
