@@ -51,10 +51,7 @@
               class="br-20 position-relative mb-20 mx-auto"
               style="max-width: 450px"
             >
-              <img
-                src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/varun-bhaiya-python.svg"
-                class="br-20 w-100"
-              />
+              <img :src="course.thumbnail" class="br-20 w-100" />
               <nuxt-link
                 :to="`/courses/${course.slug}`"
                 class="button-primary w-75 position-absolute justify-content-center"
@@ -71,7 +68,7 @@
                 <li class="px-15">
                   <div class="row no-gutters align-items-center">
                     <img
-                      :src="course.thumbnail"
+                      src="https://cb-thumbnails.s3.ap-south-1.amazonaws.com/projects_folder.svg"
                       class="mr-20"
                     />
                     <div class="flex-1">
